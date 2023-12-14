@@ -1,0 +1,39 @@
+{
+    "cut":{
+        "id": 0,
+        "num_arg": 1
+    },
+    "clean":{
+        "id": 1,
+        "num_arg": 2
+    },
+    "wash":{
+        "id": 2,
+        "num_arg": 1
+    },
+    "dry":{
+        "id": 3,
+        "num_arg": 1
+    },
+    "iron":{
+        "id": 4,
+        "num_arg": 1
+    },
+    "pick_up":{
+        "id": 5,
+        "num_arg": 2
+    },
+    "put_down":{
+        "id": 6,
+        "num_arg": 2
+    },
+    "turn_on":{
+        "id": 7,
+        "num_arg": 1
+    },
+    "turn_off":{
+        "id": 8,
+        "num_arg": 1
+    }
+    
+}
