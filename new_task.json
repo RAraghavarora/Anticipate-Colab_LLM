@@ -1,39 +1,98 @@
 {
-    "cut":{
-        "id": 0,
-        "num_arg": 1
+    "0" : 
+    {
+        "task_name": "Bring item to receptacle",
+        "num_obj_args": 2,
+        "obj_args": [
+            "item",
+            "receptacle"
+        ],
+        "example": "Bring item salmon to receptacle countertop",
+        "approx_time": "5 minutes"
     },
-    "clean":{
-        "id": 1,
-        "num_arg": 2
+    "1":
+    {
+        "task_name": "Clean item",
+        "num_obj_args": 1,
+        "obj_args": [
+            "item"
+        ],
+        "example": "Clean item salmon",
+        "approx_time": "5 minutes"
     },
-    "wash":{
-        "id": 2,
-        "num_arg": 1
+    "2":
+    {
+        "task_name": "Cut item",
+        "num_obj_args": 1,
+        "obj_args": [
+            "item"
+        ],
+        "example": "Cut item salmon",
+        "approx_time": "5 minutes"
     },
-    "dry":{
-        "id": 3,
-        "num_arg": 1
+    "3":
+    {
+        "task_name": "Cook item in receptacle",
+        "num_obj_args": 2,
+        "obj_args": [
+            "item",
+            "receptacle"
+        ],
+        "example": "Cook item salmon in receptacle microwave",
+        "approx_time": "30 minutes"
     },
-    "iron":{
-        "id": 4,
-        "num_arg": 1
+    "4":
+    {
+        "task_name": "Serve item on receptacle",
+        "num_obj_args": 2,
+        "obj_args": [
+            "item",
+            "receptacle"
+        ],
+        "example": "Serve item salmon on receptacle diningtable",
+        "approx_time": "15 minutes"
     },
-    "pick_up":{
-        "id": 5,
-        "num_arg": 2
+    "5":
+    {
+        "task_name": "Mix items in receptacle",
+        "num_obj_args": 3,
+        "obj_args": [
+            "item",
+            "item",
+            "receptacle"
+        ],
+        "example": "Mix items carrot and potato in receptacle bowl",
+        "approx_time": "3 minutes"
     },
-    "put_down":{
-        "id": 6,
-        "num_arg": 2
+    "6":
+    {
+        "task_name": "Throw leftover item",
+        "num_obj_args": 1,
+        "obj_args": [
+            "item"
+        ],
+        "example": "Throw leftover item salmon",
+        "approx_time": "1 minute"
     },
-    "turn_on":{
-        "id": 7,
-        "num_arg": 1
+    "7":
+    {
+        "task_name": "Store leftover item",
+        "num_obj_args": 1,
+        "obj_args": [
+            "item"
+        ],
+        "example": "Store leftover item salmon",
+        "approx_time": "1 minute"
     },
-    "turn_off":{
-        "id": 8,
-        "num_arg": 1
+    "8":
+    {
+        "task_name": "Serve leftover item",
+        "num_obj_args": 1,
+        "obj_args": [
+            "item"
+        ],
+        "example": "Serve leftover item salmon",
+        "approx_time": "5 minute"
     }
-    
+
 }
