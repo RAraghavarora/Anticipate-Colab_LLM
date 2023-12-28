@@ -1,31 +1,64 @@
 Monday:
-    Bring item frozen_pizza to receptacle countertop 5
-    Cook item frozen_pizza in receptacle oven 30
-    Cut item frozen_pizza 5
-    Serve item frozen_pizza on receptacle bed 15
-    Time = 55 minutes
-    
+    Clean the bedroom
+    Prepare sandwich
+    Clean the bathroom
+    Prepare salad
+    Clean the kitchen
+    Wash the dishes
+    Prepare grilled salmon
+
 Tuesday:
-    Bring item egg to receptacle countertop 5
-    Clean item egg 5
-    Cook item egg in receptacle microwave 30
-    Serve item egg on receptacle diningtable 15
-    Time = 55 minutes
+    Clean the bedroom
+    Prepare oatmeal
+    Prepare coffee
+    Prepare sandwich
+    Clean the bathroom
+    Clean the diningroom
+    Prepare chicken and rice
 
 Wednesday:
-    Bring item carrot to receptacle countertop 5
-    Bring item broccoli to receptacle countertop 5
-    Bring item lettuce to receptacle countertop 5
-    Clean item carrot 5
-    Clean item broccoli 5
-    Clean item lettuce 5
-    Cut item carrot 5
-    Cut item broccoli 5
-    Cut item lettuce 5
-    Mix items carrot and broccoli in receptacle bowl 3
-    Mix items carrot-broccoli-mix and lettuce in receptacle bowl 3
-    Serve item carrot-broccoli-lettuce-mix on receptacle diningtable 15
-    Time = 66 minutes
+    Wash dirty clothes
+    Prepare banana smoothie
+    Clean the Pantry Room
+    Prepare soup
+    Tend to the garden
+    Prepare veg stew
+    Clean the bedroom
+
+Thursday:
+    Clean the office
+    Prepare tea
+    Prepare boiled egg
+    Wash the dishes
+    Prepare mixed vegetable curry
+    Repaire the gym equipments
+    Clean the garden
+
+Friday:
+    Clean the diningroom
+    Prepare oatmeal
+    Wash the clothes
+    Clean the kitchen
+    Prepare Spaghetti
+    Clean the office
+    Wash the dishes
+    Clean the bedroom
+
+Saturday:
+    Tend to the garden
+    Clean the garden
+    Prepare tea
+    Prepare scrambled egg
+    Clean the gym
+    Clean the office
+    Prepare soup
+    Wash the dishes
+    Repair the kitchen utensils
+    Prepare mixed vegetable curry
+
+Sunday:
+    
+
 
 Thursday:
     Bring item tomato to receptacle countertop
@@ -41,7 +74,7 @@ Thursday:
     Mix items tomato-lettuce-mix and potato in receptacle bowl
     Serve item tomato-lettuce-potato-mix on receptacle diningtable
     Time = 66 minues
-    
+
 Friday:
     Bring item bread to receptacle countertop 5
     Bring item butter to receptacle countertop 5

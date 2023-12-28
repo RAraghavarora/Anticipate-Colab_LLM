@@ -1,4 +1,5 @@
 import json
+import re
 # FILEPATH: /home2/raghav.arora/rearrange/RRC-HRC-Task-Anticipation/extract_gt.py
 
 def load_json(path):
@@ -26,6 +27,10 @@ def get_tasks_for_day(timetable, tasks):
                 import pdb; pdb.set_trace()
             total_time += time
             day_tasks.append(given_task)
+            store_match = re.search(r'\bserve\b', given_task, flags=re.IGNORECASE)
+            if store_match:
+            
+
 
         print(day)
         print(day_tasks)
