@@ -115,5 +115,23 @@
         "room": "pantry",
         "fragile": false,
         "dirty": true
+    },
+    "vacuumcleaner":{
+        "global_id": 13,
+        "local_id": 0,
+        "name":"vacuumcleaner",
+        "receptacle": "cupboard",
+        "room": "bedroom",
+        "fragile": false,
+        "dirty": false
+    },
+    "gardenhose":{
+        "global_id": 14,
+        "local_id": 0,
+        "name":"gardenhose",
+        "receptacle": "cupboard",
+        "room": "pantry",
+        "fragile": false,
+        "dirty": false
     }
 }
