@@ -21,5 +21,8 @@
     "task_id_20": "Prepare office bag",
     "task_id_21": "Clean the room (Options = bedroom, bathroom, dining room, kitchen, garden, pantry room, office)",
     "task_id_22": "Set up the bookshelf",
-    "task_id_23": "Prepare the office table"
+    "task_id_23": "Set up the office table",
+    "task_id_24": "Clean the fridge",
+    "task_id_25": "Throw away kitchen waste",
+    "task_id_26": "Prepare snacks"
 }
