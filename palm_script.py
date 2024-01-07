@@ -13,16 +13,20 @@ model = models[0].name
 
 import random
 
-f = open('./new.json', 'r')
+f = open('./new_task.json', 'r')
 task_dict = json.load(f)
 f.close()
 
-f = open('./object.json', 'r')
+f = open('./object_2.json', 'r')
 objects = json.load(f)
 f.close()
 
 f = open('./receptacle.json', 'r')
 receptacles = json.load(f)
+f.close()
+
+f = open('./task.json', 'r')
+task_sample_space = json.load(f)
 f.close()
 
 from IPython.display import display
@@ -33,6 +37,37 @@ def to_markdown(text):
   text = text.replace('•', '  *')
   return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 
+
+inp1 = f'''
+# The following tasks are possible in the household
+tasks_sample_space = {task_sample_space}
+
+# The following tasks were done in the last week:
+task_last_week = {task_dict}
+
+# For this week, these are the resources available:
+Objects available: {objects}
+
+Today is Wednesday
+User Preference: All the dishes are dirty please clean them.
+'''
+
+op1 = '''
+{
+    'chain of thought': "Following last Wednesday's routine. Add 'wash the dishes' as the 1st task to the task list, and keeping everything else the same.",
+    'tasks' = [
+        "Wash dirty dishes",
+        "Wash dirty clothes",
+        "Prepare breakfast (banana smoothie)",
+        "Make the bed",
+        "Clean the Room (Pantry Room)",
+        "Prepare lunch (sandwich)",
+        "Prepare dinner (veg stew)",
+        "Clean the room (bedroom)",
+        "Prepare medicines"
+    ],
+}
+'''
 
 def main():
     results = {}
@@ -54,32 +89,38 @@ def main():
             while True:
                 
                 prompt = f'''
-# These are the tasks in the last week:
-tasks_sample_space = {task_dict}
+# The following tasks are possible in the household
+tasks_sample_space = {task_sample_space}
+
+# The following tasks were done in the last week:
+task_last_week = {task_dict}
 
 # For this week, these are the resources available:
-Resources:
 Objects available: {objects}
-Receptacles available: {receptacles}
 
-# Example input: Today is wednesday, all the clothes are clean
-# Example output:
-tasks = [
-    "Wash dirty dishes",
-    "Prepare banana smoothie",
-    "Clean the Pantry Room",
-    "Prepare soup",
-    "Tend to the garden",
-    "Prepare veg stew",
-    "Clean the bedroom"
-  ]
-
-# Input: Today is Thursday, we are out of tea
-Anticipate the tasks for today
+# Input: Today is Thursday. User Preference: I want to eat *seafood* for *dinner*.
 '''
                 model = palm.GenerativeModel('gemini-pro')
-                response = model.generate_content(prompt)
-                print(response.text)
+                convo = model.start_chat(history=[
+                    {
+                        "role": "user",
+                        "parts": [inp1]
+                    },
+                    {
+                        "role": "model",
+                        "parts": [op1]
+                    },
+                    # {
+                    #     "role": "user",
+                    #     "parts": [inp2]
+                    # },
+                    # {
+                    #     "role": "model",
+                    #     "parts": [op2]
+                    # },
+                    ])
+                response = convo.send_message(prompt)
+                print(convo.last.text)
                 import pdb; pdb.set_trace()
 
                 completion = palm.generate_text(

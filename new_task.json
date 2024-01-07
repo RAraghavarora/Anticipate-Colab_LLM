@@ -1,60 +1,68 @@
 {
   "monday": [
     "Clean the bedroom",
-    "Prepare sandwich",
+    "Prepare breakfast (Sandwich) ",
     "Clean the bathroom",
-    "Prepare salad",
+    "Prepare lunch (salad)",
     "Clean the kitchen",
     "Wash the dishes",
-    "Prepare grilled salmon"
+    "Prepare dinner (grilled salmon)",
+    "Prepare medicines"
   ],
   "tuesday": [
     "Clean the bedroom",
-    "Prepare oatmeal",
+    "Prepare breakfast (oatmeal)",
     "Prepare coffee",
-    "Prepare sandwich",
+    "Prepare lunch (sandwich)",
     "Clean the bathroom",
     "Clean the diningroom",
-    "Prepare chicken and rice"
+    "Prepare dinner (chicken and rice)",
+    "Prepare medicines"
   ],
   "wednesday": [
     "Wash dirty clothes",
-    "Prepare banana smoothie",
-    "Clean the Pantry Room",
-    "Prepare soup",
+    "Prepare breakfast (banana smoothie)",
+    "Make the bed",
+    "Clean the Room (Pantry Room)",
+    "Prepare lunch (soup)",
     "Tend to the garden",
-    "Prepare veg stew",
-    "Clean the bedroom"
+    "Prepare dinner (veg stew)",
+    "Clean the room (bedroom)",
+    "Prepare medicines"
   ],
   "thursday": [
     "Clean the office",
+    "Make the bed",
     "Prepare tea",
-    "Prepare boiled egg",
+    "Prepare breakfast (boiled egg)",
     "Wash the dishes",
-    "Prepare mixed vegetable curry",
-    "Repaire the gym equipments",
-    "Clean the garden"
+    "Prepare lunch (mixed vegetable curry)",
+    "Set up the office table",
+    "Prepare dinner (pasta)",
+    "Prepare medicines"
   ],
   "friday": [
     "Clean the diningroom",
-    "Prepare oatmeal",
+    "Prepare breakfast (oatmeal)",
     "Wash the clothes",
     "Clean the kitchen",
-    "Prepare Spaghetti",
+    "Prepare Lunch (Spaghetti)",
     "Clean the office",
     "Wash the dishes",
-    "Clean the bedroom"
+    "Prepare dinner (salmon)",
+    "Prepare medicines"
   ],
   "saturday": [
     "Tend to the garden",
     "Clean the garden",
     "Prepare tea",
-    "Prepare scrambled egg",
+    "Prepare breakfast (scrambled egg)",
     "Clean the gym",
     "Clean the office",
-    "Prepare soup",
+    "Prepare lunch (soup)",
     "Wash the dishes",
     "Repair the kitchen utensils",
-    "Prepare mixed vegetable curry"
+    "Prepare dinner (mixed vegetable curry)",
+    "Prepare medicines"
   ]
 }

@@ -24,7 +24,7 @@
         "receptacle": "dining_table",
         "room": "dining_room",
         "fragile": true,
-        "dirty": true
+        "dirty": false
     },
     "carrot_0":{
         "global_id": 3,
@@ -69,7 +69,7 @@
         "receptacle": "cupboard",
         "room": "bedroom",
         "fragile": false,
-        "dirty": true
+        "dirty": false
     },
     "shirt_1":{
         "global_id": 8,
@@ -131,6 +131,105 @@
         "name":"gardenhose",
         "receptacle": "cupboard",
         "room": "pantry",
+        "fragile": false,
+        "dirty": false
+    },
+    "pant_0":{
+        "global_id": 15,
+        "local_id": 0,
+        "name":"pant",
+        "receptacle": "cupboard",
+        "room": "bedroom",
+        "fragile": false,
+        "dirty": false
+    },
+    "pant_1":{
+        "global_id": 16,
+        "local_id": 1,
+        "name":"pant",
+        "receptacle": "cupboard",
+        "room": "bedroom",
+        "fragile": false,
+        "dirty": false
+    },
+    "banana_0":{
+        "global_id": 17,
+        "local_id": 0,
+        "name":"banana",
+        "receptacle": "fridge",
+        "room": "kitchen",
+        "fragile": false,
+        "dirty": false
+    },
+    "milk_0":{
+        "global_id": 18,
+        "local_id": 0,
+        "name":"milk",
+        "receptacle": "fridge",
+        "room": "kitchen",
+        "fragile": false,
+        "dirty": false
+    },
+    "canned_soup":{
+        "global_id": 19,
+        "local_id": 0,
+        "name":"canned_soup",
+        "receptacle": "NOT AVAILABLE",
+        "room": "NOT AVAILABLE",
+        "fragile": false,
+        "dirty": false
+    },
+    "watering_can":{
+        "global_id": 20,
+        "local_id": 0,
+        "name":"watering_can",
+        "receptacle": "cupboard",
+        "room": "pantry",
+        "fragile": false,
+        "dirty": false
+    },
+    "canned_stew":{
+        "global_id": 21,
+        "local_id": 0,
+        "name":"canned_stew",
+        "receptacle": "drawer",
+        "room": "pantry",
+        "fragile": false,
+        "dirty": false
+    },
+    "medicine_box":{
+        "global_id": 22,
+        "local_id": 0,
+        "name":"medicine_box",
+        "receptacle": "cupboard",
+        "room": "bedroom",
+        "fragile": false,
+        "dirty": false
+    },
+    "tea":{
+        "global_id": 23,
+        "local_id": 0,
+        "name":"tea",
+        "receptacle": "drawer",
+        "room": "pantry",
+        "fragile": false,
+        "dirty": false
+    },
+    "bread":{
+        "global_id": 24,
+        "local_id": 0,
+        "name":"bread",
+        "receptacle": "drawer",
+        "room": "pantry",
+        "fragile": false,
+        "dirty": false
+    },
+    "butter":{
+        "global_id": 25,
+        "local_id": 0,
+        "name":"butter",
+        "receptacle": "fridge",
+        "room": "kitchen",
         "fragile": false,
         "dirty": false
     }
