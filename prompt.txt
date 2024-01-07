@@ -1,0 +1,14 @@
+prompt = f'''
+# The following tasks are possible in the household
+tasks_sample_space = {task_sample_space}
+
+# The following tasks were done in the last week:
+task_last_week = {task_dict}
+
+# For this week, these are the resources available:
+Objects available: {objects}
+
+# Input: Today is Thursday. User Preference: I want to eat *seafood* for *dinner*.
+'''
+
+For more details, see palm_script.py
