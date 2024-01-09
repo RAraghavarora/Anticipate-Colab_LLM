@@ -1,0 +1,11 @@
+{
+    "Options_healthy_bf": ["egg", "Omlete", "Boiled_eggs", "scrambled_eggs", "salad", "rice_cake", "Meshed_potato", "veggies", "fruit_salad", "Juice", "Toast", "Cereal", "milk", "tea"],
+
+    "Options_healthy_L": ["Rice", "flat_bread", "veggies", "curry", "egg_curry", "yogurt", "stew", "soup", "mix_veggy", "lentil", "bruschetta"],
+
+    "Options_healthy_D": ["Rice", "flat_bread", "veggies", "curry", "egg_curry", "yogurt", "stew", "soup", "mix_veggy", "lentil", "bruschetta"],
+
+    "Options_junk": ["cake", "pizza", "noodles", "pasta", "coke", "ice_tea", "sugary_fruit_juice", "samosa", "fried_rice", "fried_chicken", "chips"]
+    
+  }
+  
