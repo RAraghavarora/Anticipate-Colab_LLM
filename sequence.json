@@ -1,0 +1,73 @@
+{
+    "user 1 (work from home employee)":{
+        "sequence 1": [
+            'clean the room (livingroom) (using vacuum cleaner)',
+            'prepare breakfast (boiled eggs)'
+            'set up the office table',
+            'serve the food (food=boiled eggs) (location=office table)',
+            'serve the drink (drink=coffee) (location=office table)',          
+        ],
+        "sequence 2": [
+            'prepare lunch (sandwich)',
+            'serve lunch (sandwich) (location=dining table)',
+            'wash the dishes',
+            'put remaining food in the fridge'
+        ],
+        "sequence 3": [
+            'prepare dinner (rice)',
+            'serve dinner (rice) (location=dining table)',
+            'prepare medicines'
+            'wash the dishes',
+            'put remaining food in the fridge'
+        ],
+        "sequence 4": [
+            'serve dinner (mixed vegetables) (location=dining table)',
+            'prepare medicines',
+            'charge the electronic devices',
+            'do the laundry',
+            'put remaining food in the fridge'
+        ]
+
+        "chain-of-thought": "Let us look at the user's patterns step by step.
+
+In sequence 1, we see that the use starts his day with cleaning the living room with the available vacuum cleaner. He works in the living room, and hence cleans it first, and proceeds to prepare a healthy breakfast. He then sets up his office table and serves the food and drink on the table. The user prefers drinking coffee and eating breakfast at the office table.
+
+ In sequence 2, we see that the user prepares a simple lunch, serves it on the dining table. The user cleans the dirty dishes of breakfast and lunch after serving the lunch, and does not waste food, and puts the leftover food in the fridge. 
+
+In sequence 3, we see that the user prepares a more complex dinner, serves it on the dining table. Similar to lunch, the user washes the dishes, and puts the remaining food in the fridge. We see that the user takes his medicines after dinner.
+
+From sequence 4, the user does not prepare dinner, but serves the leftover food from the fridge. He charges his electronic devices, does the laundry, and puts the remaining food in the fridge. We see that the user does his laundry after dinner. He charges the electronic devices in the evening after dinner. And takes his medicines after dinner.
+"
+    },
+    
+    "user 2 (bachelor)": {
+        "sequence 1": [
+            "prepare lunch (pasta)",
+            "serve lunch (pasta) (location=dining table)",
+            "charge the electronic devices",
+            "throw away leftover food",       
+        ],
+        "sequence 2": [
+            "serve dinner (pizza) (on dining table)",
+            "clean the room (livingroom) (using vacuum cleaner)",
+            "decorate the place",
+            "dust electronic devices",
+            "prepare clothes (party)"
+        ],
+        "sequence 3": [
+            'do the laundry',
+            'prepare breakfast (chips)',
+            'serve breakfast (chips) (location=dining table)',
+            'throw away leftover food',
+            'wash the dishes'
+        ]
+        "chain-of-thought": "Let us look at the user's patterns step by step.
+
+In sequence 1, we see that the user prepares an unhealthy lunch, serves it on the dining table. The user charges his electronic devices, and and throws away the leftover food. The user does not wash his dishes, or clean the room.
+
+From sequence 2, we see that the user eats the leftover pizza and does not cook any dinner. He proceeds to decorate the place, dust the electronic devices, and prepare his clothes for the party. He cleans the living room with the available vacuum cleaner. We can see that the user prepares his house for a party at night, and cleans the living room for this. They still don't clean the dishes.
+
+In sequence 3, we see that the user does his laundry, prepares an unhealthy breakfast, serves it on the dining table. The user throws away the leftover food, and washes the dishes. We can see that the user washes his dishes sometimes and does the laundry in the morning. He usually prepares an unhealthy breakfast, and throws away the leftover food. They does not clean the room in the morning.
+"
+    }    
+}
