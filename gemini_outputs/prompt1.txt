@@ -1,0 +1,22 @@
+                prompt = f"""
+# The following tasks are possible in the household
+tasks_sample_space = {task_sample_space}
+
+# The following tasks were done by **User 1** and **User 2** previously:
+user_tasks = {sequences}
+
+You are serving **USER 2** today.
+You see the user pick up the vacuum cleaner.
+Anticipate the next 4 tasks for the day.
+"""
+
+
+{
+    'chain-of-thought': "We see that the **USER 2** cleans the living room in the evening before the party. He must be using the vacuum cleaner to clean the room. After cleaning the room, he might prepare for the party by decorating the place, dusting the electronic devices, and preparing his clothes.",
+    'tasks' = [
+        "Clean the room (living room) (using vacuum cleaner)",
+        "Decorate the place",
+        "Dust electronic devices (options = electronic devices)",
+        "Prepare clothes (party)",
+    ],
+}

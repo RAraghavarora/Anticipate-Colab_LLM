@@ -12,12 +12,7 @@ palm.configure(api_key=palm_api)
 models = [
     m for m in palm.list_models() if "generateText" in m.supported_generation_methods
 ]
-print("Available models:", models)
 model = models[0].name
-
-f = open("./new_task.json", "r")
-task_dict = json.load(f)
-f.close()
 
 f = open("./object_2.json", "r")
 objects = json.load(f)
@@ -49,29 +44,19 @@ inp1 = f"""
 # The following tasks are possible in the household
 tasks_sample_space = {task_sample_space}
 
-# The following tasks were done in the last week:
-task_last_week = {task_dict}
+# The following tasks were done by **User 1** and **User 2** previously:
+user_tasks = {sequences}
 
-# For this week, these are the resources available:
-Objects available: {objects}
-
-Today is Wednesday
-User Preference: All the dishes are dirty please clean them.
+You are serving **user 1** today. You see the user pick up the vacuum cleaner. Anticipate the next 3 tasks for the day.
 """
 
 op1 = """
 {
-    'chain of thought': "Following last Wednesday's routine. Add 'wash the dishes' as the 1st task to the task list, and keeping everything else the same.",
+    'chain-of-thought': "We see that the **USER 1** cleans the living room in the morning. He must be using the vacuum cleaner to clean the room. After cleaning the room, he sets up the office table, and serves a healthy breakfast with coffee to the office table.",
     'tasks' = [
-        "Wash dirty dishes",
-        "Wash dirty clothes",
-        "Prepare breakfast (banana smoothie)",
-        "Make the bed",
-        "Clean the Room (Pantry Room)",
-        "Prepare lunch (sandwich)",
-        "Prepare dinner (veg stew)",
-        "Clean the room (bedroom)",
-        "Prepare medicines"
+        "Clean the room (living room) (using vacuum cleaner)",
+        "prepare breakfast (boiled eggs)",
+        "set up the office table",
     ],
 }
 """
@@ -86,7 +71,6 @@ def main():
         unordered_count = 0
         hallucination_count = 0
         missing_count = 0
-        spot_on = 0
         task_count = 0
         ordered_count = 0
         hallucinations = []
@@ -99,13 +83,12 @@ def main():
 # The following tasks are possible in the household
 tasks_sample_space = {task_sample_space}
 
-# The following tasks were done in the last week:
-task_last_week = {task_dict}
+# The following tasks were done by **User 1** and **User 2** previously:
+user_tasks = {sequences}
 
-# For this week, these are the resources available:
-Objects available: {objects}
-
-# Input: Today is Thursday. User Preference: I want to eat *seafood* for *dinner*.
+You are serving **USER 2** today.
+You see the user open the microwave.
+Anticipate the next 4 tasks for the day.
 """
                 model = palm.GenerativeModel("gemini-pro")
                 convo = model.start_chat(
@@ -124,6 +107,11 @@ Objects available: {objects}
                 )
                 response = convo.send_message(prompt)
                 print(convo.last.text)
+                feedback = input("Enter feedback: ")
+                while feedback != "exit":
+                    response = convo.send_message(feedback)
+                    print(convo.last.text)
+                    feedback = input("Enter feedback: ")
                 import pdb
 
                 pdb.set_trace()
