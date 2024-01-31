@@ -1,0 +1,201 @@
+def get_task_id(task_list, task):
+   for i, t in enumerate(task_list):
+       if t == task:
+           return i
+
+
+def get_task_value(task_dict, task):
+   return task_dict[get_task_id(task_sample_space, task)]
+
+
+def get_task_list_value(task_dict, task_list):
+   return [get_task_value(task_dict, task) for task in task_list]
+
+
+def get_task_list_index(task_list, task_list_value):
+   return [get_task_id(task_sample_space, task) for task in task_list] == task_list_value
+
+
+def get_task_list_index_by_value(task_list, task_list_value):
+   return [get_task_id(task_sample_space, task) for task in task_list if task in task_list_value]
+
+
+def get_task_list_index_by_value_in_list(task_list, task_list_value, task_list_value_index):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   return [get_task_id(task_sample_space, task) for task in task_list if task in task_list_value]
+
+
+def get_task_list_value_in_list(task_list, task_list_value, task_list_value_index):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   return [get_task_value(task_dict, task) for task in task_list if task in task_list_value]
+
+
+def get_task_list_index_by_value_in_list_and_index(task_list, task_list_value, task_list_value_index,
+                                                  task_list_value_index_2):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   return [get_task_id(task_sample_space, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2]
+
+
+def get_task_list_index_by_value_in_list_and_value_index(task_list, task_list_value, task_list_value_index,
+                                                        task_list_value_index_2):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   return [get_task_id(task_sample_space, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2]
+
+
+def get_task_list_value_in_list_and_index(task_list, task_list_value, task_list_value_index,
+                                         task_list_value_index_2):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   return [get_task_value(task_dict, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2]
+
+
+def get_task_list_index_by_value_in_list_and_index_and_value(task_list, task_list_value, task_list_value_index,
+                                                            task_list_value_index_2, task_list_value_index_3):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   task_list_value_3 = [task_list_value[task_list_value_index_3[i]] for i in range(len(task_list_value_index_3))]
+   return [get_task_id(task_sample_space, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2 and task in task_list_value_3]
+
+
+def get_task_list_value_in_list_and_index_and_value(task_list, task_list_value, task_list_value_index,
+                                                   task_list_value_index_2, task_list_value_index_3):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   task_list_value_3 = [task_list_value[task_list_value_index_3[i]] for i in range(len(task_list_value_index_3))]
+   return [get_task_value(task_dict, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2 and task in task_list_value_3]
+
+
+def get_task_list_index_by_value_in_list_and_index_and_value_index(task_list, task_list_value, task_list_value_index,
+                                                                   task_list_value_index_2,
+                                                                   task_list_value_index_3):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   task_list_value_3 = [task_list_value[task_list_value_index_3[i]] for i in range(len(task_list_value_index_3))]
+   return [get_task_id(task_sample_space, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2 and task in task_list_value_3]
+
+
+def get_task_list_value_in_list_and_index_and_value_index(task_list, task_list_value, task_list_value_index,
+                                                         task_list_value_index_2,
+                                                         task_list_value_index_3):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   task_list_value_3 = [task_list_value[task_list_value_index_3[i]] for i in range(len(task_list_value_index_3))]
+   return [get_task_value(task_dict, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2 and task in task_list_value_3]
+
+
+def get_task_list_index_by_value_in_list_and_index_and_value_index_and_value(task_list, task_list_value,
+                                                                            task_list_value_index,
+                                                                            task_list_value_index_2,
+                                                                            task_list_value_index_3,
+                                                                            task_list_value_index_4):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   task_list_value_3 = [task_list_value[task_list_value_index_3[i]] for i in range(len(task_list_value_index_3))]
+   task_list_value_4 = [task_list_value[task_list_value_index_4[i]] for i in range(len(task_list_value_index_4))]
+   return [get_task_id(task_sample_space, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2 and task in task_list_value_3 and task in task_list_value_4]
+
+
+def get_task_list_value_in_list_and_index_and_value_index_and_value(task_list, task_list_value, task_list_value_index,
+                                                                   task_list_value_index_2,
+                                                                   task_list_value_index_3,
+                                                                   task_list_value_index_4):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   task_list_value_3 = [task_list_value[task_list_value_index_3[i]] for i in range(len(task_list_value_index_3))]
+   task_list_value_4 = [task_list_value[task_list_value_index_4[i]] for i in range(len(task_list_value_index_4))]
+   return [get_task_value(task_dict, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2 and task in task_list_value_3 and task in task_list_value_4]
+
+
+def get_task_list_index_by_value_in_list_and_index_and_value_index_and_value_index_2(task_list, task_list_value,
+                                                                                   task_list_value_index,
+                                                                                   task_list_value_index_2,
+                                                                                   task_list_value_index_3,
+                                                                                   task_list_value_index_4):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   task_list_value_3 = [task_list_value[task_list_value_index_3[i]] for i in range(len(task_list_value_index_3))]
+   task_list_value_4 = [task_list_value[task_list_value_index_4[i]] for i in range(len(task_list_value_index_4))]
+   return [get_task_id(task_sample_space, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2 and task in task_list_value_3 and task in task_list_value_4]
+
+
+def get_task_list_value_in_list_and_index_and_value_index_and_value_index_2(task_list, task_list_value,
+                                                                           task_list_value_index,
+                                                                           task_list_value_index_2,
+                                                                           task_list_value_index_3,
+                                                                           task_list_value_index_4):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   task_list_value_3 = [task_list_value[task_list_value_index_3[i]] for i in range(len(task_list_value_index_3))]
+   task_list_value_4 = [task_list_value[task_list_value_index_4[i]] for i in range(len(task_list_value_index_4))]
+   return [get_task_value(task_dict, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2 and task in task_list_value_3 and task in task_list_value_4]
+
+
+def get_task_list_index_by_value_in_list_and_index_and_value_index_and_value_index_2_and_value(task_list, task_list_value,
+                                                                                              task_list_value_index,
+                                                                                              task_list_value_index_2,
+                                                                                              task_list_value_index_3,
+                                                                                              task_list_value_index_4,
+                                                                                              task_list_value_index_5):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   task_list_value_3 = [task_list_value[task_list_value_index_3[i]] for i in range(len(task_list_value_index_3))]
+   task_list_value_4 = [task_list_value[task_list_value_index_4[i]] for i in range(len(task_list_value_index_4))]
+   task_list_value_5 = [task_list_value[task_list_value_index_5[i]] for i in range(len(task_list_value_index_5))]
+   return [get_task_id(task_sample_space, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2 and task in task_list_value_3 and task in task_list_value_4 and
+           task in task_list_value_5]
+
+
+def get_task_list_value_in_list_and_index_and_value_index_and_value_index_2_and_value_index_3(task_list, task_list_value,
+                                                                                             task_list_value_index,
+                                                                                             task_list_value_index_2,
+                                                                                             task_list_value_index_3,
+                                                                                             task_list_value_index_4,
+                                                                                             task_list_value_index_5):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   task_list_value_3 = [task_list_value[task_list_value_index_3[i]] for i in range(len(task_list_value_index_3))]
+   task_list_value_4 = [task_list_value[task_list_value_index_4[i]] for i in range(len(task_list_value_index_4))]
+   task_list_value_5 = [task_list_value[task_list_value_index_5[i]] for i in range(len(task_list_value_index_5))]
+   return [get_task_value(task_dict, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2 and task in task_list_value_3 and task in task_list_value_4 and
+           task in task_list_value_5]
+
+
+def get_task_list_index_by_value_in_list_and_index_and_value_index_and_value_index_2_and_value_index_3_and_value(
+       task_list, task_list_value, task_list_value_index, task_list_value_index_2, task_list_value_index_3,
+       task_list_value_index_4, task_list_value_index_5):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   task_list_value_3 = [task_list_value[task_list_value_index_3[i]] for i in range(len(task_list_value_index_3))]
+   task_list_value_4 = [task_list_value[task_list_value_index_4[i]] for i in range(len(task_list_value_index_4))]
+   task_list_value_5 = [task_list_value[task_list_value_index_5[i]] for i in range(len(task_list_value_index_5))]
+   return [get_task_id(task_sample_space, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2 and task in task_list_value_3 and task in task_list_value_4 and
+           task in task_list_value_5]
+
+
+def get_task_list_value_in_list_and_index_and_value_index_and_value_index_2_and_value_index_3_and_value_index_4(
+       task_list, task_list_value, task_list_value_index, task_list_value_index_2, task_list_value_index_3,
+       task_list_value_index_4, task_list_value_index_5):
+   task_list_value = [task_list_value[task_list_value_index[i]] for i in range(len(task_list_value_index))]
+   task_list_value_2 = [task_list_value[task_list_value_index_2[i]] for i in range(len(task_list_value_index_2))]
+   task_list_value_3 = [task_list_value[task_list_value_index_3[i]] for i in range(len(task_list_value_index_3))]
+   task_list_value_4 = [task_list_value[task_list_value_index_4[i]] for i in range(len(task_list_value_index_4))]
+   task_list_value_5 = [task_list_value[task_list_value_index_5[i]] for i in range(len(task_list_value_index_5))]
+   return [get_task_value(task_dict, task) for task in task_list if
+           task in task_list_value and task in task_list_value_2 and task in task_list_value_3 and task in task_list_value_4 and
+           task in task_list_value_5]
