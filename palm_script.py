@@ -12,7 +12,6 @@ palm.configure(api_key=palm_api)
 models = [
     m for m in palm.list_models() if "generateText" in m.supported_generation_methods
 ]
-print("Available models:", models)
 model = models[0].name
 
 f = open("./new_task.json", "r")
@@ -75,6 +74,9 @@ op1 = """
     ],
 }
 """
+
+with open("./prompt_try_llama.txt", "w") as f:
+    f.write(inp1)
 
 
 def main():
