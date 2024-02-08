@@ -1,11 +1,13 @@
 import json
-import numpy as np
 import math
-from scipy.stats import kendalltau
-from keyconfig import gemini as palm_api
 import pprint
-import google.generativeai as palm
 import random
+
+import google.generativeai as palm
+import numpy as np
+from scipy.stats import kendalltau
+
+from keyconfig import gemini as palm_api
 
 palm.configure(api_key=palm_api)
 
@@ -30,9 +32,9 @@ f = open("./sequence.json", "r")
 sequences = json.load(f)
 f.close()
 
-from IPython.display import display
-from IPython.display import Markdown
 import textwrap
+
+from IPython.display import Markdown, display
 
 
 def to_markdown(text):
@@ -112,101 +114,6 @@ Anticipate the next 4 tasks for the day.
                     response = convo.send_message(feedback)
                     print(convo.last.text)
                     feedback = input("Enter feedback: ")
-                import pdb
-
-                pdb.set_trace()
-
-                completion = palm.generate_text(
-                    model=model,
-                    prompt=prompt,
-                    temperature=palm_temp,
-                    # The maximum length of the response
-                    max_output_tokens=1000,
-                    # candidate_count = 8
-                )
-
-                if completion.result:
-                    # import pdb; pdb.set_trace()
-                    print("Working temp = ", palm_temp)
-                    break
-                else:
-                    print("Not working temp = ", palm_temp)
-            import pdb
-
-            pdb.set_trace()
-            for candidate in completion.candidates[:1]:
-                task_count += len(final_combined_lists_op) + len(
-                    final_combined_lists_ip
-                )
-                code_to_execute = candidate["output"].strip()  # Removing triple quotes
-
-                env = {}
-                try:
-                    exec(code_to_execute, env)
-                except Exception as e:
-                    print(e)
-                    print("why bro?")
-                    continue
-
-                try:
-                    routine_3_output = env["routine_3_output"]
-                except:
-                    print("Error in execution?")
-                    try:
-                        routine_3_output = eval(code_to_execute)
-                    except:
-                        print("Error in execution.")
-                        import pdb
-
-                        pdb.set_trace()
-                        continue
-                import pdb
-
-                pdb.set_trace()
-                tau, missing = kendal_tau(
-                    routine_3_output, final_combined_lists_op, final_seq
-                )
-                final_tau.append(tau)
-                final_missing.append(missing)
-                all_sequences = [
-                    sequence
-                    for sub_sequence in sequences.values()
-                    for sequence in sub_sequence
-                ]
-
-                temp = [x for x in routine_3_output if x not in set(all_sequences)]
-
-                if len(temp) > 0:
-                    hallucination_count += 1
-                    hallucinations.extend(temp)
-
-                sanity = sanity_check(routine_3_output, sequences)
-                if sanity:
-                    ordered_count += 1
-                else:
-                    unordered_count += 1
-
-                count += 1
-
-                print(count)
-
-        results[palm_temp] = {
-            "Average Ordered count": ordered_count / count,
-            "Average Hallucination count": hallucination_count / count,
-            "Average Missing count": missing_count / count,
-            "Average Unordered count": unordered_count / count,
-            "Average Hallucinations": len(hallucinations) / count,
-            "Average tau per prompt": np.mean(final_tau),
-            "Average missing per prompt": np.mean(final_missing),
-            "Total missing": np.sum(final_missing),
-            "Average task count": task_count / count,
-        }
-
-    for temp, result in results.items():
-        print(f"Temperature: {temp}")
-        for key, value in result.items():
-            print(f"{key}: {value}")
-        print("\n")
 
 
 if __name__ == "__main__":
