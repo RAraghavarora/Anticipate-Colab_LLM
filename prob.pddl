@@ -42,16 +42,16 @@
     ; (human_near working_table livingroom)
     
     ;; init_3
-    ; (agent_at kitchen) 
-    ; (Human_at kitchen)
-    ; (agent_near sink kitchen)
-    ; (human_near dining_table kitchen)
+    (agent_at kitchen) 
+    (Human_at kitchen)
+    (agent_near sink kitchen)
+    (human_near dining_table kitchen)
 
     ;; init_4
-    (agent_at livingroom)
-    (Human_at livingroom)
-    (agent_near closet livingroom)
-    (human_near working_table livingroom)
+    ; (agent_at livingroom)
+    ; (Human_at livingroom)
+    ; (agent_near closet livingroom)
+    ; (human_near working_table livingroom)
 
     (agent_switched_off faucet sink Kitchen)  
     (agent_switched_off Burner stove_burner_1 Kitchen) 
@@ -932,11 +932,13 @@
         
 
         ; Goal_2
-        (food_served roasted_sandwich plate working_table livingRoom)
-        (room_cleaned livingRoom)
+        ; (food_served roasted_sandwich plate working_table livingRoom)
+        ; (room_cleaned livingRoom)
 
-        ; (laundrydone)
-        ; (electronic_items_Cleaned)
+        
+        ; Goal_3
+        (laundrydone)
+        (electronic_items_Cleaned)
 
     )
 )

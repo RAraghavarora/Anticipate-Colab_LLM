@@ -139,7 +139,7 @@
             (not(Human_at ?l1))
             (Human_at ?l2)
             (human_near ?r2 ?l2)
-            (increase(total-cost)(agent_dur ?r1 ?r2)) ;human_slow
+            (increase(total-cost)(agent_dur ?r1 ?r2)) ;human_fast
         )                    
  )  
 
@@ -1417,7 +1417,6 @@
 (:action Laundry_Done 
  :parameters()
  :precondition(and(stuff_at folded_clothes Closet LivingRoom)
-                  (agent_near Closet LivingRoom)
                   (not(laundrydone))
  ) 
  :effect(and(laundrydone)(increase (total-cost) 10))
@@ -1460,7 +1459,7 @@
 (:action agent_cleans_electronics
  :parameters (?o - obj ?l - location)
  :precondition(and(agent_at ?l)
-                  (In_agent_hand Dustmop)
+                  (In_agent_handB DustingCloth)
                   (not(electronics_cleaned ?o ?l))
               )
  :effect(and(electronics_cleaned ?o ?l)
