@@ -1,0 +1,17 @@
+{
+    'prepare medicines': 'medicines_provided at dining_table kitchen',
+    'wash the dishes': 'dishes_cleaned',
+    'do the laundry': 'laundrydone',
+    'serve the food': 'food_served cooked_pasta plate dining_table kitchen',
+    'prepare clothes': 'prepared_clothes ??',
+    'charge the electronic devices': '???',
+    'prepare office bag': 'bag_prepared ????',
+    'clean the room': 'room_cleaned kitchen',
+    'set up office table': '???',
+    'throw away leftover food': 'cleaned_food cooked_pizza ??',
+    'put remaining food in the fridge': '??',
+    'decorate the place': '??',
+    'serve a drink': 'served_drink tea glass dining_table kitchen',
+    'dust electronic devices': 'electronic_devices_cleaned',
+    'extinguish the fire': 'FireExtinguished kitchen',
+}
