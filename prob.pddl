@@ -925,21 +925,7 @@
 (:goal
     (and
 
-
-        ;; Goal_1
-        ; (food_served cooked_pasta plate working_table livingRoom)
-        ; (served_drink milk glass working_table livingRoom)
-        
-
-        ; Goal_2
-        ; (food_served roasted_sandwich plate working_table livingRoom)
-        ; (room_cleaned livingRoom)
-
-        
-        ; Goal_3
-        (laundrydone)
-        (electronic_items_Cleaned)
-
+    (laundrydone)
     )
 )
 
