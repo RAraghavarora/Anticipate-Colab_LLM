@@ -13,6 +13,27 @@ from keyconfig import gemini as palm_api
 
 palm.configure(api_key=palm_api)
 
+
+def replace_options(tasks, food_options):
+
+    for task_id, task_description in tasks.items():
+        if "(options =" in task_description:
+            start_index = task_description.find("(options = ") + len("(options = ")
+            end_index = task_description.find(")")
+            options = task_description[start_index:end_index].split(", ")
+            print(options)
+            print("\n\n")
+            for i in range(len(options)):
+                option = options[i]
+                if option in food_options:
+                    task_description = task_description.replace(
+                        option, str(food_options[option])
+                    )
+                    tasks[task_id] = task_description
+
+    return tasks
+
+
 models = [
     m for m in palm.list_models() if "generateText" in m.supported_generation_methods
 ]
@@ -34,7 +55,11 @@ f = open("./json_files/sequence.json", "r")
 sequences = json.load(f)
 f.close()
 
+f = open("./json_files/food.json", "r")
+food = json.load(f)
+f.close()
 
+task_sample_space = replace_options(task_sample_space, food)
 
 
 def to_markdown(text):
@@ -92,7 +117,9 @@ You are serving **USER 2** today.
 You see the user open the microwave.
 Anticipate the next 4 tasks for the day.
 """
-                model = palm,GenerativeModel("gemini-pro")
+                model = palm.GenerativeModel("gemini-pro")
+                model2 = palm.GenerativeModel("palm-2")
+                print(model2)
                 convo = model.start_chat(
                     history=[
                         {"role": "user", "parts": [inp1]},
