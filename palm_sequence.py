@@ -2,7 +2,9 @@ import json
 import math
 import pprint
 import random
+import textwrap
 
+from IPython.display import Markdown, display
 import google.generativeai as palm
 import numpy as np
 from scipy.stats import kendalltau
@@ -16,25 +18,23 @@ models = [
 ]
 model = models[0].name
 
-f = open("./object_2.json", "r")
+f = open("./json_files/object_2.json", "r")
 objects = json.load(f)
 f.close()
 
-f = open("./receptacle.json", "r")
+f = open("./json_files/receptacle.json", "r")
 receptacles = json.load(f)
 f.close()
 
-f = open("./task.json", "r")
+f = open("./json_files/task.json", "r")
 task_sample_space = json.load(f)
 f.close()
 
-f = open("./sequence.json", "r")
+f = open("./json_files/sequence.json", "r")
 sequences = json.load(f)
 f.close()
 
-import textwrap
 
-from IPython.display import Markdown, display
 
 
 def to_markdown(text):
@@ -92,7 +92,7 @@ You are serving **USER 2** today.
 You see the user open the microwave.
 Anticipate the next 4 tasks for the day.
 """
-                model = palm.GenerativeModel("gemini-pro")
+                model = palm,GenerativeModel("gemini-pro")
                 convo = model.start_chat(
                     history=[
                         {"role": "user", "parts": [inp1]},
