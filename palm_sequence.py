@@ -10,6 +10,7 @@ import numpy as np
 from scipy.stats import kendalltau
 
 from keyconfig import gemini as palm_api
+from json_files.master_task import master_tasks
 
 palm.configure(api_key=palm_api)
 
@@ -21,8 +22,6 @@ def replace_options(tasks, food_options):
             start_index = task_description.find("(options = ") + len("(options = ")
             end_index = task_description.find(")")
             options = task_description[start_index:end_index].split(", ")
-            print(options)
-            print("\n\n")
             for i in range(len(options)):
                 option = options[i]
                 if option in food_options:
@@ -61,6 +60,8 @@ f.close()
 
 task_sample_space = replace_options(task_sample_space, food)
 
+# print(task_sample_space)
+
 
 def to_markdown(text):
     text = text.replace("•", "  *")
@@ -87,6 +88,64 @@ op1 = """
     ],
 }
 """
+
+
+def prompt_gemini(task, user=1):
+    print("inside gemini prompt")
+
+    prompt = f"""
+# The following tasks are possible in the household
+tasks_sample_space = {task_sample_space}
+
+# The following tasks were done by **User 1** and **User 2** previously:
+user_tasks = {sequences}
+
+You are serving **USER {user}** today.
+The first task for the day is: "{task}".
+Anticipate the next 4 tasks for the day.
+Answer only as a valid python dictionary, keeping tasks from the sample space: {master_tasks}
+"""
+
+    model = palm.GenerativeModel("gemini-pro")
+
+    convo = model.start_chat(
+        history=[
+            {"role": "user", "parts": [inp1]},
+            {"role": "model", "parts": [op1]},
+        ]
+    )
+    response = convo.send_message(prompt)
+    import pdb
+
+    while True:
+        try:
+            op_dict = eval(convo.last.text)
+            break
+        except Exception as e:
+            try:
+                op_string = convo.last.text
+                start_index = op_string.find("{")
+                end_index = op_string.rfind("}") + 1
+                dict_string = op_string[start_index:end_index]
+
+                # Using eval() to convert the string to a dictionary
+                op_dict = eval(dict_string)
+                break
+            except Exception
+                pass
+
+            print(e)
+            import pdb
+
+            pdb.set_trace()
+            response = convo.send_message(
+                "Please provide output only as a valid python dict. When converting your output to a dict, we get the following error: "
+                + str(e)
+            )
+
+        # pdb.set_trace()
+    print(convo.last.text)
+    return convo.last.text
 
 
 def main():

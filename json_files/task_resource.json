@@ -1,7 +1,13 @@
 {
-    "prepare food": "Food ingredient",
-    "wash the dishes": ["Dishwasher", "dirtydishes"],
-    "do the laundry": ["washingmachine", "dirtyclothes"],
-    "clean the room": "Vacuumcleaner",
-    "serve a drink": "Drink", 
+  "prepare food": "food ingredient",
+  "wash the dishes": [
+    "dishwasher",
+    "dirtydishes"
+  ],
+  "do the laundry": [
+    "washingmachine",
+    "dirtyclothes"
+  ],
+  "clean the room": "vacuumcleaner",
+  "serve a drink": "drink"
 }
