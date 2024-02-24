@@ -8,12 +8,13 @@ import textwrap
 import google.generativeai as palm
 import numpy as np
 
-from keyconfig import gemini as palm_api
-from palm_sequence import prompt_gemini
 from json_files.master_task import master_tasks
 from json_files.task_user_1 import task_user_1
+from keyconfig import gemini as palm_api
+from palm_sequence import prompt_gemini
 
 palm.configure(api_key=palm_api)
+random.seed(69)
 
 
 def replace_options(tasks, food_options):
@@ -71,16 +72,42 @@ f = open("./json_files/task_phrase.json", "r")
 phrase_mapping = json.load(f)
 f.close()
 
+f = open("./json_files/task_resource.json", "r")
+resource_mapping = json.load(f)
+f.close()
+
+
 for i in range(10):
     # random_key = random.choice(list(task_sample_space.keys()))
     # task = task_sample_space[random_key]
     task = random.choice(task_user_1)
-    if "fire" in task:
-        continue
-    if "clothes" in task or "room" in task:
-        pass
-    else:
-        task = remove_parentheses(task)
+    # if "fire" in task:
+    #     continue
+    # if "clothes" in task or "room" in task:
+    #     pass
+    # else:
+    #     task = remove_parentheses(task)
 
-    print(task)
-    print(prompt_gemini(task, user=1))
+    print(
+        "You see the user perform the task: ",
+        task,
+        "\n What do you anticipate to be the next 4 tasks?",
+    )
+    op_dict = prompt_gemini(task, user=1)
+    import pdb
+
+    resource_found = False
+    for task in op_dict["tasks"]:
+        if task in resource_mapping.keys():
+            print(f"Resource {resource_mapping[task]} is not available")
+            resource_found = True
+
+    if not resource_found:
+        print("No resource found")
+
+    task_phrase = random.choice(list(phrase_mapping.keys()))
+    print("Requirement: ", phrase_mapping[task_phrase])
+
+    print("------------------------------------")
+
+    pdb.set_trace()
