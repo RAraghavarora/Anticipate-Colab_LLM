@@ -1,5 +1,7 @@
 {
-  "prepare food": "food ingredient",
+  "prepare breakfast": "food ingredient",
+  "prepare lunch": "food ingredient",
+  "prepare dinner": "food ingredient",
   "wash the dishes": [
     "dishwasher",
     "dirtydishes"
