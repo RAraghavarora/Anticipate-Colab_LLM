@@ -91,8 +91,6 @@ op1 = """
 
 
 def prompt_gemini(task, user=1):
-    print("inside gemini prompt")
-
     prompt = f"""
 # The following tasks are possible in the household
 tasks_sample_space = {task_sample_space}
@@ -131,13 +129,13 @@ Answer only as a valid python dictionary, keeping tasks from the sample space: {
                 # Using eval() to convert the string to a dictionary
                 op_dict = eval(dict_string)
                 break
-            except Exception
+            except Exception:
                 pass
 
             print(e)
             import pdb
 
-            pdb.set_trace()
+            # pdb.set_trace()
             response = convo.send_message(
                 "Please provide output only as a valid python dict. When converting your output to a dict, we get the following error: "
                 + str(e)
@@ -145,7 +143,7 @@ Answer only as a valid python dictionary, keeping tasks from the sample space: {
 
         # pdb.set_trace()
     print(convo.last.text)
-    return convo.last.text
+    return op_dict
 
 
 def main():
