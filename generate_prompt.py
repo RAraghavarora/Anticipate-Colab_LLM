@@ -76,40 +76,62 @@ f = open("./json_files/task_resource.json", "r")
 resource_mapping = json.load(f)
 f.close()
 
+with open("data/household1.json") as f:
+    household_responses = json.load(f)
 
-for i in range(10):
-    # random_key = random.choice(list(task_sample_space.keys()))
-    # task = task_sample_space[random_key]
-    task = random.choice(task_user_2)
-    # if "fire" in task:
-    #     continue
-    # if "clothes" in task or "room" in task:
-    #     pass
-    # else:
-    #     task = remove_parentheses(task)
+# for i in range(10):
+#     # random_key = random.choice(list(task_sample_space.keys()))
+#     # task = task_sample_space[random_key]
+#     task = random.choice(task_user_2)
+#     # if "fire" in task:
+#     #     continue
+#     # if "clothes" in task or "room" in task:
+#     #     pass
+#     # else:
+#     #     task = remove_parentheses(task)
 
-    print(
-        "You see the user perform the task: ",
-        task,
-        "\n What do you anticipate to be the next 4 tasks?",
-    )
+#     print(
+#         "You see the user perform the task: ",
+#         task,
+#         "\n What do you anticipate to be the next 4 tasks?",
+#     )
 
-    task = "It is morning time, the user has prepared his breakfast \n You see the user perform the task:  \n *serve the food (boiled eggs) (location=office table)* \n What do you anticipate to be the next 4 tasks? \n Requirement: The kitchen is very dirty\n"
-    op_dict = prompt_gemini(task, user=1)
-    import pdb
+#     task = "It is morning time, the user has prepared his breakfast \n You see the user perform the task:  \n *serve the food (boiled eggs) (location=office table)* \n What do you anticipate to be the next 4 tasks? \n Requirement: The kitchen is very dirty\n"
+#     op_dict = prompt_gemini(task, user=1)
+#     import pdb
 
-    resource_found = False
-    for task in op_dict["tasks"]:
-        if task in resource_mapping.keys():
-            print(f"Resource {resource_mapping[task]} is not available")
-            resource_found = True
+#     resource_found = False
+#     for task in op_dict["tasks"]:
+#         if task in resource_mapping.keys():
+#             print(f"Resource {resource_mapping[task]} is not available")
+#             resource_found = True
 
-    if not resource_found:
-        print("No resource found")
+#     if not resource_found:
+#         print("No resource found")
 
-    task_phrase = random.choice(list(phrase_mapping.keys()))
-    print("Requirement: ", phrase_mapping[task_phrase])
+#     task_phrase = random.choice(list(phrase_mapping.keys()))
+#     print("Requirement: ", phrase_mapping[task_phrase])
 
-    print("------------------------------------")
+#     print("------------------------------------")
 
-    pdb.set_trace()
+#     pdb.set_trace()
+
+common_count = 0
+
+for scenes in household_responses.keys():
+    scene_details = household_responses[scenes]["details"]
+    op_dict = prompt_gemini(scene_details, user=1)
+    op_tasks = op_dict["tasks"]
+    response_users = list(household_responses[scenes].keys())[1:]
+    for user in response_users:
+        user_tasks = household_responses[scenes][user]
+        user_tasks = [remove_parentheses(task) for task in user_tasks]
+        op_tasks = [remove_parentheses(task) for task in op_tasks]
+        print(f"User {user} tasks: ", user_tasks)
+        print(f"Predicted tasks: ", op_tasks)
+        print("Overlap: ", set(user_tasks).intersection(op_tasks))
+        print("-------------------------------------------------")
+
+        common_count += len(set(user_tasks).intersection(op_tasks))
+
+print("Common tasks: ", common_count)
