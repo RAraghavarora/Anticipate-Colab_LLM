@@ -9,7 +9,7 @@ import google.generativeai as palm
 import numpy as np
 
 from json_files.master_task import master_tasks
-from json_files.task_user_1 import task_user_1
+from json_files.task_users import task_user_1, task_user_2
 from keyconfig import gemini as palm_api
 from palm_sequence import prompt_gemini
 
@@ -80,7 +80,7 @@ f.close()
 for i in range(10):
     # random_key = random.choice(list(task_sample_space.keys()))
     # task = task_sample_space[random_key]
-    task = random.choice(task_user_1)
+    task = random.choice(task_user_2)
     # if "fire" in task:
     #     continue
     # if "clothes" in task or "room" in task:
@@ -93,6 +93,8 @@ for i in range(10):
         task,
         "\n What do you anticipate to be the next 4 tasks?",
     )
+
+    task = "It is morning time, the user has prepared his breakfast \n You see the user perform the task:  \n *serve the food (boiled eggs) (location=office table)* \n What do you anticipate to be the next 4 tasks? \n Requirement: The kitchen is very dirty\n"
     op_dict = prompt_gemini(task, user=1)
     import pdb
 

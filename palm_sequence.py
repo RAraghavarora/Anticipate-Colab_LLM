@@ -99,6 +99,7 @@ tasks_sample_space = {task_sample_space}
 user_tasks = {sequences}
 
 You are serving **USER {user}** today.
+{task}
 The first task for the day is: "{task}".
 Anticipate the next 4 tasks for the day.
 Answer only as a valid python dictionary, keeping tasks from the sample space: {master_tasks}

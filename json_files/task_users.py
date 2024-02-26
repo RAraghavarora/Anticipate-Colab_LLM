@@ -29,3 +29,14 @@ task_user_1 = [
     "serve the drink (milk) (location=dining table)",
     "serve the drink (tea) (location=dining table)",
 ]
+
+task_user_2 = [
+    "charge the electronic devices",
+    "prepare clothes (party)",
+    "serve breakfast (chips)",
+    "put leftover food in the fridge",
+    "decorate the place",
+    "prepare clothes (party)",
+    "serve the drink",
+    "wash the dishes",
+]
