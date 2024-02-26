@@ -1,0 +1,212 @@
+{
+  "scene_0": {
+    "details": "It is morning time, the user has prepared his breakfast \n You see the user perform the task:  \n *serve the food (boiled eggs) (location=office table)* \n What do you anticipate to be the next 4 tasks? \n Requirement: The kitchen is very dirty",
+    "user_0": [
+      "serve a drink",
+      "clean the room (kitchen)",
+      "put remaining food in the fridge",
+      "wash the dishes"
+    ],
+    "user_1": [
+      "serve a drink",
+      "set up office table",
+      "clean the room (livingroom)",
+      "clean the room (kitchen)"
+    ],
+    "user_2": [
+      "clean the room (kitchen)",
+      "put remaining food in the fridge",
+      "serve a drink",
+      "wash the dishes"
+    ],
+    "user_3": [
+      "serve a drink",
+      "wash the dishes",
+      "clean the room (kitchen)",
+      "prepare office clothes"
+    ],
+    "user_4": [
+      "clean the room (kitchen)",
+      "clean the room (bathroom)",
+      "wash the dishes",
+      "throw away leftover food"
+    ],
+    "user_5": [
+      "set up office table",
+      "throw away leftover food",
+      "wash the dishes",
+      "clean the room (kitchen)"
+    ]
+  },
+  "scene_1": {
+    "details": "It is evening time, the user has completed his dinner. \n You see the user perform the task:  \n *put leftover food in the fridge* \n What do you anticipate to be the next 4 tasks? Requirement: User wants his office bag prepared for the next day \n *All the dishes are clean*",
+    "user_0": [
+      "prepare office bag",
+      "prepare office clothes",
+      "prepare medicines",
+      "clean the room (kitchen)"
+    ],
+    "user_1": [
+      "prepare medicines",
+      "charge the electronic devices",
+      "prepare office clothes",
+      "prepare office bag"
+    ],
+    "user_2": [
+      "dust electronic surfaces",
+      "charge the electronic devices",
+      "prepare office clothes",
+      "prepare office bag"
+    ],
+    "user_3": [
+      "prepare medicines",
+      "set up office table",
+      "prepare office bag",
+      "charge the electronic devices"
+    ],
+    "user_4": [
+      "serve a drink",
+      "prepare medicines",
+      "wash the dishes",
+      "do the laundry"
+    ],
+    "user_5": [
+      "clean the room (kitchen)",
+      "charge the electronic devices",
+      "prepare office bag",
+      "prepare office clothes"
+    ]
+  },
+  "scene_2": {
+    "details": "It is the morning on a weekend. The user just woke up. \n You see the user perform the task: \n  *clean the bathroom (using mop)* \n What do you anticipate to be the next 4 tasks? \n Requirement: There is a fire in the kitchen",
+    "user_0": [
+      "extinguish fire",
+      "clean the room (kitchen)",
+      "prepare food",
+      "serve the food"
+    ],
+    "user_1": [
+      "extinguish fire",
+      "prepare food",
+      "serve the food",
+      "serve a drink"
+    ],
+    "user_2": [
+      "extinguish fire",
+      "clean the room (kitchen)",
+      "decorate the place",
+      "prepare food"
+    ],
+    "user_3": [
+      "extinguish fire",
+      "clean the room (kitchen)",
+      "clean the room (storeroom)",
+      "dust electronic surfaces"
+    ],
+    "user_4": [
+      "extinguish fire",
+      "serve a drink",
+      "clean the room (kitchen)",
+      "decorate the place"
+    ],
+    "user_5": [
+      "clean the room (storeroom)",
+      "clean the room (livingroom)",
+      "do the laundry",
+      "prepare party clothes"
+    ]
+  },
+  "scene_3": {
+    "details": "It is the afternoon time on a weekend. The user has finished his lunch. \n You see the user perform the task:  \n *do laundry* \n What do you anticipate to be the next 4 tasks? Requirement: All the dishes are very dirty \n *coffee is not available*",
+    "user_0": [
+      "prepare gym clothes",
+      "wash the dishes",
+      "serve the food",
+      "charge the electronic devices"
+    ],
+    "user_1": [
+      "charge the electronic devices",
+      "wash the dishes",
+      "put remaining food in the fridge",
+      "prepare medicines"
+    ],
+    "user_2": [
+      "clean the room (livingroom)",
+      "decorate the place",
+      "prepare party clothes",
+      "prepare food"
+    ],
+    "user_3": [
+      "put remaining food in the fridge",
+      "do the laundry",
+      "prepare gym clothes",
+      "extinguish fire"
+    ],
+    "user_4": [
+      "wash the dishes",
+      "serve a drink",
+      "charge the electronic devices",
+      "prepare party clothes"
+    ],
+    "user_5": [
+      "prepare gym clothes",
+      "wash the dishes",
+      "dust electronic surfaces",
+      "charge the electronic devices"
+    ]
+  },
+  "scene_4": {
+    "details": "It is the evening time, and user has not eaten dinner yet. \n You see the user perform the task:  \n *prepare clothes (casual)* \n What do you anticipate to be the next 4 tasks? \n Requirement: Living Room is very dirty \n *User is not hungry*",
+    "user_0": [
+      "do the laundry",
+      "clean the room (livingroom)",
+      "dust electronic surfaces",
+      "set up office table"
+    ],
+    "user_1": [
+      "clean the room (livingroom)",
+      "prepare food",
+      "charge the electronic devices",
+      "prepare medicines"
+    ],
+    "user_2": [
+      "clean the room (livingroom)",
+      "decorate the place",
+      "prepare food",
+      "serve the food"
+    ],
+    "user_3": [
+      "clean the room (livingroom)",
+      "prepare party clothes",
+      "decorate the place",
+      "serve a drink"
+    ],
+    "user_4": [
+      "clean the room (livingroom)",
+      "decorate the place",
+      "serve a drink",
+      "prepare gym clothes"
+    ],
+    "user_5": [
+      "clean the room (livingroom)",
+      "decorate the place",
+      "prepare food",
+      "prepare medicines"
+    ]
+  },
+  "scene_5": {
+    "details": "lorem ipsum"
+  },
+  "scene_6": {
+    "details": "lorem ipsum"
+  },
+  "scene_7": {
+    "details": "lorem ipsum"
+  },
+  "scene_8": {
+    "details": "lorem ipsum"
+  },
+  "scene_9": {
+    "details": "lorem ipsum"
+  }
+}
