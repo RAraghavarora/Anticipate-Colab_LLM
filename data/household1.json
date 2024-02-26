@@ -9,7 +9,7 @@
     ],
     "user_1": [
       "serve a drink",
-      "set up office table",
+      "set up the office table",
       "clean the room (livingroom)",
       "clean the room (kitchen)"
     ],
@@ -23,7 +23,7 @@
       "serve a drink",
       "wash the dishes",
       "clean the room (kitchen)",
-      "prepare office clothes"
+      "prepare clothes (office)"
     ],
     "user_4": [
       "clean the room (kitchen)",
@@ -32,7 +32,7 @@
       "throw away leftover food"
     ],
     "user_5": [
-      "set up office table",
+      "set up the office table",
       "throw away leftover food",
       "wash the dishes",
       "clean the room (kitchen)"
@@ -41,27 +41,27 @@
   "scene_1": {
     "details": "It is evening time, the user has completed his dinner. \n You see the user perform the task:  \n *put leftover food in the fridge* \n What do you anticipate to be the next 4 tasks? Requirement: User wants his office bag prepared for the next day \n *All the dishes are clean*",
     "user_0": [
-      "prepare office bag",
-      "prepare office clothes",
+      "prepare the office bag",
+      "prepare clothes (office)",
       "prepare medicines",
       "clean the room (kitchen)"
     ],
     "user_1": [
       "prepare medicines",
       "charge the electronic devices",
-      "prepare office clothes",
-      "prepare office bag"
+      "prepare clothes (office)",
+      "prepare the office bag"
     ],
     "user_2": [
       "dust electronic surfaces",
       "charge the electronic devices",
-      "prepare office clothes",
-      "prepare office bag"
+      "prepare clothes (office)",
+      "prepare the office bag"
     ],
     "user_3": [
       "prepare medicines",
-      "set up office table",
-      "prepare office bag",
+      "set up the office table",
+      "prepare the office bag",
       "charge the electronic devices"
     ],
     "user_4": [
@@ -73,38 +73,38 @@
     "user_5": [
       "clean the room (kitchen)",
       "charge the electronic devices",
-      "prepare office bag",
-      "prepare office clothes"
+      "prepare the office bag",
+      "prepare clothes (office)"
     ]
   },
   "scene_2": {
     "details": "It is the morning on a weekend. The user just woke up. \n You see the user perform the task: \n  *clean the bathroom (using mop)* \n What do you anticipate to be the next 4 tasks? \n Requirement: There is a fire in the kitchen",
     "user_0": [
-      "extinguish fire",
+      "extinguish the fire",
       "clean the room (kitchen)",
       "prepare food",
       "serve the food"
     ],
     "user_1": [
-      "extinguish fire",
+      "extinguish the fire",
       "prepare food",
       "serve the food",
       "serve a drink"
     ],
     "user_2": [
-      "extinguish fire",
+      "extinguish the fire",
       "clean the room (kitchen)",
       "decorate the place",
       "prepare food"
     ],
     "user_3": [
-      "extinguish fire",
+      "extinguish the fire",
       "clean the room (kitchen)",
       "clean the room (storeroom)",
       "dust electronic surfaces"
     ],
     "user_4": [
-      "extinguish fire",
+      "extinguish the fire",
       "serve a drink",
       "clean the room (kitchen)",
       "decorate the place"
@@ -113,13 +113,13 @@
       "clean the room (storeroom)",
       "clean the room (livingroom)",
       "do the laundry",
-      "prepare party clothes"
+      "prepare clothes (party)"
     ]
   },
   "scene_3": {
     "details": "It is the afternoon time on a weekend. The user has finished his lunch. \n You see the user perform the task:  \n *do laundry* \n What do you anticipate to be the next 4 tasks? Requirement: All the dishes are very dirty \n *coffee is not available*",
     "user_0": [
-      "prepare gym clothes",
+      "prepare clothes (gym)",
       "wash the dishes",
       "serve the food",
       "charge the electronic devices"
@@ -133,23 +133,23 @@
     "user_2": [
       "clean the room (livingroom)",
       "decorate the place",
-      "prepare party clothes",
+      "prepare clothes (party)",
       "prepare food"
     ],
     "user_3": [
       "put remaining food in the fridge",
       "do the laundry",
-      "prepare gym clothes",
-      "extinguish fire"
+      "prepare clothes (gym)",
+      "extinguish the fire"
     ],
     "user_4": [
       "wash the dishes",
       "serve a drink",
       "charge the electronic devices",
-      "prepare party clothes"
+      "prepare clothes (party)"
     ],
     "user_5": [
-      "prepare gym clothes",
+      "prepare clothes (gym)",
       "wash the dishes",
       "dust electronic surfaces",
       "charge the electronic devices"
@@ -161,7 +161,7 @@
       "do the laundry",
       "clean the room (livingroom)",
       "dust electronic surfaces",
-      "set up office table"
+      "set up the office table"
     ],
     "user_1": [
       "clean the room (livingroom)",
@@ -177,7 +177,7 @@
     ],
     "user_3": [
       "clean the room (livingroom)",
-      "prepare party clothes",
+      "prepare clothes (party)",
       "decorate the place",
       "serve a drink"
     ],
@@ -185,7 +185,7 @@
       "clean the room (livingroom)",
       "decorate the place",
       "serve a drink",
-      "prepare gym clothes"
+      "prepare clothes (gym)"
     ],
     "user_5": [
       "clean the room (livingroom)",
@@ -204,7 +204,7 @@
     ],
     "user_1": [
       "serve a drink",
-      "set up office table",
+      "set up the office table",
       "clean the room (livingroom)",
       "clean the room (kitchen)"
     ],
@@ -218,7 +218,7 @@
       "serve a drink",
       "wash the dishes",
       "clean the room (kitchen)",
-      "prepare office clothes"
+      "prepare clothes (office)"
     ],
     "user_4": [
       "clean the room (kitchen)",
@@ -227,7 +227,7 @@
       "throw away leftover food"
     ],
     "user_5": [
-      "set up office table",
+      "set up the office table",
       "throw away leftover food",
       "wash the dishes",
       "clean the room (kitchen)"
@@ -236,27 +236,27 @@
   "scene_6": {
     "details": "It is afternoon time, the user has completed his lunch \n You see the user perform the task: \n *put leftover food in the fridge* \n What do you anticipate to be the next 4 tasks? \n Requirement: To do his office work, the user needs his office table \n *All the dishes are clean*",
     "user_0": [
-      "prepare office bag",
-      "prepare office clothes",
+      "prepare the office bag",
+      "prepare clothes (office)",
       "prepare medicines",
       "clean the room (kitchen)"
     ],
     "user_1": [
       "prepare medicines",
       "charge the electronic devices",
-      "prepare office clothes",
-      "prepare office bag"
+      "prepare clothes (office)",
+      "prepare the office bag"
     ],
     "user_2": [
       "dust electronic surfaces",
       "charge the electronic devices",
-      "prepare office clothes",
-      "prepare office bag"
+      "prepare clothes (office)",
+      "prepare the office bag"
     ],
     "user_3": [
       "prepare medicines",
-      "set up office table",
-      "prepare office bag",
+      "set up the office table",
+      "prepare the office bag",
       "charge the electronic devices"
     ],
     "user_4": [
@@ -268,38 +268,38 @@
     "user_5": [
       "clean the room (kitchen)",
       "charge the electronic devices",
-      "prepare office bag",
-      "prepare office clothes"
+      "prepare the office bag",
+      "prepare clothes (office)"
     ]
   },
   "scene_7": {
     "details": "It is the morning on a weekend. The user just woke up \n You see the user perform the task: \n *clean the bathroom (using mop)* \n What do you anticipate to be the next 4 tasks? \n Requirement: The cellphone needs charging \n *All the clothes are clean*",
     "user_0": [
-      "extinguish fire",
+      "extinguish the fire",
       "clean the room (kitchen)",
       "prepare food",
       "serve the food"
     ],
     "user_1": [
-      "extinguish fire",
+      "extinguish the fire",
       "prepare food",
       "serve the food",
       "serve a drink"
     ],
     "user_2": [
-      "extinguish fire",
+      "extinguish the fire",
       "clean the room (kitchen)",
       "decorate the place",
       "prepare food"
     ],
     "user_3": [
-      "extinguish fire",
+      "extinguish the fire",
       "clean the room (kitchen)",
       "clean the room (storeroom)",
       "dust electronic surfaces"
     ],
     "user_4": [
-      "extinguish fire",
+      "extinguish the fire",
       "serve a drink",
       "clean the room (kitchen)",
       "decorate the place"
@@ -308,13 +308,13 @@
       "clean the room (storeroom)",
       "clean the room (livingroom)",
       "do the laundry",
-      "prepare party clothes"
+      "prepare clothes (party)"
     ]
   },
   "scene_8": {
     "details": "It is the afternoon time on a weekend. The user is yet to have his lunch. You see the user perform the task:  \n *do laundry*  What do you anticipate to be the next 4 tasks? \n Requirement: The storeroom is very dirty \n *Dishwasher is not working*",
     "user_0": [
-      "prepare gym clothes",
+      "prepare clothes (gym)",
       "wash the dishes",
       "serve the food",
       "charge the electronic devices"
@@ -328,23 +328,23 @@
     "user_2": [
       "clean the room (livingroom)",
       "decorate the place",
-      "prepare party clothes",
+      "prepare clothes (party)",
       "prepare food"
     ],
     "user_3": [
       "put remaining food in the fridge",
       "do the laundry",
-      "prepare gym clothes",
-      "extinguish fire"
+      "prepare clothes (gym)",
+      "extinguish the fire"
     ],
     "user_4": [
       "wash the dishes",
       "serve a drink",
       "charge the electronic devices",
-      "prepare party clothes"
+      "prepare clothes (party)"
     ],
     "user_5": [
-      "prepare gym clothes",
+      "prepare clothes (gym)",
       "wash the dishes",
       "dust electronic surfaces",
       "charge the electronic devices"
@@ -356,7 +356,7 @@
       "do the laundry",
       "clean the room (livingroom)",
       "dust electronic surfaces",
-      "set up office table"
+      "set up the office table"
     ],
     "user_1": [
       "clean the room (livingroom)",
@@ -372,7 +372,7 @@
     ],
     "user_3": [
       "clean the room (livingroom)",
-      "prepare party clothes",
+      "prepare clothes (party)",
       "decorate the place",
       "serve a drink"
     ],
@@ -380,7 +380,7 @@
       "clean the room (livingroom)",
       "decorate the place",
       "serve a drink",
-      "prepare gym clothes"
+      "prepare clothes (gym)"
     ],
     "user_5": [
       "clean the room (livingroom)",

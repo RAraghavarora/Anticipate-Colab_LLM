@@ -54,7 +54,7 @@ f = open("./json_files/task.json", "r")
 task_sample_space = json.load(f)
 f.close()
 
-f = open("./json_files/sequence.json", "r")
+f = open("./json_files/sequence_1.json", "r")
 sequences = json.load(f)
 f.close()
 
@@ -116,22 +116,33 @@ with open("data/household1.json") as f:
 
 #     pdb.set_trace()
 
-common_count = 0
+common_ratio = list()
 
 for scenes in household_responses.keys():
     scene_details = household_responses[scenes]["details"]
     op_dict = prompt_gemini(scene_details, user=1)
     op_tasks = op_dict["tasks"]
+    op_tasks = [remove_parentheses(task) for task in op_tasks]
+    op_tasks = [
+        (
+            "prepare food"
+            if task in ["prepare breakfast", "prepare lunch", "prepare dinner"]
+            else task
+        )
+        for task in op_tasks
+    ]
     response_users = list(household_responses[scenes].keys())[1:]
     for user in response_users:
         user_tasks = household_responses[scenes][user]
         user_tasks = [remove_parentheses(task) for task in user_tasks]
-        op_tasks = [remove_parentheses(task) for task in op_tasks]
         print(f"User {user} tasks: ", user_tasks)
         print(f"Predicted tasks: ", op_tasks)
         print("Overlap: ", set(user_tasks).intersection(op_tasks))
         print("-------------------------------------------------")
 
-        common_count += len(set(user_tasks).intersection(op_tasks))
+        common_ratio.append(len(set(user_tasks).intersection(op_tasks)) / 4)
+        # if len(set(user_tasks).intersection(op_tasks)) == 0:
+        #     breakpoint()
 
-print("Common tasks: ", common_count)
+print("Common tasks: ", sum(common_ratio) / len(common_ratio))
+breakpoint()
