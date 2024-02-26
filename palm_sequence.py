@@ -102,7 +102,7 @@ You are serving **USER {user}** today.
 {task}
 The first task for the day is: "{task}".
 Anticipate the next 4 tasks for the day.
-Answer only as a valid python dictionary, keeping tasks from the sample space: {master_tasks}
+Answer only as a valid python dictionary, with 2 keys: 'chain-of-thought', and 'tasks'. Keep tasks from the sample space: {master_tasks}
 """
 
     model = palm.GenerativeModel("gemini-pro")
@@ -119,6 +119,8 @@ Answer only as a valid python dictionary, keeping tasks from the sample space: {
     while True:
         try:
             op_dict = eval(convo.last.text)
+            if "tasks" not in op_dict.keys():
+                raise Exception("Tasks key not found")
             break
         except Exception as e:
             try:
