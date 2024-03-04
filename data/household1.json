@@ -1,6 +1,6 @@
 {
   "scene_0": {
-    "details": "It is morning time, the user has prepared his breakfast \n You see the user perform the task:  \n *serve the food (boiled eggs) (location=office table)* \n What do you anticipate to be the next 4 tasks? \n Requirement: The kitchen is very dirty",
+    "details": "It is morning time, the user has prepared his breakfast \n You see the user perform the task:  \n *serve the food (boiled eggs) (location=office table)* \n What do you anticipate to be the next 5 tasks? \n Requirement: The kitchen is very dirty",
     "required_task": "clean the room (kitchen)",
     "user_0": [
       "serve a drink",
@@ -40,7 +40,7 @@
     ]
   },
   "scene_1": {
-    "details": "It is evening time, the user has completed his dinner. \n You see the user perform the task:  \n *put leftover food in the fridge* \n What do you anticipate to be the next 4 tasks? Requirement: User wants his office bag prepared for the next day \n *All the dishes are clean*",
+    "details": "It is evening time, the user has completed his dinner. \n You see the user perform the task:  \n *put leftover food in the fridge* \n What do you anticipate to be the next 5 tasks? Requirement: User wants his office bag prepared for the next day \n *All the dishes are clean*",
     "required_task": "prepare the office bag",
     "not_required_task": "wash the dishes",
     "user_0": [
@@ -81,7 +81,7 @@
     ]
   },
   "scene_2": {
-    "details": "It is the morning on a weekend. The user just woke up. \n You see the user perform the task: \n  *clean the bathroom (using mop)* \n What do you anticipate to be the next 4 tasks? \n Requirement: There is a fire in the kitchen",
+    "details": "It is the morning on a weekend. The user just woke up. \n You see the user perform the task: \n  *clean the bathroom (using mop)* \n What do you anticipate to be the next 5 tasks? \n Requirement: There is a fire in the kitchen",
     "required_task": "extinguish the fire",
     "user_0": [
       "extinguish the fire",
@@ -121,7 +121,7 @@
     ]
   },
   "scene_3": {
-    "details": "It is the afternoon time on a weekend. The user has finished his lunch. \n You see the user perform the task:  \n *do laundry* \n What do you anticipate to be the next 4 tasks? Requirement: All the dishes are very dirty \n *coffee is not available*",
+    "details": "It is the afternoon time on a weekend. The user has finished his lunch. \n You see the user perform the task:  \n *do laundry* \n What do you anticipate to be the next 5 tasks? Requirement: All the dishes are very dirty \n *coffee is not available*",
     "required_task": "wash the dishes",
     "not_required_task": "serve a drink (coffee)",
     "user_0": [
@@ -162,7 +162,7 @@
     ]
   },
   "scene_4": {
-    "details": "It is the evening time, and user has not eaten dinner yet. \n You see the user perform the task:  \n *prepare clothes (casual)* \n What do you anticipate to be the next 4 tasks? \n Requirement: Living Room is very dirty \n *User is not hungry*",
+    "details": "It is the evening time, and user has not eaten dinner yet. \n You see the user perform the task:  \n *prepare clothes (casual)* \n What do you anticipate to be the next 5 tasks? \n Requirement: Living Room is very dirty \n *User is not hungry*",
     "required_task": "clean the room (livingroom)",
     "not_required_task": [
       "prepare food",
@@ -206,7 +206,7 @@
     ]
   },
   "scene_5": {
-    "details": "It is morning time, the user hasn't had breakfast yet. \n You see the user perform the task:  \n *serve the drink (tea) (location=dining table)* \n What do you anticipate to be the next 4 tasks? \n  Requirement: The bathroom is very dirty. \n  *Eggs are not available*",
+    "details": "It is morning time, the user hasn't had breakfast yet. \n You see the user perform the task:  \n *serve the drink (tea) (location=dining table)* \n What do you anticipate to be the next 5 tasks? \n  Requirement: The bathroom is very dirty. \n  *Eggs are not available*",
     "required_task": "clean the room (bathroom)",
     "user_0": [
       "serve a drink",
@@ -246,7 +246,7 @@
     ]
   },
   "scene_6": {
-    "details": "It is afternoon time, the user has completed his lunch \n You see the user perform the task: \n *put leftover food in the fridge* \n What do you anticipate to be the next 4 tasks? \n Requirement: To do his office work, the user needs his office table \n *All the dishes are clean*",
+    "details": "It is afternoon time, the user has completed his lunch \n You see the user perform the task: \n *put leftover food in the fridge* \n What do you anticipate to be the next 5 tasks? \n Requirement: To do his office work, the user needs his office table \n *All the dishes are clean*",
     "required_task": "set up the office table",
     "not_required_task": "wash the dishes",
     "user_0": [
@@ -287,7 +287,7 @@
     ]
   },
   "scene_7": {
-    "details": "It is the morning on a weekend. The user just woke up \n You see the user perform the task: \n *clean the bathroom (using mop)* \n What do you anticipate to be the next 4 tasks? \n Requirement: The cellphone needs charging \n *All the clothes are clean*",
+    "details": "It is the morning on a weekend. The user just woke up \n You see the user perform the task: \n *clean the bathroom (using mop)* \n What do you anticipate to be the next 5 tasks? \n Requirement: The cellphone needs charging \n *All the clothes are clean*",
     "required_task": "charge the electronic devices",
     "not_required_task": "do laundry",
     "user_0": [
@@ -328,7 +328,7 @@
     ]
   },
   "scene_8": {
-    "details": "It is the afternoon time on a weekend. The user is yet to have his lunch. You see the user perform the task:  \n *do laundry*  What do you anticipate to be the next 4 tasks? \n Requirement: The storeroom is very dirty \n *Dishwasher is not working*",
+    "details": "It is the afternoon time on a weekend. The user is yet to have his lunch. You see the user perform the task:  \n *do laundry*  What do you anticipate to be the next 5 tasks? \n Requirement: The storeroom is very dirty \n *Dishwasher is not working*",
     "required_task": "clean the room (storeroom)",
     "not_required_task": "wash the dishes",
     "user_0": [
@@ -369,7 +369,7 @@
     ]
   },
   "scene_9": {
-    "details": "It is the evening time, and user has not eaten dinner yet. \n You see the user perform the task:  \n *prepare clothes (casual)* \n What do you anticipate to be the next 4 tasks? \n Requirement: Spoiled food needs to be thrown \n *Rice is not available*",
+    "details": "It is the evening time, and user has not eaten dinner yet. \n You see the user perform the task:  \n *prepare clothes (casual)* \n What do you anticipate to be the next 5 tasks? \n Requirement: Spoiled food needs to be thrown \n *Rice is not available*",
     "required_task": "throw away leftover food",
     "user_0": [
       "do the laundry",

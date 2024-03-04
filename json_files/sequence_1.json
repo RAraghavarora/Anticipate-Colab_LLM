@@ -1,11 +1,11 @@
 {
   "user 1": {
     "sequence 1": [
-      "clean the room (livingroom) (using vacuum cleaner)",
+      "clean the room (living_room) (using vacuum cleaner)",
       "prepare breakfast (boiled eggs)",
       "set up the office table",
-      "serve the food (food=boiled eggs) (location=office table)",
-      "serve the drink (drink=coffee) (location=office table)"
+        "serve the food (boiled eggs)",
+      "serve the drink (drink=coffee)"
     ],
     "sequence 2": [
       "prepare lunch (sandwich)",
@@ -27,6 +27,6 @@
       "do the laundry",
       "put remaining food in the fridge"
     ],
-    "description": "Let us look at the user's patterns step by step.\n\nIn sequence 1, we see that the use starts his day with cleaning the living room with the available vacuum cleaner. He works in the living room, and hence cleans it first, and proceeds to prepare a healthy breakfast. He then sets up his office table and serves the food and drink on the table. The user prefers drinking coffee and eating breakfast at the office table.\n\n In sequence 2, we see that the user prepares a simple lunch, serves it on the dining table. The user cleans the dirty dishes of breakfast and lunch after serving the lunch, and does not waste food, and puts the leftover food in the fridge. \n\nIn sequence 3, we see that the user prepares a more complex dinner, serves it on the dining table. Similar to lunch, the user washes the dishes, and puts the remaining food in the fridge. We see that the user takes his medicines after dinner.\n\nFrom sequence 4, the user does not prepare dinner, but serves the leftover food from the fridge. He charges his electronic devices, does the laundry, and puts the remaining food in the fridge. We see that the user does his laundry after dinner. He charges the electronic devices in the evening after dinner. And takes his medicines after dinner.\n"
+    "description": "Let us look at the user's patterns step by step.\n\nIn sequence 1, we see that the use starts his day with cleaning the living_room with the available vacuum cleaner. He works in the living_room, and hence cleans it first, and proceeds to prepare a healthy breakfast. He then sets up his office table and serves the food and drink on the table. The user prefers drinking coffee and eating breakfast at the office table.\n\n In sequence 2, we see that the user prepares a simple lunch, serves it on the dining table. The user cleans the dirty dishes of breakfast and lunch after serving the lunch, and does not waste food, and puts the leftover food in the fridge. \n\nIn sequence 3, we see that the user prepares a more complex dinner, serves it on the dining table. Similar to lunch, the user washes the dishes, and puts the remaining food in the fridge. We see that the user takes his medicines after dinner.\n\nFrom sequence 4, the user does not prepare dinner, but serves the leftover food from the fridge. He charges his electronic devices, does the laundry, and puts the remaining food in the fridge. We see that the user does his laundry after dinner. He charges the electronic devices in the evening after dinner. And takes his medicines after dinner.\n"
   }
 }

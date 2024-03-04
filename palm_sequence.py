@@ -50,7 +50,7 @@ f = open("./json_files/task.json", "r")
 task_sample_space = json.load(f)
 f.close()
 
-f = open("./json_files/sequence_1.json", "r")
+f = open("./json_files/sequence_2.json", "r")
 sequences = json.load(f)
 f.close()
 
@@ -62,15 +62,17 @@ task_sample_space = replace_options(task_sample_space, food)
 
 # print(task_sample_space)
 
+# del sequences["user 1"]["description"]
+
 
 inp1 = f"""
 # The following tasks are possible in the household
 tasks_sample_space = {task_sample_space}
 
-# The following tasks were done by **USER 1** previously:
+# The following tasks were done by **USER 2** previously:
 user_tasks = {sequences}
 
-You are serving **USER 1** today.
+You are serving **USER 2** today.
 It is morning time, the user has prepared his breakfast
 You see the user perform the task:  
 * serve the food (boiled eggs) *
@@ -80,16 +82,26 @@ Requirement: The kitchen is very dirty
 
 op1 = """
 {
-    'chain-of-thought': "It is morning time, and the user will first finish the requirement by cleaning the kitchen. From the previous routine, we know that they cleans the living room in the morning, followed by setting up the office table for work. They also serve coffee with breakfast.",
+    'chain-of-thought': "To start, we need to finish the requirement by cleaning the kitchen. It is morning time, and from the previous routine, we know that they cleans the living room in the morning, followed by setting up the office table for work. They also serve coffee with breakfast.",
     'tasks' = [
         "clean the room (kitchen)",
-        "clean the room (living room)",
+        "clean the room (living_room)",
         "set up the office table",
         "serve a drink"
     ],
 }
 """
 
+op1_nocot = """
+{
+    'tasks' = [
+        "clean the room (kitchen)",
+        "clean the room (living_room)",
+        "set up the office table",
+        "serve a drink"
+    ],
+}
+"""
 inp2 = f"""
 # The following tasks are possible in the household
 tasks_sample_space = {task_sample_space}
@@ -97,7 +109,7 @@ tasks_sample_space = {task_sample_space}
 # The following tasks were done by **User 1** previously:
 user_tasks = {sequences}
 
-You are serving **user 1** today.
+You are serving **user 2** today.
 It is the evening time, and user has not eaten dinner yet.
 You see the user perform the task:  
 prepare clothes (casual)
@@ -108,7 +120,18 @@ Requirement: Spoiled food needs to be thrown
 
 op2 = """
 {
-    'chain-of-thought': "We know that on evenings the user eats dinner and takes medicines. The user has not eaten yet, so they will first prepare and serve their dinner. Since the user takes his medicine after food in the evening, we can anticipate that the user will prepare medicines. We know that the spoiled food needs to be thrown, so the user will throw away leftover food. We see that the user has prepared casual clothes, so they will prepare a casual and fun dinner. Hence we can anticipate the user eating pizza.",
+    'chain-of-thought': "We can anticipate that the user will first finish the requirement by throwing away the leftover food. We know that on evenings the user eats dinner and takes medicines. The user has not eaten yet, so they will first prepare and serve their dinner. Since the user takes his medicine after food in the evening, we can anticipate that the user will prepare medicines. We know that the spoiled food needs to be thrown, so the user will throw away leftover food. We see that the user has prepared casual clothes, so they will prepare a casual and fun dinner. Hence we can anticipate the user eating pizza.",
+    'tasks' = [
+        "throw away leftover food"
+        "prepare food (pizza)",
+        "serve the food (pizza)",
+        "prepare medicines",
+    ],
+}
+"""
+
+op2_nocot = """
+{
     'tasks' = [
         "throw away leftover food"
         "prepare food (pizza)",
@@ -124,14 +147,12 @@ def prompt_gemini(task, user=1):
 # The following tasks are possible in the household
 tasks_sample_space = {task_sample_space}
 
-# The following tasks were done by **User 1** and **User 2** previously:
+# The following tasks were done by **User 2** previously:
 user_tasks = {sequences}
 
-You are serving **USER {user}** today.
 {task}
-The first task for the day is: "{task}".
-Anticipate the next 4 tasks for the day.
-Answer only as a valid python dictionary, with 2 keys: 'chain-of-thought', and 'tasks'. Keep tasks from the sample space: {master_tasks}
+    
+Answer only as a valid python dictionary, with two keys: 'chain-of-thought', and 'tasks'. Number of tasks should be 5! Keep tasks from the sample space: {master_tasks}
 """
 
     model = palm.GenerativeModel("gemini-pro")
@@ -145,53 +166,43 @@ Answer only as a valid python dictionary, with 2 keys: 'chain-of-thought', and '
         ]
     )
     response = convo.send_message(prompt)
+    print("message sent")
     import pdb
 
+    counter = 0
     while True:
+        print(counter)
+        counter += 1
         try:
-            op_dict = eval(convo.last.text)
-            if "tasks" not in op_dict.keys():
-                raise Exception("Tasks key not found")
-
-            while True:
-                hallucination = False
-                for task in op_dict["tasks"]:
-                    if task not in master_tasks:
-                        hallucination = True
-                        response = convo.send_message(
-                            f"Please provide tasks only from the sample space: {master_tasks}"
-                        )
-                        break
-                if not hallucination:
-                    break
-            if len(op_dict["tasks"]) != 4:
-                response = convo.send_message(
-                    "Please anticipate a total of 4 next tasks."
-                )
-                break
-        except Exception as e:
             try:
+                op_dict = eval(convo.last.text)
+            except:
                 op_string = convo.last.text
                 start_index = op_string.find("{")
                 end_index = op_string.rfind("}") + 1
                 dict_string = op_string[start_index:end_index]
-
-                # Using eval() to convert the string to a dictionary
                 op_dict = eval(dict_string)
-                break
-            except Exception:
-                pass
 
+            if "tasks" not in op_dict.keys():
+                raise Exception("Tasks key not found in output")
+            # elif len(op_dict["tasks"]) != 4:
+            #     raise Exception("Number of tasks is not equal to 4")
+            # elif any(task not in master_tasks for task in op_dict["tasks"]):
+            #     invalid_tasks = [
+            #         task for task in op_dict["tasks"] if task not in master_tasks
+            #     ]
+            #     raise Exception(
+            #         f"Tasks should be from the master task list. \n The following tasks are invalid: {invalid_tasks} \n\n List of master tasks:{master_tasks}"
+            #     )
+            break
+        except Exception as e:
             print(e)
-            import pdb
-
-            # pdb.set_trace()
+            # if counter == 2:
+            #     breakpoint()
             response = convo.send_message(
-                "Please provide output only as a valid python dict. When converting your output to a dict, we get the following error: "
+                "Please provide output only as a valid python dict. When evaluating, we get the following error: "
                 + str(e)
             )
-
-    print(convo.last.text)
     return op_dict
 
 

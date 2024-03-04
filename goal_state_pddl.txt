@@ -1,0 +1,25 @@
+# Household 1:
+
+['clean the room (kitchen)', 'clean the room (living_room)', 'set up the office table', 'serve a drink (coffee)', 'prepare medicines']
+['prepare the office bag', 'prepare dinner (rice)', 'serve the food (rice)', 'prepare medicines', 'serve a drink (coffee)']
+['extinguish the fire', 'prepare breakfast (fruit_salad)', 'serve the food (fruit_salad)', 'serve a drink (water)', 'wash the dishes']
+['wash the dishes', 'serve the food (fruit_salad)', 'serve the food (toast)', 'serve the food (cereal)', 'serve a drink (tea)', 'charge the electronic devices', 'prepare clothes (other)']
+['prepare dinner (chips)', 'clean the room (living_room)', 'serve the food (chips)', 'prepare medicines', 'put remaining food in the fridge']
+['prepare breakfast (fruit_salad)', 'serve the food (fruit_salad)', 'clean the room (bathroom)', 'set up the office table', 'charge the electronic devices']
+['set up the office table', 'prepare clothes (office)', 'serve a drink (coffee)', 'clean the room (kitchen)']
+['prepare breakfast (boiled_eggs)', 'serve the food (boiled_eggs)', 'wash the dishes', 'serve a drink (tea)', 'charge the electronic devices']
+['prepare lunch (soup)', 'serve the food (soup)', 'prepare medicines', 'clean the room (storeroom)', 'wash the dishes']
+['throw away leftover food', 'prepare dinner (pizza)', 'serve the food (pizza)', 'prepare medicine', 'dust electronic devices']
+
+# Household 2:
+
+['clean the room (kitchen)', 'charge the electronic devices', 'prepare the office bag', 'prepare lunch (rice)', 'prepare lunch (soup)']
+['prepare the office bag', 'prepare breakfast (boiled_eggs)', 'prepare medicines', 'prepare clothes (office)']
+['extinguish the fire', 'prepare breakfast (toast)', 'serve the food (toast)', 'serve a drink (coffee)', 'clean the room (bedroom)']
+['prepare breakfast (boiled_eggs)', 'serve the food (boiled_eggs)', 'serve a drink (tea)', 'wash the dishes', 'prepare clothes (party)']
+['clean the room (living_room)', 'wash the dishes', 'charge the electronic devices', 'prepare the office bag', 'put remaining food in the fridge']
+['prepare breakfast (chips)', 'prepare clothes (formal)', 'clean the room (bathroom)', 'charge the electronic devices']
+['set up the office table', 'prepare breakfast (cake)', 'serve the food (cake)', 'serve a drink (coke)', 'charge the electronic devices']
+['charge the electronic devices', 'prepare breakfast (boiled_eggs)', 'prepare breakfast (fruit_salad)', 'prepare breakfast (cereal)', 'prepare clothes (office)']
+['prepare lunch (lentil)', 'wash the dishes', 'clean the room (storeroom)', 'prepare clothes (party)', 'serve the food (lentil)']
+['throw away leftover food', 'prepare dinner (pizza)', 'serve the food (pizza)', 'prepare medicines', 'put remaining food in the fridge']
