@@ -1,6 +1,6 @@
 {
   "scene_0": {
-    "details": "lorem ipsum",
+    "details": "It is morning time, the user has to go to the office. \n You see the user perform the task:  \n *prepare the office bag* \n What do you anticipate to be the next 4 tasks? \n Requirement: The office clothes are dirty",
     "user_0": [
       "do the laundry",
       "charge the electronic devices",
@@ -21,7 +21,7 @@
     ]
   },
   "scene_1": {
-    "details": "lorem ipsum",
+    "details": "It is evening time, the user just came home from the office \n You see the user perform the task:  \n *prepare casual clothes* \n What do you anticipate to be the next 4 tasks? \n Requirement: Kitchen is very dirty",
     "user_0": [
       "clean the room (kitchen)",
       "prepare food",
@@ -42,7 +42,7 @@
     ]
   },
   "scene_2": {
-    "details": "lorem ipsum",
+    "details": "It is evening time, the user is preparing to sleep \n You see the user perform the task:  \n *clean the room (livingroom)* \n What do you anticipate to be the next 4 tasks? \n Requirement: The dishes, and kitchen are dirty",
     "user_0": [
       "clean the room (kitchen)",
       "wash the dishes",
@@ -63,7 +63,7 @@
     ]
   },
   "scene_3": {
-    "details": "lorem ipsum",
+    "details": "It is the afternoon time, and user hasn't eaten lunch. \n You see the user perform the task:  \n *clean the room (livingroom)* \n What do you anticipate to be the next 4 tasks? \n Requirement: All the dishes are very dirty \n *soup is not available*",
     "user_0": [
       "prepare food",
       "serve the food",
@@ -84,7 +84,7 @@
     ]
   },
   "scene_4": {
-    "details": "lorem ipsum",
+    "details": "It is the evening time, and user wants to go to the gym \n You see the user perform the task:  \n *do the laundry* \n What do you anticipate to be the next 4 tasks?\n Requirement: Living Room is very dirty \n *User is hungry and there is rice in the fridge*",
     "user_0": [
       "prepare gym clothes",
       "prepare food",
