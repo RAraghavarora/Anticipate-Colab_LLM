@@ -76,8 +76,9 @@ f = open("./json_files/task_resource.json", "r")
 resource_mapping = json.load(f)
 f.close()
 
-with open("data/household1.json") as f:
+with open("data/h1_corrected_format.json") as f:
     household_responses = json.load(f)
+
 
 # for i in range(10):
 #     # random_key = random.choice(list(task_sample_space.keys()))
@@ -116,33 +117,121 @@ with open("data/household1.json") as f:
 
 #     pdb.set_trace()
 
-common_ratio = list()
+# common_ratio = list()
+# llm_requirement_satisfied = list()
+# user_requirement_satisfied = list()
+# llm_resource_used = list()
+# user_resource_used = list()
+# for scenes in list(household_responses.keys()):
+#     scene_details = household_responses[scenes]["details"]
+#     required_task = household_responses[scenes]["required_task"]
+#     # print("scene details: ", scene_details)
+#     if "not_required_task" in household_responses[scenes].keys():
+#         not_required_task = household_responses[scenes]["not_required_task"]
+#     else:
+#         not_required_task = None
+#     required_task = remove_parentheses(required_task)
+#     op_dict = prompt_gemini(scene_details, user=1)
+#     op_tasks = op_dict["tasks"]
+#     print(op_tasks)
+#     op_tasks = [remove_parentheses(task) for task in op_tasks]
+#     op_tasks = [
+#         (
+#             "prepare food"
+#             if task in ["prepare breakfast", "prepare lunch", "prepare dinner"]
+#             else task
+#         )
+#         for task in op_tasks
+#     ]
+#     if len(op_tasks) > 4:
+#         op_tasks = op_tasks[:4]
+#     if required_task in op_tasks:
+#         llm_requirement_satisfied.append(1)
+#     else:
+#         llm_requirement_satisfied.append(0)
+#         # breakpoint()
 
-for scenes in household_responses.keys():
+#     if not_required_task and not_required_task in op_tasks:
+#         llm_resource_used.append(1)
+#     else:
+#         llm_resource_used.append(0)
+
+#     response_users = [
+#         key for key in household_responses[scenes].keys() if key.startswith("user")
+#     ]
+#     for user in response_users:
+#         user_tasks = household_responses[scenes][user]
+#         user_tasks = [remove_parentheses(task) for task in user_tasks]
+#         user_tasks = [
+#             (
+#                 "prepare food"
+#                 if task in ["prepare breakfast", "prepare lunch", "prepare dinner"]
+#                 else task
+#             )
+#             for task in user_tasks
+#         ]
+
+#         if len(user_tasks) > 4:
+#             user_tasks = user_tasks[:4]
+
+#         if required_task in user_tasks:
+#             user_requirement_satisfied.append(1)
+#         else:
+#             user_requirement_satisfied.append(0)
+
+#         if not_required_task and not_required_task in user_tasks:
+#             user_resource_used.append(1)
+#         else:
+#             user_resource_used.append(0)
+
+#         print(f"User {user} tasks: ", user_tasks)
+#         print(f"Predicted tasks: ", op_tasks)
+#         print("Overlap: ", set(user_tasks).intersection(op_tasks))
+#         print("-------------------------------------------------")
+
+#         common_ratio.append(len(set(user_tasks).intersection(op_tasks)) / 4)
+#         # if len(set(user_tasks).intersection(op_tasks)) == 0:
+
+# print("Common tasks: ", sum(common_ratio) / len(common_ratio))
+# print(
+#     "LLM requirement satisfied: ",
+#     sum(llm_requirement_satisfied) / len(llm_requirement_satisfied),
+# )
+# print(
+#     "User requirement satisfied: ",
+#     sum(user_requirement_satisfied) / len(user_requirement_satisfied),
+# )
+# print("LLM resource used: ", sum(llm_resource_used) / len(llm_resource_used))
+# print("User resource used: ", sum(user_resource_used) / len(user_resource_used))
+# breakpoint()
+
+
+alpha = np.zeros([3, 3, 5])
+breakpoint()
+
+
+for scene in list(household_responses.keys())[:5]:
+    del household_responses[scene]["user_1"]
+
+
+for scn_id, scenes in enumerate(household_responses.keys()):
+    if scn_id == 5:
+        break
     scene_details = household_responses[scenes]["details"]
-    op_dict = prompt_gemini(scene_details, user=1)
-    op_tasks = op_dict["tasks"]
-    op_tasks = [remove_parentheses(task) for task in op_tasks]
-    op_tasks = [
-        (
-            "prepare food"
-            if task in ["prepare breakfast", "prepare lunch", "prepare dinner"]
-            else task
-        )
-        for task in op_tasks
-    ]
     response_users = list(household_responses[scenes].keys())[1:]
-    for user in response_users:
+    for user1_id, user in enumerate(response_users):
         user_tasks = household_responses[scenes][user]
-        user_tasks = [remove_parentheses(task) for task in user_tasks]
-        print(f"User {user} tasks: ", user_tasks)
-        print(f"Predicted tasks: ", op_tasks)
-        print("Overlap: ", set(user_tasks).intersection(op_tasks))
+        # user_tasks = [remove_parentheses(task) for task in user_tasks]
+        for user2_id, user2 in enumerate(response_users):
+            user2_tasks = household_responses[scenes][user2]
+            # user2_tasks = [remove_parentheses(task) for task in user2_tasks]
+            overlap = set(user_tasks).intersection(user2_tasks)
+
+            print(f"{user} and {user2} overlap: ", len(overlap))
+            alpha[user1_id][user2_id][scn_id] = len(overlap)
+
         print("-------------------------------------------------")
 
-        common_ratio.append(len(set(user_tasks).intersection(op_tasks)) / 4)
-        # if len(set(user_tasks).intersection(op_tasks)) == 0:
-        #     breakpoint()
-
-print("Common tasks: ", sum(common_ratio) / len(common_ratio))
+print(np.mean(alpha, axis=-1))
+print(np.mean(alpha))
 breakpoint()
