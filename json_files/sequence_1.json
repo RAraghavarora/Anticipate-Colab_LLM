@@ -1,32 +1,29 @@
 {
   "user 1": {
-    "sequence 1": [
-      "clean the room (living_room) (using vacuum cleaner)",
-      "prepare breakfast (boiled eggs)",
-      "set up the office table",
-        "serve the food (boiled eggs)",
-      "serve the drink (drink=coffee)"
+    "observation 1": [
+      "prepare office bag",
+      "prepare office clothes",
+      "charge electronic devices",
+      "prepare food",
+      "serve the food"
     ],
-    "sequence 2": [
-      "prepare lunch (sandwich)",
-      "serve lunch (sandwich) (location=dining table)",
-      "wash the dishes",
-      "put remaining food in the fridge"
-    ],
-    "sequence 3": [
-      "prepare dinner (rice)",
-      "serve dinner (rice) (location=dining table)",
+    "observation 2": [
+      "prepare casual clothes",
+      "prepare food",
+      "serve the food",
       "prepare medicines",
+      "put remaining food in the fridge"
+    ],
+    "observation 3": [
       "wash the dishes",
-      "put remaining food in the fridge"
+      "clean the room (kitchen)",
+      "dust the electronic surfaces",
+      "clean the room (livingroom)"
     ],
-    "sequence 4": [
-      "serve dinner (mixed vegetables) (location=dining table)",
-      "prepare medicines",
-      "charge the electronic devices",
-      "do the laundry",
-      "put remaining food in the fridge"
-    ],
-    "description": "Let us look at the user's patterns step by step.\n\nIn sequence 1, we see that the use starts his day with cleaning the living_room with the available vacuum cleaner. He works in the living_room, and hence cleans it first, and proceeds to prepare a healthy breakfast. He then sets up his office table and serves the food and drink on the table. The user prefers drinking coffee and eating breakfast at the office table.\n\n In sequence 2, we see that the user prepares a simple lunch, serves it on the dining table. The user cleans the dirty dishes of breakfast and lunch after serving the lunch, and does not waste food, and puts the leftover food in the fridge. \n\nIn sequence 3, we see that the user prepares a more complex dinner, serves it on the dining table. Similar to lunch, the user washes the dishes, and puts the remaining food in the fridge. We see that the user takes his medicines after dinner.\n\nFrom sequence 4, the user does not prepare dinner, but serves the leftover food from the fridge. He charges his electronic devices, does the laundry, and puts the remaining food in the fridge. We see that the user does his laundry after dinner. He charges the electronic devices in the evening after dinner. And takes his medicines after dinner.\n"
+    "description": {
+      "observation 1": "The user is a disciplined employee, who wakes up early morning to prepare for office. They prepare their office bag, office clothes, charge their electronic devices, followed by preparation of a healthy breakfast. Office clothes can only be prepared if they are clean, else the user does laundry before preparation.",
+      "observation 2": "In the evening, the user prepares their casual clothes (if they're clean). Then they prepare and serve a healthy dinner, and take their medicines. After that, they either store the leftover food back in the fridge, or throw it away.",
+      "observation 3": "Before going to sleep, the user makes sure that the house is clean. They clean each room that is dirty, clean the dirty dishes, and dust the electronic devices."
+    }
   }
 }

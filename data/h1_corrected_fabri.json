@@ -8,10 +8,10 @@
       "serve the food"
     ],
     "user_1": [
-      "prepare food",
+      "do the laundry",
       "prepare office clothes",
-      "serve the food",
-      "wash the dishes"
+      "charge the electronic devices",
+      "prepare food"
     ],
     "user_2": [
       "do the laundry",
@@ -60,9 +60,9 @@
     ],
     "user_1": [
       "clean the room (kitchen)",
-      "do the laundry",
-      "clean the room (livingroom)",
-      "prepare food"
+      "prepare food",
+      "serve the food",
+      "prepare medicines"
     ],
     "user_2": [
       "clean the room (kitchen)",
@@ -73,8 +73,8 @@
     "user_3": [
       "prepare food",
       "serve the food",
-      "wash the dishes",
-      "clean the room (kitchen)"
+      "serve a drink",
+      "prepare medicines"
     ],
     "user_4": [
       "clean the room (kitchen)",
@@ -83,10 +83,10 @@
       "prepare medicines"
     ],
     "user_5": [
-      "clean the room (kitchen)",
       "prepare food",
       "serve the food",
-      "serve a drink"
+      "charge the electronic devices",
+      "clean the room (kitchen)"
     ],
     "user_6": [
       "prepare casual clothes",
@@ -111,9 +111,9 @@
     ],
     "user_1": [
       "wash the dishes",
-      "clean the room (livingroom)",
       "clean the room (kitchen)",
-      "throw away leftover food"
+      "clean the room (livingroom)",
+      "put remaining food in the fridge"
     ],
     "user_2": [
       "wash the dishes",
@@ -122,10 +122,10 @@
       "clean the room (livingroom)"
     ],
     "user_3": [
-      "wash the dishes",
       "clean the room (kitchen)",
-      "clean the room (livingroom)",
-      "prepare medicines"
+      "wash the dishes",
+      "put remaining food in the fridge",
+      "charge the electronic devices"
     ],
     "user_4": [
       "clean the room (kitchen)",
@@ -161,10 +161,10 @@
       "clean the room (kitchen)"
     ],
     "user_1": [
+      "wash the dishes",
       "prepare food",
       "serve the food",
-      "charge the electronic devices",
-      "put remaining food in the fridge"
+      "clean the room (kitchen)"
     ],
     "user_2": [
       "wash the dishes",
@@ -185,10 +185,10 @@
       "wash the dishes"
     ],
     "user_5": [
+      "wash the dishes",
       "prepare food",
       "serve the food",
-      "wash the dishes",
-      "clean the room (kitchen)"
+      "serve a drink"
     ],
     "user_6": [
       "wash the dishes",
@@ -213,9 +213,9 @@
     ],
     "user_1": [
       "prepare gym clothes",
-      "do the laundry",
-      "clean the room (storeroom)",
-      "clean the room (bathroom)"
+      "clean the room (livingroom)",
+      "serve the food",
+      "serve a drink"
     ],
     "user_2": [
       "clean the room (livingroom)",
@@ -230,10 +230,10 @@
       "prepare medicines"
     ],
     "user_4": [
-      "serve the food (rice)",
-      "wash the dishes",
       "prepare gym clothes",
-      "clean the room (livingroom)"
+      "clean the room (living_room)",
+      "serve the food (rice)",
+      "serve a drink"
     ],
     "user_5": [
       "prepare gym clothes",
@@ -242,10 +242,10 @@
       "prepare medicines"
     ],
     "user_6": [
-      "prepare gym clothes",
+      "do the laundry",
+      "clean the room (living_room)",
       "serve the food (rice)",
-      "prepare medicines",
-      "prepare casual clothes"
+      "prepare gym clothes"
     ],
     "user_7": [
       "clean the room (livingroom)",

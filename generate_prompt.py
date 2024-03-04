@@ -12,6 +12,7 @@ from json_files.master_task import master_tasks
 from json_files.task_users import task_user_1, task_user_2
 from keyconfig import gemini as palm_api
 from palm_sequence import prompt_gemini
+from azure import prompt_gpt
 
 palm.configure(api_key=palm_api)
 random.seed(69)
@@ -76,7 +77,7 @@ f = open("./json_files/task_resource.json", "r")
 resource_mapping = json.load(f)
 f.close()
 
-with open("data/h1_corrected_format.json") as f:
+with open("data/h1_corrected_fabri.json") as f:
     household_responses = json.load(f)
 
 
@@ -206,31 +207,42 @@ with open("data/h1_corrected_format.json") as f:
 # breakpoint()
 
 
-alpha = np.zeros([3, 3, 5])
+alpha = np.zeros([8, 8, 5])
 breakpoint()
 
 
-for scene in list(household_responses.keys())[:5]:
-    del household_responses[scene]["user_1"]
+try:
+    for scn_id, scenes in enumerate(household_responses.keys()):
+        print(f"Scene {scn_id}")
+        if scn_id == 5:
+            break
+        scene_details = household_responses[scenes]["details"]
+        response_users = list(household_responses[scenes].keys())[1:]
+        for user1_id, user in enumerate(response_users):
+            user_tasks = household_responses[scenes][user]
+            user_tasks = [
+                remove_parentheses(task) if "food" in task or "drink" in task else task
+                for task in user_tasks
+            ]
+            for user2_id, user2 in enumerate(response_users):
+                user2_tasks = household_responses[scenes][user2]
+                user2_tasks = [
+                    (
+                        remove_parentheses(task)
+                        if "food" in task or "drink" in task
+                        else task
+                    )
+                    for task in user2_tasks
+                ]
+                overlap = set(user_tasks).intersection(user2_tasks)
 
+                print(f"{user} and {user2} overlap: ", len(overlap))
+                alpha[user1_id][user2_id][scn_id] = len(overlap)
 
-for scn_id, scenes in enumerate(household_responses.keys()):
-    if scn_id == 5:
-        break
-    scene_details = household_responses[scenes]["details"]
-    response_users = list(household_responses[scenes].keys())[1:]
-    for user1_id, user in enumerate(response_users):
-        user_tasks = household_responses[scenes][user]
-        # user_tasks = [remove_parentheses(task) for task in user_tasks]
-        for user2_id, user2 in enumerate(response_users):
-            user2_tasks = household_responses[scenes][user2]
-            # user2_tasks = [remove_parentheses(task) for task in user2_tasks]
-            overlap = set(user_tasks).intersection(user2_tasks)
-
-            print(f"{user} and {user2} overlap: ", len(overlap))
-            alpha[user1_id][user2_id][scn_id] = len(overlap)
-
-        print("-------------------------------------------------")
+            print("-------------------------------------------------")
+except Exception as exc:
+    breakpoint()
+    print(exc)
 
 print(np.mean(alpha, axis=-1))
 print(np.mean(alpha))

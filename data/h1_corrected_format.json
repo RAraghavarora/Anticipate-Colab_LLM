@@ -84,7 +84,7 @@
     ]
   },
   "scene_4": {
-    "details": "It is the evening time, and user wants to go to the gym \n You see the user perform the task:  \n *do the laundry* \n What do you anticipate to be the next 4 tasks?\n Requirement: Living Room is very dirty \n *User is hungry and there is rice in the fridge*",
+      "details": "It is the evening time, and user wants to go to the gym \n You see the user perform the task:  \n *do the laundry* \n What do you anticipate to be the next 4 tasks?\n Requirement: Living Room is very dirty \n *User is hungry and there is rice in the fridge* \n This means that there is no need to prepare any food, and you can serve rice directly.",
     "user_0": [
       "prepare gym clothes",
       "prepare food",

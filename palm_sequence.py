@@ -50,7 +50,7 @@ f = open("./json_files/task.json", "r")
 task_sample_space = json.load(f)
 f.close()
 
-f = open("./json_files/sequence_2.json", "r")
+f = open("./json_files/sequence_1.json", "r")
 sequences = json.load(f)
 f.close()
 
@@ -69,10 +69,10 @@ inp1 = f"""
 # The following tasks are possible in the household
 tasks_sample_space = {task_sample_space}
 
-# The following tasks were done by **USER 2** previously:
+# The following tasks were done by **USER 1** previously:
 user_tasks = {sequences}
 
-You are serving **USER 2** today.
+You are serving **USER 1** today.
 It is morning time, the user has prepared his breakfast
 You see the user perform the task:  
 * serve the food (boiled eggs) *
@@ -82,12 +82,11 @@ Requirement: The kitchen is very dirty
 
 op1 = """
 {
-    'chain-of-thought': "To start, we need to finish the requirement by cleaning the kitchen. It is morning time, and from the previous routine, we know that they cleans the living room in the morning, followed by setting up the office table for work. They also serve coffee with breakfast.",
-    'tasks' = [
+    'chain-of-thought': "To start, we need to finish the requirement by cleaning the kitchen. It is morning time, and from the previous routine, we know that they prepare office clothes, charge electronic devices, and prepare the office bag",
         "clean the room (kitchen)",
-        "clean the room (living_room)",
-        "set up the office table",
-        "serve a drink"
+        "prepare the office bag",
+        "charge electronic devices",
+        "prepare office clothes"
     ],
 }
 """
@@ -109,7 +108,7 @@ tasks_sample_space = {task_sample_space}
 # The following tasks were done by **User 1** previously:
 user_tasks = {sequences}
 
-You are serving **user 2** today.
+You are serving **user 1** today.
 It is the evening time, and user has not eaten dinner yet.
 You see the user perform the task:  
 prepare clothes (casual)
@@ -147,12 +146,12 @@ def prompt_gemini(task, user=1):
 # The following tasks are possible in the household
 tasks_sample_space = {task_sample_space}
 
-# The following tasks were done by **User 2** previously:
+# The following tasks were done by **User 1** previously:
 user_tasks = {sequences}
 
 {task}
     
-Answer only as a valid python dictionary, with two keys: 'chain-of-thought', and 'tasks'. Number of tasks should be 5! Keep tasks from the sample space: {master_tasks}
+Answer only as a valid python dictionary, with two keys: 'chain-of-thought', and 'tasks'. Number of tasks should be 4! Keep tasks from the sample space: {master_tasks}
 """
 
     model = palm.GenerativeModel("gemini-pro")
