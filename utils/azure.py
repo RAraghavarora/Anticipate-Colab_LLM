@@ -1,5 +1,6 @@
 import json
 import math
+import os
 import random
 import re
 import time
@@ -78,7 +79,7 @@ task_sample_space = replace_options(task_sample_space, food)
 # breakpoint()
 
 
-def prompt_gpt(task, user=1):
+def prompt_gpt(task, dirname, user=1):
     prompt = f"""
 # The following tasks are possible in the household
 tasks_sample_space = {task_sample_space}
@@ -191,5 +192,14 @@ Requirement: The kitchen is very dirty
             print("Re-prompting Mr. GPT")
             op_string = gpt_call(messages)
             print("Mr. GPT has responded again!")
-    print("exiting azure")
-    return op_dict
+
+    if not os.path.exists(f"llm_cache/{dirname}"):
+        os.makedirs(f"llm_cache/{dirname}")
+
+    with open(f"llm_cache/{dirname}/gpt_prompt", "w") as f:
+        f.write(prompt)
+
+    with open(f"llm_cache/{dirname}/gpt_response", "w") as f:
+        f.write(op_string)
+
+    return op_dict, messages
