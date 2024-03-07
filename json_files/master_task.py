@@ -57,7 +57,7 @@ master_tasks = [
     "clean the room (kitchen)",
     "clean the room (bathroom)",
     "clean the room (bedroom)",
-    "clean the room (living_room)",
+    "clean the room (livingroom)",
     "set up the office table",
     "throw away leftover food",
     "put remaining food in the fridge",
