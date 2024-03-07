@@ -1,3 +1,4 @@
+import os
 import json
 import math
 import pprint
@@ -15,7 +16,7 @@ from palm_sequence import prompt_gemini
 from azure import prompt_gpt
 
 palm.configure(api_key=palm_api)
-random.seed(69)
+random.seed(9511)
 
 
 def replace_options(tasks, food_options):
@@ -77,7 +78,7 @@ f = open("./json_files/task_resource.json", "r")
 resource_mapping = json.load(f)
 f.close()
 
-with open("data/h1_corrected_fabri.json") as f:
+with open("data/h1_corrected_fabri_1.json") as f:
     household_responses = json.load(f)
 
 
@@ -118,82 +119,100 @@ with open("data/h1_corrected_fabri.json") as f:
 
 #     pdb.set_trace()
 
-# common_ratio = list()
-# llm_requirement_satisfied = list()
-# user_requirement_satisfied = list()
-# llm_resource_used = list()
-# user_resource_used = list()
-# for scenes in list(household_responses.keys()):
-#     scene_details = household_responses[scenes]["details"]
-#     required_task = household_responses[scenes]["required_task"]
-#     # print("scene details: ", scene_details)
-#     if "not_required_task" in household_responses[scenes].keys():
-#         not_required_task = household_responses[scenes]["not_required_task"]
-#     else:
-#         not_required_task = None
-#     required_task = remove_parentheses(required_task)
-#     op_dict = prompt_gemini(scene_details, user=1)
-#     op_tasks = op_dict["tasks"]
-#     print(op_tasks)
-#     op_tasks = [remove_parentheses(task) for task in op_tasks]
-#     op_tasks = [
-#         (
-#             "prepare food"
-#             if task in ["prepare breakfast", "prepare lunch", "prepare dinner"]
-#             else task
-#         )
-#         for task in op_tasks
-#     ]
-#     if len(op_tasks) > 4:
-#         op_tasks = op_tasks[:4]
-#     if required_task in op_tasks:
-#         llm_requirement_satisfied.append(1)
-#     else:
-#         llm_requirement_satisfied.append(0)
-#         # breakpoint()
+common_ratio = list()
+llm_requirement_satisfied = list()
+user_requirement_satisfied = list()
+llm_resource_used = list()
+user_resource_used = list()
+for exp in range(0, 10):
+    scene_counter = 0
+    for scenes in list(household_responses.keys()):
+        scene_details = household_responses[scenes]["details"]
+        # required_task = household_responses[scenes]["required_task"]
+        # print("scene details: ", scene_details)
+        if "not_required_task" in household_responses[scenes].keys():
+            not_required_task = household_responses[scenes]["not_required_task"]
+        else:
+            not_required_task = None
+            # required_task = remove_parentheses(required_task)
 
-#     if not_required_task and not_required_task in op_tasks:
-#         llm_resource_used.append(1)
-#     else:
-#         llm_resource_used.append(0)
+        if not os.path.exists(f"./llm_cache/scene_{scene_counter}"):
+            os.makedirs(f"./llm_cache/scene_{scene_counter}")
+        op_dict, convo = prompt_gemini(
+            scene_details, f"scene_{scene_counter}/{exp}", prompt_method="nocot", user=1
+        )
+        scene_counter += 1
+        op_tasks = op_dict["tasks"]
+        op_tasks = [
+            (
+                "prepare food"
+                if "breakfast" in task.lower()
+                or "lunch" in task.lower()
+                or "dinner" in task.lower()
+                else task
+            )
+            for task in op_tasks
+        ]
+        op_tasks = [
+            remove_parentheses(task) if "food" in task or "drink" in task else task
+            for task in op_tasks
+        ]
 
-#     response_users = [
-#         key for key in household_responses[scenes].keys() if key.startswith("user")
-#     ]
-#     for user in response_users:
-#         user_tasks = household_responses[scenes][user]
-#         user_tasks = [remove_parentheses(task) for task in user_tasks]
-#         user_tasks = [
-#             (
-#                 "prepare food"
-#                 if task in ["prepare breakfast", "prepare lunch", "prepare dinner"]
-#                 else task
-#             )
-#             for task in user_tasks
-#         ]
+        if len(op_tasks) > 4:
+            op_tasks = op_tasks[:4]
+            # if required_task in op_tasks:
+            # llm_requirement_satisfied.append(1)
+            # else:
+            # llm_requirement_satisfied.append(0)
+            # breakpoint()
 
-#         if len(user_tasks) > 4:
-#             user_tasks = user_tasks[:4]
+        if not_required_task and not_required_task in op_tasks:
+            llm_resource_used.append(1)
+        else:
+            llm_resource_used.append(0)
 
-#         if required_task in user_tasks:
-#             user_requirement_satisfied.append(1)
-#         else:
-#             user_requirement_satisfied.append(0)
+        response_users = [
+            key for key in household_responses[scenes].keys() if key.startswith("user")
+        ]
+        for user in response_users:
+            user_tasks = household_responses[scenes][user]
+            user_tasks = [
+                remove_parentheses(task) if "food" in task or "drink" in task else task
+                for task in user_tasks
+            ]
+            user_tasks = [
+                (
+                    "prepare food"
+                    if task in ["prepare breakfast", "prepare lunch", "prepare dinner"]
+                    else task
+                )
+                for task in user_tasks
+            ]
 
-#         if not_required_task and not_required_task in user_tasks:
-#             user_resource_used.append(1)
-#         else:
-#             user_resource_used.append(0)
+            if len(user_tasks) > 4:
+                user_tasks = user_tasks[:4]
 
-#         print(f"User {user} tasks: ", user_tasks)
-#         print(f"Predicted tasks: ", op_tasks)
-#         print("Overlap: ", set(user_tasks).intersection(op_tasks))
-#         print("-------------------------------------------------")
+            # if required_task in user_tasks:
+            #     user_requirement_satisfied.append(1)
+            # else:
+            #     user_requirement_satisfied.append(0)
 
-#         common_ratio.append(len(set(user_tasks).intersection(op_tasks)) / 4)
-#         # if len(set(user_tasks).intersection(op_tasks)) == 0:
+            if not_required_task and not_required_task in user_tasks:
+                user_resource_used.append(1)
+            else:
+                user_resource_used.append(0)
 
-# print("Common tasks: ", sum(common_ratio) / len(common_ratio))
+            print(f"User {user} tasks: ", user_tasks)
+            print(f"Predicted tasks: ", op_tasks)
+            print("Overlap: ", set(user_tasks).intersection(op_tasks))
+            print("-------------------------------------------------")
+
+            common_ratio.append(len(set(user_tasks).intersection(op_tasks)) / 4)
+            if len(set(user_tasks).intersection(op_tasks)) <= 1:
+                breakpoint()
+            # if len(set(user_tasks).intersection(op_tasks)) == 0:
+
+print("Common tasks: ", sum(common_ratio) / len(common_ratio))
 # print(
 #     "LLM requirement satisfied: ",
 #     sum(llm_requirement_satisfied) / len(llm_requirement_satisfied),
@@ -204,46 +223,48 @@ with open("data/h1_corrected_fabri.json") as f:
 # )
 # print("LLM resource used: ", sum(llm_resource_used) / len(llm_resource_used))
 # print("User resource used: ", sum(user_resource_used) / len(user_resource_used))
-# breakpoint()
-
-
-alpha = np.zeros([8, 8, 5])
 breakpoint()
 
 
-try:
-    for scn_id, scenes in enumerate(household_responses.keys()):
-        print(f"Scene {scn_id}")
-        if scn_id == 5:
-            break
-        scene_details = household_responses[scenes]["details"]
-        response_users = list(household_responses[scenes].keys())[1:]
-        for user1_id, user in enumerate(response_users):
-            user_tasks = household_responses[scenes][user]
-            user_tasks = [
-                remove_parentheses(task) if "food" in task or "drink" in task else task
-                for task in user_tasks
-            ]
-            for user2_id, user2 in enumerate(response_users):
-                user2_tasks = household_responses[scenes][user2]
-                user2_tasks = [
+def get_user_overlap():
+    alpha = np.zeros([11, 11, 5])
+    try:
+        for scn_id, scenes in enumerate(household_responses.keys()):
+            print(f"Scene {scn_id}")
+            if scn_id == 5:
+                break
+            # scene_details = household_responses[scenes]["details"]
+            response_users = list(household_responses[scenes].keys())[1:]
+            for user1_id, user in enumerate(response_users):
+                user_tasks = household_responses[scenes][user]
+                user_tasks = [
                     (
                         remove_parentheses(task)
                         if "food" in task or "drink" in task
                         else task
                     )
-                    for task in user2_tasks
+                    for task in user_tasks
                 ]
-                overlap = set(user_tasks).intersection(user2_tasks)
+                for user2_id, user2 in enumerate(response_users):
+                    user2_tasks = household_responses[scenes][user2]
+                    user2_tasks = [
+                        (
+                            remove_parentheses(task)
+                            if "food" in task or "drink" in task
+                            else task
+                        )
+                        for task in user2_tasks
+                    ]
+                    overlap = set(user_tasks).intersection(user2_tasks)
 
-                print(f"{user} and {user2} overlap: ", len(overlap))
-                alpha[user1_id][user2_id][scn_id] = len(overlap)
+                    print(f"{user} and {user2} overlap: ", len(overlap))
+                    alpha[user1_id][user2_id][scn_id] = len(overlap)
 
-            print("-------------------------------------------------")
-except Exception as exc:
+                print("-------------------------------------------------")
+    except Exception as exc:
+        breakpoint()
+        print(exc)
+
+    print(np.mean(alpha, axis=-1))
+    print(np.mean(alpha))
     breakpoint()
-    print(exc)
-
-print(np.mean(alpha, axis=-1))
-print(np.mean(alpha))
-breakpoint()
