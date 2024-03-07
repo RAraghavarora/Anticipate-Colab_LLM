@@ -125,13 +125,13 @@
       "clean the room (kitchen)",
       "wash the dishes",
       "put remaining food in the fridge",
-      "charge the electronic devices"
+      "clean the room (livingroom)"
     ],
     "user_4": [
       "clean the room (kitchen)",
       "wash the dishes",
-      "prepare office clothes",
-      "prepare the office bag"
+      "clean the room (livingroom)",
+      "dust electronic surfaces"
     ],
     "user_5": [
       "clean the room (kitchen)",
@@ -148,7 +148,7 @@
     "user_7": [
       "wash the dishes",
       "clean the room (kitchen)",
-      "prepare medicines",
+      "put remaining food in the fridge",
       "clean the room (livingroom)"
     ]
   },
@@ -207,8 +207,8 @@
     "details": "It is the evening time, and user wants to go to the gym \n You see the user perform the task:  \n *do the laundry* \n What do you anticipate to be the next 4 tasks?\n Requirement: Living Room is very dirty \n *User is hungry and there is rice in the fridge* \n This means that there is no need to prepare any food, and you can serve rice directly.",
     "user_0": [
       "prepare gym clothes",
-      "prepare food",
-      "wash the dishes",
+      "serve the food",
+      "prepare medicines",
       "clean the room (livingroom)"
     ],
     "user_1": [
@@ -242,14 +242,14 @@
       "prepare medicines"
     ],
     "user_6": [
-      "do the laundry",
       "clean the room (living_room)",
       "serve the food (rice)",
-      "prepare gym clothes"
+      "prepare gym clothes",
+      "prepare medicines"
     ],
     "user_7": [
       "clean the room (livingroom)",
-      "put remaining food in the fridge",
+      "serve a drink",
       "prepare gym clothes",
       "serve the food (rice)"
     ]
