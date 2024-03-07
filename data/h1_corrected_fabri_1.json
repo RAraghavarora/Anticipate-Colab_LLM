@@ -1,0 +1,347 @@
+{
+  "scene_0": {
+    "details": "It is morning time, the user has to go to the office. \n You see the user perform the task:  \n *prepare the office bag* \n What do you anticipate to be the next 4 tasks? \n Requirement: The office clothes are dirty",
+    "user_0": [
+      "do the laundry",
+      "charge the electronic devices",
+      "prepare food",
+      "serve the food"
+    ],
+    "user_1": [
+      "do the laundry",
+      "prepare office clothes",
+      "charge the electronic devices",
+      "prepare food"
+    ],
+    "user_2": [
+      "do the laundry",
+      "prepare office clothes",
+      "charge the electronic devices",
+      "prepare food"
+    ],
+    "user_3": [
+      "prepare office clothes",
+      "prepare food",
+      "serve the food",
+      "wash the dishes"
+    ],
+    "user_4": [
+      "do the laundry",
+      "prepare office clothes",
+      "prepare food",
+      "serve the food"
+    ],
+    "user_5": [
+      "do the laundry",
+      "prepare office clothes",
+      "charge the electronic devices",
+      "prepare food"
+    ],
+    "user_6": [
+      "do the laundry",
+      "charge the electronic devices",
+      "prepare food",
+      "serve the food"
+    ],
+    "user_7": [
+      "do the laundry",
+      "charge the electronic devices",
+      "prepare food",
+      "serve a drink"
+    ],
+    "user_8": [
+      "do the laundry",
+      "prepare office clothes",
+      "charge the electronic devices",
+      "prepare food"
+    ],
+    "user_9": [
+      "do the laundry",
+      "prepare office clothes",
+      "prepare food",
+      "serve the food"
+    ],
+    "user_10": [
+      "do the laundry",
+      "prepare office clothes",
+      "charge the electronic devices",
+      "prepare food"
+    ]
+  },
+  "scene_1": {
+    "details": "It is evening time, the user just came home from the office \n You see the user perform the task:  \n *prepare casual clothes* \n What do you anticipate to be the next 4 tasks? \n Requirement: Kitchen is very dirty",
+    "user_0": [
+      "clean the room (kitchen)",
+      "prepare food",
+      "serve the food",
+      "prepare medicines"
+    ],
+    "user_1": [
+      "clean the room (kitchen)",
+      "prepare food",
+      "serve the food",
+      "prepare medicines"
+    ],
+    "user_2": [
+      "clean the room (kitchen)",
+      "prepare food",
+      "serve the food",
+      "prepare medicines"
+    ],
+    "user_3": [
+      "prepare food",
+      "serve the food",
+      "serve a drink",
+      "prepare medicines"
+    ],
+    "user_4": [
+      "clean the room (kitchen)",
+      "prepare food",
+      "serve the food",
+      "prepare medicines"
+    ],
+    "user_5": [
+      "prepare food",
+      "serve the food",
+      "charge the electronic devices",
+      "clean the room (kitchen)"
+    ],
+    "user_6": [
+      "prepare casual clothes",
+      "clean the room (kitchen)",
+      "prepare food",
+      "prepare medicines"
+    ],
+    "user_7": [
+      "clean the room (kitchen)",
+      "wash the dishes",
+      "prepare food",
+      "serve the food"
+    ],
+    "user_8": [
+      "prepare casual clothes",
+      "clean the room (kitchen)",
+      "prepare food",
+      "prepare medicines"
+    ],
+    "user_9": [
+      "clean the room (kitchen)",
+      "prepare food",
+      "serve the food",
+      "prepare medicines"
+    ],
+    "user_10": [
+      "clean the room (kitchen)",
+      "prepare food",
+      "serve the food",
+      "prepare medicines"
+    ]
+  },
+  "scene_2": {
+    "details": "It is evening time, the user is preparing to sleep \n You see the user perform the task:  \n *clean the room (livingroom)* \n What do you anticipate to be the next 4 tasks? \n Requirement: The dishes, and kitchen are dirty",
+    "user_0": [
+      "clean the room (kitchen)",
+      "wash the dishes",
+      "put remaining food in the fridge",
+      "dust electronic surfaces"
+    ],
+    "user_1": [
+      "wash the dishes",
+      "clean the room (kitchen)",
+      "clean the room (livingroom)",
+      "put remaining food in the fridge"
+    ],
+    "user_2": [
+      "wash the dishes",
+      "clean the room (kitchen)",
+      "dust electronic surfaces",
+      "clean the room (livingroom)"
+    ],
+    "user_3": [
+      "clean the room (kitchen)",
+      "wash the dishes",
+      "put remaining food in the fridge",
+      "clean the room (livingroom)"
+    ],
+    "user_4": [
+      "clean the room (kitchen)",
+      "wash the dishes",
+      "clean the room (livingroom)",
+      "dust electronic surfaces"
+    ],
+    "user_5": [
+      "clean the room (kitchen)",
+      "wash the dishes",
+      "clean the room (livingroom)",
+      "dust electronic surfaces"
+    ],
+    "user_6": [
+      "clean the room (kitchen)",
+      "wash the dishes",
+      "clean the room (livingroom)",
+      "dust electronic surfaces"
+    ],
+    "user_7": [
+      "wash the dishes",
+      "clean the room (kitchen)",
+      "put remaining food in the fridge",
+      "clean the room (livingroom)"
+    ],
+    "user_8": [
+      "clean the room (kitchen)",
+      "wash the dishes",
+      "clean the room (livingroom)",
+      "dust electronic surfaces"
+    ],
+    "user_9": [
+      "clean the room (kitchen)",
+      "wash the dishes",
+      "clean the room (livingroom)",
+      "dust electronic surfaces"
+    ],
+    "user_10": [
+      "wash the dishes",
+      "clean the room (kitchen)",
+      "dust electronic surfaces",
+      "clean the room (livingroom)"
+    ]
+  },
+  "scene_3": {
+    "details": "It is the afternoon time, and user hasn't eaten lunch. \n You see the user perform the task:  \n *clean the room (livingroom)* \n What do you anticipate to be the next 4 tasks? \n Requirement: All the dishes are very dirty \n *soup is not available*",
+    "user_0": [
+      "prepare food",
+      "serve the food",
+      "wash the dishes",
+      "clean the room (kitchen)"
+    ],
+    "user_1": [
+      "wash the dishes",
+      "prepare food",
+      "serve the food",
+      "clean the room (kitchen)"
+    ],
+    "user_2": [
+      "wash the dishes",
+      "prepare food",
+      "serve the food",
+      "serve a drink"
+    ],
+    "user_3": [
+      "prepare food",
+      "serve the food",
+      "wash the dishes",
+      "clean the room (kitchen)"
+    ],
+    "user_4": [
+      "prepare food",
+      "serve the food",
+      "serve a drink",
+      "wash the dishes"
+    ],
+    "user_5": [
+      "wash the dishes",
+      "prepare food",
+      "serve the food",
+      "serve a drink"
+    ],
+    "user_6": [
+      "wash the dishes",
+      "prepare food",
+      "serve the food",
+      "dust electronic devices"
+    ],
+    "user_7": [
+      "prepare food",
+      "serve the food",
+      "wash the dishes",
+      "prepare medicines"
+    ],
+    "user_8": [
+      "prepare food",
+      "serve the food",
+      "serve a drink",
+      "wash the dishes"
+    ],
+    "user_9": [
+      "prepare food",
+      "serve the food",
+      "wash the dishes",
+      "prepare medicines"
+    ],
+    "user_10": [
+      "wash the dishes",
+      "prepare food",
+      "serve the food",
+      "serve a drink"
+    ]
+  },
+  "scene_4": {
+    "details": "It is the evening time, and user wants to go to the gym \n You see the user perform the task:  \n *do the laundry* \n What do you anticipate to be the next 4 tasks?\n Requirement: Living Room is very dirty \n *User is hungry and there is rice in the fridge* \n",
+    "user_0": [
+      "prepare gym clothes",
+      "serve the food",
+      "prepare medicines",
+      "clean the room (livingroom)"
+    ],
+    "user_1": [
+      "prepare gym clothes",
+      "clean the room (livingroom)",
+      "serve the food",
+      "serve a drink"
+    ],
+    "user_2": [
+      "clean the room (livingroom)",
+      "prepare gym clothes",
+      "serve a drink",
+      "serve the food"
+    ],
+    "user_3": [
+      "prepare gym clothes",
+      "clean the room (livingroom)",
+      "serve the food",
+      "prepare medicines"
+    ],
+    "user_4": [
+      "prepare gym clothes",
+      "clean the room (livingroom)",
+      "serve the food",
+      "serve a drink"
+    ],
+    "user_5": [
+      "prepare gym clothes",
+      "clean the room (livingroom)",
+      "serve the food",
+      "prepare medicines"
+    ],
+    "user_6": [
+      "clean the room (livingroom)",
+      "serve the food",
+      "prepare gym clothes",
+      "prepare medicines"
+    ],
+    "user_7": [
+      "clean the room (livingroom)",
+      "serve a drink",
+      "prepare gym clothes",
+      "serve the food"
+    ],
+    "user_8": [
+      "prepare gym clothes",
+      "clean the room (livingroom)",
+      "serve the food",
+      "prepare medicines"
+    ],
+    "user_9": [
+      "clean the room (livingroom)",
+      "serve a drink",
+      "prepare gym clothes",
+      "serve the food"
+    ],
+    "user_10": [
+      "clean the room (livingroom)",
+      "serve a drink",
+      "prepare gym clothes",
+      "serve the food"
+    ]
+  }
+}
