@@ -1,4 +1,7 @@
+import re
 import os
+
+
 def extract_op_string(op_string):
     try:
         op_dict = eval(op_string)
@@ -23,3 +26,19 @@ def count_folders(directory):
 def remove_parentheses(text):
     return re.sub(r"\s*\([^)]*\)", "", text).strip()
 
+
+def replace_options(tasks, food_options):
+    for task_id, task_description in tasks.items():
+        if "(options =" in task_description:
+            start_index = task_description.find("(options = ") + len("(options = ")
+            end_index = task_description.find(")")
+            options = task_description[start_index:end_index].split(", ")
+            for i in range(len(options)):
+                option = options[i]
+                if option in food_options:
+                    task_description = task_description.replace(
+                        option, str(food_options[option])
+                    )
+                    tasks[task_id] = task_description
+
+    return tasks

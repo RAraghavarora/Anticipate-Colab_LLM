@@ -1,44 +1,12 @@
-import os
 import json
-import math
-import pprint
-import random
-import textwrap
-
-from IPython.display import Markdown, display
+import os
 
 import google.generativeai as palm
 from json_files.master_task import master_tasks
 from keyconfig import gemini as palm_api
-import numpy as np
-from scipy.stats import kendalltau
 
 palm.configure(api_key=palm_api)
 
-
-def replace_options(tasks, food_options):
-
-    for task_id, task_description in tasks.items():
-        if "(options =" in task_description:
-            start_index = task_description.find("(options = ") + len("(options = ")
-            end_index = task_description.find(")")
-            options = task_description[start_index:end_index].split(", ")
-            for i in range(len(options)):
-                option = options[i]
-                if option in food_options:
-                    task_description = task_description.replace(
-                        option, str(food_options[option])
-                    )
-                    tasks[task_id] = task_description
-
-    return tasks
-
-
-models = [
-    m for m in palm.list_models() if "generateText" in m.supported_generation_methods
-]
-model = models[0].name
-model = "gemini-1.0-pro-latest"
 f = open("./json_files/object_2.json", "r")
 objects = json.load(f)
 f.close()
@@ -58,10 +26,6 @@ f.close()
 f = open("./json_files/food.json", "r")
 food = json.load(f)
 f.close()
-
-task_sample_space = replace_options(task_sample_space, food)
-
-# print(task_sample_space)
 
 del sequences["user 1"]["description"]
 
@@ -142,7 +106,7 @@ op2_nocot = """
 """
 
 
-def prompt_gemini(task, dirname, prompt_method = '', user=1):
+def prompt_gemini(task, dirname, prompt_method="", user=1):
     prompt = f"""
 # The following tasks are possible in the household
 tasks_sample_space = {master_tasks}
@@ -156,7 +120,7 @@ Answer only as a valid python dictionary, with a key: 'tasks'. Number of tasks s
 """
 
     model = palm.GenerativeModel("gemini-1.0-pro-latest")
-    if prompt_method == '':
+    if prompt_method == "":
         convo = model.start_chat(
             history=[
                 {"role": "user", "parts": [inp1]},
@@ -165,7 +129,7 @@ Answer only as a valid python dictionary, with a key: 'tasks'. Number of tasks s
                 {"role": "model", "parts": [op2]},
             ]
         )
-    elif prompt_method == 'nocot':
+    elif prompt_method == "nocot":
         convo = model.start_chat(
             history=[
                 {"role": "user", "parts": [inp1]},
@@ -174,7 +138,7 @@ Answer only as a valid python dictionary, with a key: 'tasks'. Number of tasks s
                 {"role": "model", "parts": [op2_nocot]},
             ]
         )
-    response = convo.send_message(prompt)
+    _ = convo.send_message(prompt)
 
     counter = 0
     while True:
@@ -224,23 +188,8 @@ Answer only as a valid python dictionary, with a key: 'tasks'. Number of tasks s
 
 
 def main():
-    results = {}
-    temperatures = [0.1, 0.01, 0.5, 0.9]
-    for palm_temp in temperatures:
-        final_tau = []
-        final_missing = []
-        unordered_count = 0
-        hallucination_count = 0
-        missing_count = 0
-        task_count = 0
-        ordered_count = 0
-        hallucinations = []
-        count = 0
-        # if palm_temp == 0.2:
-        #     import pdb; pdb.set_trace()
-        while count < 500:
-            while True:
-                prompt = f"""
+    while True:
+        prompt = f"""
 # The following tasks are possible in the household
 tasks_sample_space = {master_tasks}
 
@@ -251,30 +200,30 @@ You are serving **USER 1** today.
 You see the user open the microwave.
 Anticipate the next 4 tasks for the day.
 """
-                model = palm.GenerativeModel("gemini-pro")
-                model2 = palm.GenerativeModel("palm-2")
-                print(model2)
-                convo = model.start_chat(
-                    history=[
-                        {"role": "user", "parts": [inp1]},
-                        {"role": "model", "parts": [op1]},
-                        # {
-                        #     "role": "user",
-                        #     "parts": [inp2]
-                        # },
-                        # {
-                        #     "role": "model",
-                        #     "parts": [op2]
-                        # },
-                    ]
-                )
-                response = convo.send_message(prompt)
-                print(convo.last.text)
-                feedback = input("Enter feedback: ")
-                while feedback != "exit":
-                    response = convo.send_message(feedback)
-                    print(convo.last.text)
-                    feedback = input("Enter feedback: ")
+        model = palm.GenerativeModel("gemini-pro")
+        model2 = palm.GenerativeModel("palm-2")
+        print(model2)
+        convo = model.start_chat(
+            history=[
+                {"role": "user", "parts": [inp1]},
+                {"role": "model", "parts": [op1]},
+                # {
+                #     "role": "user",
+                #     "parts": [inp2]
+                # },
+                # {
+                #     "role": "model",
+                #     "parts": [op2]
+                # },
+            ]
+        )
+        response = convo.send_message(prompt)
+        print(convo.last.text)
+        feedback = input("Enter feedback: ")
+        while feedback != "exit":
+            response = convo.send_message(feedback)
+            print(convo.last.text)
+            feedback = input("Enter feedback: ")
 
 
 if __name__ == "__main__":
