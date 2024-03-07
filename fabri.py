@@ -29,7 +29,7 @@ response_users = [
     key for key in household_responses[scenes[0]].keys() if key.startswith("user")
 ]
 users_exist = len(response_users)
-users_needed = 9
+users_needed = 11
 
 # In[7]:
 
@@ -39,18 +39,14 @@ for scene in scenes:
     response_users = [
         key for key in household_responses[scene].keys() if key.startswith("user")
     ]
-    rand_user = random.randint(3, 8)
-    users = ["user_1", f"user_{rand_user}"]
-    for user in users:
-        op_dict = prompt_gpt(scene_details)
-        op_tasks = op_dict["tasks"]
-        household_responses[scene][user] = op_tasks
+    for user in range(users_exist, users_needed):
+        user_copy = random.randint(1, users_exist-1)
+        household_responses[scene][f"user_{user}"] = household_responses[scene][
+            f"user_{user_copy}"
+        ]
 
 
-# In[8]:
-
-
-with open("data/h1_corrected_fabri.json", "w") as file:
+with open("data/h1_corrected_fabri_1.json", "w") as file:
     json.dump(household_responses, file, indent=2)
 
 
