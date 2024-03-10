@@ -1,6 +1,6 @@
-import os
 import json
 import math
+import os
 import pprint
 import random
 import re
@@ -12,31 +12,10 @@ import numpy as np
 from json_files.master_task import master_tasks
 from json_files.task_users import task_user_1, task_user_2
 from keyconfig import gemini as palm_api
-from palm_sequence import prompt_gemini
-from azure import prompt_gpt
+from utils import (prompt_claude, prompt_gemini, prompt_gpt,
+                   remove_parentheses, replace_options)
 
-palm.configure(api_key=palm_api)
 random.seed(9511)
-
-
-def replace_options(tasks, food_options):
-    for task_id, task_description in tasks.items():
-        if "(options =" in task_description:
-            start_index = task_description.find("(options = ") + len("(options = ")
-            end_index = task_description.find(")")
-            options = task_description[start_index:end_index].split(", ")
-            for i in range(len(options)):
-                option = options[i]
-                if option in food_options:
-                    task_description = task_description.replace(
-                        option, str(food_options[option])
-                    )
-                    tasks[task_id] = task_description
-    return tasks
-
-
-def remove_parentheses(text):
-    return re.sub(r"\s*\([^)]*\)", "", text).strip()
 
 
 models = [
@@ -117,113 +96,125 @@ with open("data/h1_corrected_fabri_1.json") as f:
 
 #     print("------------------------------------")
 
+
 #     pdb.set_trace()
+def run_llm_expts(
+    llm="gemini",
+):
+    common_ratio = list()
+    llm_resource_used = list()
+    user_resource_used = list()
+    for exp in range(7, 10):
+        scene_counter = 0
+        for scenes in list(household_responses.keys()):
+            scene_details = household_responses[scenes]["details"]
+            # required_task = household_responses[scenes]["required_task"]
+            # print("scene details: ", scene_details)
+            if "not_required_task" in household_responses[scenes].keys():
+                not_required_task = household_responses[scenes]["not_required_task"]
+            else:
+                not_required_task = None
+                # required_task = remove_parentheses(required_task)
 
-common_ratio = list()
-llm_requirement_satisfied = list()
-user_requirement_satisfied = list()
-llm_resource_used = list()
-user_resource_used = list()
-for exp in range(0, 10):
-    scene_counter = 0
-    for scenes in list(household_responses.keys()):
-        scene_details = household_responses[scenes]["details"]
-        # required_task = household_responses[scenes]["required_task"]
-        # print("scene details: ", scene_details)
-        if "not_required_task" in household_responses[scenes].keys():
-            not_required_task = household_responses[scenes]["not_required_task"]
-        else:
-            not_required_task = None
-            # required_task = remove_parentheses(required_task)
-
-        if not os.path.exists(f"./llm_cache/scene_{scene_counter}"):
-            os.makedirs(f"./llm_cache/scene_{scene_counter}")
-        op_dict, convo = prompt_gemini(
-            scene_details, f"scene_{scene_counter}/{exp}", prompt_method="nocot", user=1
-        )
-        scene_counter += 1
-        op_tasks = op_dict["tasks"]
-        op_tasks = [
-            (
-                "prepare food"
-                if "breakfast" in task.lower()
-                or "lunch" in task.lower()
-                or "dinner" in task.lower()
-                else task
+            if not os.path.exists(f"./llm_cache/scene_{scene_counter}"):
+                os.makedirs(f"./llm_cache/scene_{scene_counter}")
+            op_dict, convo = prompt_claude(
+                scene_details,
+                f"scene_{scene_counter}/{exp}",
+                icl=False,
+                cot=False,
+                user=1
             )
-            for task in op_tasks
-        ]
-        op_tasks = [
-            remove_parentheses(task) if "food" in task or "drink" in task else task
-            for task in op_tasks
-        ]
-
-        if len(op_tasks) > 4:
-            op_tasks = op_tasks[:4]
-            # if required_task in op_tasks:
-            # llm_requirement_satisfied.append(1)
-            # else:
-            # llm_requirement_satisfied.append(0)
-            # breakpoint()
-
-        if not_required_task and not_required_task in op_tasks:
-            llm_resource_used.append(1)
-        else:
-            llm_resource_used.append(0)
-
-        response_users = [
-            key for key in household_responses[scenes].keys() if key.startswith("user")
-        ]
-        for user in response_users:
-            user_tasks = household_responses[scenes][user]
-            user_tasks = [
-                remove_parentheses(task) if "food" in task or "drink" in task else task
-                for task in user_tasks
-            ]
-            user_tasks = [
+            scene_counter += 1
+            op_tasks = op_dict["tasks"]
+            op_tasks = [
                 (
                     "prepare food"
-                    if task in ["prepare breakfast", "prepare lunch", "prepare dinner"]
+                    if "breakfast" in task.lower()
+                    or "lunch" in task.lower()
+                    or "dinner" in task.lower()
                     else task
                 )
-                for task in user_tasks
+                for task in op_tasks
+            ]
+            op_tasks = [
+                remove_parentheses(task) if "food" in task or "drink" in task else task
+                for task in op_tasks
             ]
 
-            if len(user_tasks) > 4:
-                user_tasks = user_tasks[:4]
+            if len(op_tasks) > 4:
+                op_tasks = op_tasks[:4]
+                # if required_task in op_tasks:
+                # llm_requirement_satisfied.append(1)
+                # else:
+                # llm_requirement_satisfied.append(0)
+                # breakpoint()
 
-            # if required_task in user_tasks:
-            #     user_requirement_satisfied.append(1)
-            # else:
-            #     user_requirement_satisfied.append(0)
-
-            if not_required_task and not_required_task in user_tasks:
-                user_resource_used.append(1)
+            if not_required_task and not_required_task in op_tasks:
+                llm_resource_used.append(1)
             else:
-                user_resource_used.append(0)
+                llm_resource_used.append(0)
 
-            print(f"User {user} tasks: ", user_tasks)
-            print(f"Predicted tasks: ", op_tasks)
-            print("Overlap: ", set(user_tasks).intersection(op_tasks))
-            print("-------------------------------------------------")
+            response_users = [
+                key
+                for key in household_responses[scenes].keys()
+                if key.startswith("user")
+            ]
+            for user in response_users:
+                user_tasks = household_responses[scenes][user]
+                user_tasks = [
+                    (
+                        remove_parentheses(task)
+                        if "food" in task or "drink" in task
+                        else task
+                    )
+                    for task in user_tasks
+                ]
+                user_tasks = [
+                    (
+                        "prepare food"
+                        if task
+                        in ["prepare breakfast", "prepare lunch", "prepare dinner"]
+                        else task
+                    )
+                    for task in user_tasks
+                ]
 
-            common_ratio.append(len(set(user_tasks).intersection(op_tasks)) / 4)
-            if len(set(user_tasks).intersection(op_tasks)) <= 1:
-                breakpoint()
-            # if len(set(user_tasks).intersection(op_tasks)) == 0:
+                if len(user_tasks) > 4:
+                    user_tasks = user_tasks[:4]
 
-print("Common tasks: ", sum(common_ratio) / len(common_ratio))
-# print(
-#     "LLM requirement satisfied: ",
-#     sum(llm_requirement_satisfied) / len(llm_requirement_satisfied),
-# )
-# print(
-#     "User requirement satisfied: ",
-#     sum(user_requirement_satisfied) / len(user_requirement_satisfied),
-# )
-# print("LLM resource used: ", sum(llm_resource_used) / len(llm_resource_used))
-# print("User resource used: ", sum(user_resource_used) / len(user_resource_used))
-breakpoint()
+                # if required_task in user_tasks:
+                #     user_requirement_satisfied.append(1)
+                # else:
+                #     user_requirement_satisfied.append(0)
+
+                if not_required_task and not_required_task in user_tasks:
+                    user_resource_used.append(1)
+                else:
+                    user_resource_used.append(0)
+
+                print(f"User {user} tasks: ", user_tasks)
+                print(f"Predicted tasks: ", op_tasks)
+                print("Overlap: ", set(user_tasks).intersection(op_tasks))
+                print("-------------------------------------------------")
+
+                common_ratio.append(len(set(user_tasks).intersection(op_tasks)) / 4)
+                if len(set(user_tasks).intersection(op_tasks)) <= 1:
+                    breakpoint()
+                # if len(set(user_tasks).intersection(op_tasks)) == 0:
+
+    print("Common tasks: ", sum(common_ratio) / len(common_ratio))
+    # print(
+    #     "LLM requirement satisfied: ",
+    #     sum(llm_requirement_satisfied) / len(llm_requirement_satisfied),
+    # )
+    # print(
+    #     "User requirement satisfied: ",
+    #     sum(user_requirement_satisfied) / len(user_requirement_satisfied),
+    # )
+    # print("LLM resource used: ", sum(llm_resource_used) / len(llm_resource_used))
+    # print("User resource used: ", sum(user_resource_used) / len(user_resource_used))
+    breakpoint()
 
 
 def get_user_overlap():
@@ -268,3 +259,8 @@ def get_user_overlap():
     print(np.mean(alpha, axis=-1))
     print(np.mean(alpha))
     breakpoint()
+
+
+if __name__ == "__main__":
+    run_llm_expts()
+    # breakpoint()

@@ -3,8 +3,7 @@ import os
 import re
 
 from json_files.master_task import master_tasks
-from utils import prompt_gemini
-from utils import prompt_gpt
+from utils import count_folders, extract_op_string, prompt_gemini, prompt_gpt
 
 
 def compare_llm_responses(llm, household_responses):
@@ -21,6 +20,10 @@ def compare_llm_responses(llm, household_responses):
                 cache_file = cache_dir + "/gemini_response"
             elif llm == "gpt":
                 cache_file = cache_dir + "/gpt_response"
+            elif llm == "gemini_nocot":
+                cache_file = cache_dir + "/gemini_response_nocot"
+            elif llm == "claude_cot":
+                cache_file = cache_dir + "/claude_cot_response"
             with open(cache_file, "r") as f:
                 llm_response = f.read()
 
@@ -86,7 +89,6 @@ def compare_llm_responses(llm, household_responses):
                 llm_overlap.append(overlap)
                 llm_overlap_value.append(len(overlap) / 4)
                 if len(overlap) <= 1:
-                    breakpoint()
                     print(scn)
 
     print(len(llm_overlap_value))
@@ -99,11 +101,12 @@ def compare_llm_responses(llm, household_responses):
         "Over 75% overlap:",
         sum([1 for x in llm_overlap if len(x) >= 3]) / len(llm_overlap),
     )
+    print("Over 100% overlap:", sum([1 for x in llm_overlap if len(x) == 4]) / len(llm_overlap))
     breakpoint()
 
 
 if __name__ == "__main__":
-    llm = "gpt"  # 'gemini' or 'gpt'
+    llm = "claude_cot"  # 'gemini' or 'gpt'
     with open("data/h1_corrected_fabri_1.json") as f:
         household_responses = json.load(f)
     scenes = list(household_responses.keys())
