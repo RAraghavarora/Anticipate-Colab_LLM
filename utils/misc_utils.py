@@ -42,3 +42,11 @@ def replace_options(tasks, food_options):
                     tasks[task_id] = task_description
 
     return tasks
+
+def write_file(content, file_name):
+    try:
+        with open(file_name, "w") as f:
+            f.write(content)
+        return True
+    except Exception:
+        return False

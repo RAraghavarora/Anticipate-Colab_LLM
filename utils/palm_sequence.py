@@ -5,6 +5,9 @@ import google.generativeai as palm
 from json_files.master_task import master_tasks
 from keyconfig import gemini as palm_api
 
+from .misc_utils import write_file
+from .prompts import inp1, inp2, op1_cot, op2_cot
+
 palm.configure(api_key=palm_api)
 
 f = open("./json_files/object_2.json", "r")
@@ -29,33 +32,6 @@ f.close()
 
 del sequences["user 1"]["description"]
 
-inp1 = f"""
-# The following tasks are possible in the household
-tasks_sample_space = {master_tasks}
-
-# The following tasks were done by **USER 1** previously:
-user_tasks = {sequences}
-
-You are serving **USER 1** today.
-It is morning time, the user has prepared his breakfast
-You see the user perform the task:  
-* serve the food (boiled eggs) *
-What do you anticipate to be the next 4 tasks?
-Requirement: The kitchen is very dirty
-"""
-
-op1 = """
-{
-    'chain-of-thought': "Let us go through the requirements step by step. The kitchen is dirty, so the user will first clean the kitchen. The requirements in the morning are: prepare breakfast, prepare office clothes, charge electronic devices, prepare the office bag. Since the user has already prepared the breakfast, we can eliminate that. The next task is 'prepare office clothes'. Checking if the clothes are clean. Since the clothes are clean, the user can directly prepare office clothes. The next task is 'charge electronic devices'. The user charges electronic devices. The next task is 'prepare the office bag'. The user prepares the office bag.",
-    'tasks' = [
-        "clean the room (kitchen)",
-        "prepare office clothes",
-        "charge electronic devices",
-        "prepare the office bag"
-    ],
-}
-"""
-
 op1_nocot = """
 {
     'tasks' = [
@@ -66,34 +42,6 @@ op1_nocot = """
     ],
 }
 """
-inp2 = f"""
-# The following tasks are possible in the household
-tasks_sample_space = {master_tasks}
-
-# The following tasks were done by **User 1** previously:
-user_tasks = {sequences}
-
-You are serving **user 1** today.
-It is the evening time, and user has not eaten dinner yet.
-You see the user perform the task:  
-*prepare clothes (casual)*
-What do you anticipate to be the next 4 tasks?
-Requirement: Spoiled food needs to be thrown
-*Rice is not available*
-"""
-
-op2 = """
-{
-    'chain-of-thought': "Let us go through the requirements step by step. We can anticipate that the user will first finish the requirement by throwing away the leftover food. We know that on evenings the user eats dinner and takes medicines. The user has not eaten yet, so they will first prepare and serve their dinner. Since the user takes their medicine after food in the evening, we can anticipate that the user will prepare medicines. We know that the spoiled food needs to be thrown, so the user will throw away leftover food. We see that the user has prepared casual clothes, so they will prepare a casual and fun dinner. Hence we can anticipate the user eating pizza.",
-    'tasks' = [
-        "throw away leftover food"
-        "prepare food",
-        "serve the food",
-        "prepare medicines",
-    ],
-}
-"""
-
 op2_nocot = """
 {
     'tasks' = [
@@ -124,9 +72,9 @@ Answer only as a valid python dictionary, with a key: 'tasks'. Number of tasks s
         convo = model.start_chat(
             history=[
                 {"role": "user", "parts": [inp1]},
-                {"role": "model", "parts": [op1]},
+                {"role": "model", "parts": [op1_cot]},
                 {"role": "user", "parts": [inp2]},
-                {"role": "model", "parts": [op2]},
+                {"role": "model", "parts": [op2_cot]},
             ]
         )
     elif prompt_method == "nocot":
@@ -178,11 +126,8 @@ Answer only as a valid python dictionary, with a key: 'tasks'. Number of tasks s
     if not os.path.exists(f"llm_cache/{dirname}"):
         os.makedirs(f"llm_cache/{dirname}")
 
-    with open(f"llm_cache/{dirname}/gemini_prompt_{prompt_method}", "w") as f:
-        f.write(prompt)
-
-    with open(f"llm_cache/{dirname}/gemini_response_{prompt_method}", "w") as f:
-        f.write(convo.last.text)
+    write_file(prompt, f"llm_cache/{dirname}/gemini_prompt_{prompt_method}")
+    write_file(convo.last.text, f"llm_cache/{dirname}/gemini_response_{prompt_method}")
 
     return op_dict, convo
 
