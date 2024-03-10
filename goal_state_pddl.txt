@@ -23,3 +23,12 @@
 ['charge the electronic devices', 'prepare breakfast (boiled_eggs)', 'prepare breakfast (fruit_salad)', 'prepare breakfast (cereal)', 'prepare clothes (office)']
 ['prepare lunch (lentil)', 'wash the dishes', 'clean the room (storeroom)', 'prepare clothes (party)', 'serve the food (lentil)']
 ['throw away leftover food', 'prepare dinner (pizza)', 'serve the food (pizza)', 'prepare medicines', 'put remaining food in the fridge']
+
+
+# NEW H1
+
+['prepare the office bag', "do the laundry", "charge the electronic devices","prepare food","serve the food"]
+['prepare casual clothes', "clean the room (kitchen)", "prepare food", "serve the food","prepare medicines"]
+["clean the room (livingroom)", "clean the room (kitchen)", "wash the dishes", "put remaining food in the fridge","dust electronic surfaces"]
+["clean the room (livingroom)", "prepare food", "serve the food", "wash the dishes", "clean the room (kitchen)"]
+["do the laundry", "prepare gym clothes", "serve the food", "prepare medicines", "clean the room (livingroom)"]
