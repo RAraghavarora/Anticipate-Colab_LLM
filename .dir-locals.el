@@ -1,7 +1,9 @@
 ;;; Directory Local Variables
 ;;; For more information see (info "(emacs) Directory Variables")
 
-((python-mode . ((flycheck-flake8-maximum-line-length . 200)
+((python-mode . ((conda-project-env-path . "default")
+                 (conda-env-name-for-buffer . "default")
+                 (flycheck-flake8-maximum-line-length . 200)
                  (flycheck-checker . python-flake8)
                  (flycheck-python-pylint-executable . "~/miniconda3/envs/default/bin/pylint")
                  (flycheck-python-flake8-executable . "~/miniconda3/envs/default/bin/flake8")
