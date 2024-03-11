@@ -144,8 +144,14 @@ Answer only as a valid python dictionary, with a key: 'tasks'. Number of tasks s
 
     if icl == True:
         if cot == True:
-            write_file(prompt, f"llm_cache/{dirname}/gemini_prompt_{prompt_method}")
-    write_file(convo.last.text, f"llm_cache/{dirname}/gemini_response_{prompt_method}")
+            write_file(prompt, f"llm_cache/{dirname}/gemini_cot_prompt")
+            write_file(convo.last.text, f"llm_cache/{dirname}/gemini_cot_response")
+        else:
+            write_file(prompt, f"llm_cache/{dirname}/gemini_icl_prompt")
+            write_file(convo.last.text, f"llm_cache/{dirname}/gemini_icl_response")
+    else:
+        write_file(prompt, f"llm_cache/{dirname}/gemini_prompt")
+        write_file(convo.last.text, f"llm_cache/{dirname}/gemini_response")
 
     return op_dict, convo
 
