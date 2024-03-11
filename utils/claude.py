@@ -3,13 +3,13 @@ import os
 
 import anthropic
 from json_files.master_task import master_tasks
-from keyconfig import claude_api
+from keyconfig import claude_2_api, claude_3_api, claude_api
 
 from .misc_utils import (count_folders, extract_op_string, remove_parentheses,
                          replace_options, write_file)
 from .prompts import inp1, inp2, op1_cot, op2_cot
 
-client = anthropic.Anthropic(api_key=claude_api)
+client = anthropic.Anthropic(api_key=claude_3_api)
 model_name = "claude-3-opus-20240229"
 
 f = open("./json_files/task.json", "r")
@@ -31,7 +31,24 @@ def get_messages(task, icl=True, cot=True):
     task: str
     Takes a task description and returns the messages to be sent to the GPT API
     """
-    prompt = f"""
+    if icl == False:
+        try:
+            del sequences["user 1"]["description"]
+        except KeyError:
+            pass
+    if icl == False or cot == False:
+        prompt = f"""
+# The following tasks are possible in the household
+tasks_sample_space = {master_tasks}
+
+# The following tasks were done by **User 1** previously:
+user_tasks = {sequences}
+
+{task}
+Anticipate the next 4 tasks for the day.
+Answer only as a valid python dictionary, with a key: 'tasks'. Keep tasks from the sample space."""
+    else:
+        prompt = f"""
 # The following tasks are possible in the household
 tasks_sample_space = {master_tasks}
 
@@ -62,13 +79,13 @@ user_tasks = {sequences}""",
             messages.append({"role": "assistant", "content": op1_cot})
             messages.append({"role": "user", "content": inp2})
             messages.append({"role": "assistant", "content": op2_cot})
-
+    messages.append({"role": "user", "content": prompt})
     return messages
 
 
 def claude_call(messages):
     response = client.messages.create(
-        model="claude-3-opus-20240229",
+        model="claude-3-sonnet-20240229",  # or opus
         max_tokens=800,
         system=messages[0]["content"],
         messages=messages[1:],
@@ -77,7 +94,7 @@ def claude_call(messages):
 
 
 def prompt_claude(task, dirname, icl=True, cot=True, user=1):
-    messages = get_messages(task)
+    messages = get_messages(task, icl, cot)
     op_string_, message_content = claude_call(messages)
     op_string = op_string_.dict()["content"][0]["text"]
     messages.append({"role": "assistant", "content": op_string})

@@ -30,8 +30,6 @@ f = open("./json_files/food.json", "r")
 food = json.load(f)
 f.close()
 
-del sequences["user 1"]["description"]
-
 op1_nocot = """
 {
     'tasks' = [
@@ -54,8 +52,22 @@ op2_nocot = """
 """
 
 
-def prompt_gemini(task, dirname, prompt_method="", user=1):
-    prompt = f"""
+def prompt_gemini(task, dirname, icl=True, cot=True, user=1):
+    if icl == False or cot == False:
+        del sequences["user 1"]["description"]
+        prompt = f"""
+# The following tasks are possible in the household
+tasks_sample_space = {master_tasks}
+
+# The following tasks were done by **User 1** previously:
+user_tasks = {sequences}
+
+{task}
+    
+Answer only as a valid python dictionary, with a key: 'tasks'. Number of tasks should be 4! Keep tasks from the sample space.
+"""
+    else:
+        prompt = f"""
 # The following tasks are possible in the household
 tasks_sample_space = {master_tasks}
 
@@ -68,24 +80,28 @@ Answer only as a valid python dictionary, with a key: 'tasks'. Number of tasks s
 """
 
     model = palm.GenerativeModel("gemini-1.0-pro-latest")
-    if prompt_method == "":
-        convo = model.start_chat(
-            history=[
-                {"role": "user", "parts": [inp1]},
-                {"role": "model", "parts": [op1_cot]},
-                {"role": "user", "parts": [inp2]},
-                {"role": "model", "parts": [op2_cot]},
-            ]
-        )
-    elif prompt_method == "nocot":
-        convo = model.start_chat(
-            history=[
-                {"role": "user", "parts": [inp1]},
-                {"role": "model", "parts": [op1_nocot]},
-                {"role": "user", "parts": [inp2]},
-                {"role": "model", "parts": [op2_nocot]},
-            ]
-        )
+    if icl == True:
+        if cot == True:
+            convo = model.start_chat(
+                history=[
+                    {"role": "user", "parts": [inp1]},
+                    {"role": "model", "parts": [op1_cot]},
+                    {"role": "user", "parts": [inp2]},
+                    {"role": "model", "parts": [op2_cot]},
+                ]
+            )
+        elif cot == False:
+            convo = model.start_chat(
+                history=[
+                    {"role": "user", "parts": [inp1]},
+                    {"role": "model", "parts": [op1_nocot]},
+                    {"role": "user", "parts": [inp2]},
+                    {"role": "model", "parts": [op2_nocot]},
+                ]
+            )
+
+    else:
+        convo = model.start_chat(history=[])
     _ = convo.send_message(prompt)
 
     counter = 0
@@ -126,7 +142,9 @@ Answer only as a valid python dictionary, with a key: 'tasks'. Number of tasks s
     if not os.path.exists(f"llm_cache/{dirname}"):
         os.makedirs(f"llm_cache/{dirname}")
 
-    write_file(prompt, f"llm_cache/{dirname}/gemini_prompt_{prompt_method}")
+    if icl == True:
+        if cot == True:
+            write_file(prompt, f"llm_cache/{dirname}/gemini_prompt_{prompt_method}")
     write_file(convo.last.text, f"llm_cache/{dirname}/gemini_response_{prompt_method}")
 
     return op_dict, convo
