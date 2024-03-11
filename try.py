@@ -12,8 +12,8 @@ for root, dirs, files in os.walk(base_dir):
             os.rename(os.path.join(root, file), os.path.join(root, 'gpt35_cot_prompt'))
         elif file == 'gpt_response':
             os.rename(os.path.join(root, file), os.path.join(root, 'gpt35_cot_response'))
-        elif file == 'gemini_nocot_prompt':
+        elif file == 'gemini_prompt_nocot':
             os.rename(os.path.join(root, file), os.path.join(root, 'gemini_icl_prompt'))
-        elif file == 'gemini_nocot_response':
+        elif file == 'gemini_response_nocot':
             os.rename(os.path.join(root, file), os.path.join(root, 'gemini_icl_response'))
 print("Done")
