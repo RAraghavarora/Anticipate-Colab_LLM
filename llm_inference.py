@@ -11,7 +11,7 @@ def compare_llm_responses(llm, household_responses):
     llm_overlap = list()
     llm_overlap_value = list()
     expts = count_folders("llm_cache/" + scenes[0])
-    expts = 10
+    expts = 25
     scene_counter = 0
     for expt in range(expts):
         for scn in scenes:
@@ -24,6 +24,8 @@ def compare_llm_responses(llm, household_responses):
                 cache_file = cache_dir + "/gemini_response_nocot"
             elif llm == "claude_cot":
                 cache_file = cache_dir + "/claude_cot_response"
+            elif llm == "claude":
+                cache_file = cache_dir + "/claude_response"
             with open(cache_file, "r") as f:
                 llm_response = f.read()
 
@@ -106,7 +108,7 @@ def compare_llm_responses(llm, household_responses):
 
 
 if __name__ == "__main__":
-    llm = "claude_cot"  # 'gemini' or 'gpt'
+    llm = "claude"  # 'gemini' or 'gpt'
     with open("data/h1_corrected_fabri_1.json") as f:
         household_responses = json.load(f)
     scenes = list(household_responses.keys())
