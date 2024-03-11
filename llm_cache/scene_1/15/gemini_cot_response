@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The kitchen is very dirty, so the user will clean the kitchen. In the evenings, the user prepares casual clothes, prepares and serves dinner, takes medicines, and stores leftover food in the fridge. We see that the user has already prepared their casual clothes, so they will first clean the kitchen. Since the medicines are taken after dinner, the user will prepare dinner after cleaning the kitchen. Hence, the dinner will be stored in the fridge after it is prepared. The user takes medicines after eating, so the user will take medicines after preparing the dinner.",
+    'tasks': [
+        "clean the room (kitchen)",
+        "prepare food",
+        "serve the food",
+        "put remaining food in the fridge"
+    ]
+}
+```

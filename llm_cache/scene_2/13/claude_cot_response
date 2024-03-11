@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Based on the observation 3 description, the user cleans the house before going to sleep. Since the user has already cleaned the living room, the next tasks would likely involve cleaning other areas. The requirement mentions that the dishes and kitchen are dirty, so the user will likely clean those next. The typical sequence based on observation 3 is to clean the dishes, clean the kitchen, and dust the electronic surfaces. After cleaning, the user may also want to throw away any leftover food before going to bed.",
+    'tasks': ['wash the dishes', 'clean the room (kitchen)', 'dust electronic devices', 'throw away leftover food']
+}

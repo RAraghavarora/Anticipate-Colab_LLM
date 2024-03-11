@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "After preparing casual clothes, the user typically prepares and serves dinner, takes medicines, and either stores leftover food in the fridge or throws it away. However, the requirement states that the kitchen is very dirty, so the user will likely clean the kitchen first before preparing food. After cleaning the kitchen, the user can prepare food, serve the food, and then take medicines.",
+    'tasks': ['clean the room (kitchen)', 'prepare food', 'serve the food', 'prepare medicines']
+}

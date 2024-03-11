@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Based on the observation 3 and the description, the user tends to clean the house before going to sleep. Since the user has just cleaned the living room, the next task would likely be to clean the other dirty areas, which are the kitchen and the dishes. After cleaning the kitchen and washing the dishes, the user would likely dust the electronic devices as per their routine mentioned in observation 3.",
+    'tasks': ['clean the room (kitchen)', 'wash the dishes', 'dust electronic devices', 'prepare medicines']
+}

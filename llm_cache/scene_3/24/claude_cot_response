@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "The user has just cleaned the living room, which means they are likely getting ready for their next activity. Since it's afternoon and the user hasn't eaten lunch yet, we can anticipate that they will prepare and eat lunch next. Checking the requirements, it says that all the dishes are dirty, so we can anticipate that the user will wash the dishes before preparing food. Since soup is not available, we can assume the user will prepare something else for lunch. After eating, the user might want to relax for a bit before moving on to their next task.",
+    'tasks': [
+        'wash the dishes',
+        'prepare food', 
+        'serve the food',
+        'serve a drink'
+    ]
+}

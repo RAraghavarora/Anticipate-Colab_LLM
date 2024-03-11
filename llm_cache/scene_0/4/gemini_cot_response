@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "Since the user is getting ready for work in the morning, we can anticipate that they will do tasks related to their morning routine. The requirements state that the office clothes are dirty, so the user will need to do laundry before preparing their office clothes. Once the office clothes are prepared, the user will likely charge their electronic devices, as it is part of their morning routine. Finally, the user will likely prepare their breakfast.",
+    'tasks': [
+        "do the laundry",
+        "prepare office clothes",
+        "charge the electronic devices",
+        "prepare food"
+    ],
+}
+```

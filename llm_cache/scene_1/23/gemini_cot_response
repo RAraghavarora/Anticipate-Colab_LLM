@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "Let's go through the user's routine and the requirements one by one. The user just came home from the office and changed into casual clothes. Next, they will likely prepare and eat dinner. After that, they will need to clean the kitchen. Finally, they will most likely prepare their clothes for the next day.",
+    'tasks': [
+        "prepare food",
+        "serve the food",
+        "clean the room (kitchen)",
+        "prepare casual clothes"
+    ],
+}
+```

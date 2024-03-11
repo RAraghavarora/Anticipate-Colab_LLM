@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Since the user is preparing for the office, we can refer to 'observation 1' from the given data. The first task the user usually does is 'prepare the office bag', which has already been performed. The next task should be 'prepare office clothes', but the requirement states that the office clothes are dirty. Therefore, the next logical task would be to 'do the laundry' to clean the office clothes before preparing them. After the laundry is done and office clothes are prepared, the user will 'charge the electronic devices' and then 'prepare food' and 'serve the food' as part of their morning routine before leaving for the office.",
+    'tasks': ['do the laundry', 'prepare office clothes', 'charge the electronic devices', 'prepare food']
+}

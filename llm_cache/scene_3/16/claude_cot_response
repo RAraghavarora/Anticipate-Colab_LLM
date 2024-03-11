@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Since the user has cleaned the living room, they will likely move on to other cleaning tasks. Given that all the dishes are dirty, we can anticipate that the next task will be 'wash the dishes'. After cleaning, the user will likely prepare and have lunch since they haven't eaten yet. Since soup is not available, we can assume the user will prepare something else for lunch like a sandwich or salad. After eating, the user may want to clean up the kitchen which was likely dirtied from preparing the food. Finally, since the user cleaned the living room and likely the kitchen, they may want to continue cleaning and dust the electronic devices.",
+    'tasks': ['wash the dishes', 'prepare food', 'serve the food', 'clean the room (kitchen)']
+}

@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Based on the given information, the user's typical routine before going to sleep includes cleaning the house, washing dishes, and dusting electronic devices. Since the user has already cleaned the living room, the next logical step would be to clean the other dirty areas, which are the kitchen and the dishes. After that, the user would likely dust the electronic devices before retiring for the night.",
+    'tasks': ['clean the room (kitchen)', 'wash the dishes', 'dust electronic devices', 'throw away leftover food']
+}

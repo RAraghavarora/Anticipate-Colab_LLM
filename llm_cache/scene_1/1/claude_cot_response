@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user has already prepared casual clothes, so we think about what comes after that in the evening. From the user's previous observations, we know that in the evening, the user prepares and serves dinner, takes medicines, and then either stores the leftover food in the fridge or throws it away. However, the kitchen is very dirty, so before preparing food, the user will need to clean the kitchen. Once the kitchen is clean, the user can proceed with preparing and serving dinner. After dinner, the user will take their medicines. Finally, based on the amount of leftover food, the user will either store it in the fridge or throw it away.",
+    'tasks': [
+        "clean the room (kitchen)",
+        "prepare food",
+        "serve the food", 
+        "prepare medicines"
+    ]
+}

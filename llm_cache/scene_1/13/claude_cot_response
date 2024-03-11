@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Based on the given observations, the user typically prepares casual clothes when they come home from the office in the evening. The next logical task would be to prepare and serve dinner, and then take their medicine. Since the kitchen is very dirty, the user will likely clean the kitchen before preparing food. After dinner, the user may either store the remaining food in the fridge or throw away any leftovers.",
+    'tasks': ['clean the room (kitchen)', 'prepare food', 'serve the food', 'prepare medicines']
+}

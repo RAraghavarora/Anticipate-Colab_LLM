@@ -1,0 +1,4 @@
+Please provide output only as a valid python dict. When evaluating, we get the following error: Tasks should be from the master task list. 
+ The following tasks are invalid: ['prepare office bag'] 
+
+ List of master tasks:['prepare food', 'serve the food', 'serve a drink', 'serve a drink (coke)', 'serve a drink (ice_tea)', 'serve a drink (sugary_fruit_juice)', 'serve a drink (milk)', 'serve a drink (coffee)', 'serve a drink (tea)', 'prepare medicines', 'wash the dishes', 'do the laundry', 'prepare office clothes', 'prepare casual clothes', 'prepare gym clothes', 'charge the electronic devices', 'prepare the office bag', 'clean the room (kitchen)', 'clean the room (bathroom)', 'clean the room (bedroom)', 'clean the room (livingroom)', 'set up the office table', 'throw away leftover food', 'put remaining food in the fridge', 'decorate the place', 'dust electronic devices', 'extinguish the fire']

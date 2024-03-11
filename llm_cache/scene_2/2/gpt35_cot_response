@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user has already cleaned the living room, so we can think about the next tasks. The user usually cleans the kitchen and washes the dishes before going to sleep. Checking if the kitchen is dirty and the dishes are dirty. The kitchen is dirty, so the user will clean the kitchen. The dishes are dirty, so the user will wash the dishes. After cleaning the kitchen and washing the dishes, the user usually performs other tasks related to preparing for sleep. Since the user is preparing to sleep, the next task could be to prepare the bedroom or clean the bathroom. Let's assume the user prepares the bedroom. After that, the user might want to dust the electronic devices in the bedroom. Hence, we can anticipate these tasks.",
+    'tasks': [
+        'clean the room (kitchen)',
+        'wash the dishes',
+        'clean the room (bedroom)',
+        'dust electronic devices'
+    ]
+}

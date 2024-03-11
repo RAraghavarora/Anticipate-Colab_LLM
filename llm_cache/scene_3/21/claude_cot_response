@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "The user has cleaned the living room, which is typically done before going to sleep according to the observations. However, it is afternoon time, and the user hasn't eaten lunch yet. Since all the dishes are dirty, the next logical task would be to wash the dishes. After washing the dishes, the user will likely prepare food for lunch. Since soup is not available, the user will likely prepare a different meal. After preparing the food, the user will serve the food. Since it is afternoon, the user may also want to serve a drink along with the food, possibly a refreshing drink like iced tea or fruit juice.",
+    'tasks': [
+        'wash the dishes',
+        'prepare food',
+        'serve the food',
+        'serve a drink (ice_tea)'
+    ]
+}

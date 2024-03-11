@@ -1,0 +1,8 @@
+{
+    'tasks': [
+        'prepare food',
+        'serve the food',
+        'clean the room (kitchen)',
+        'wash the dishes'
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': 'The user has cleaned the living room, it is afternoon time, and they haven\'t eaten lunch yet. We can anticipate that the user will first prepare and serve their lunch. We also know that the dishes are dirty, so the user will wash them after eating. Since the user hasn\'t eaten lunch yet, we can assume that they will prepare a simple and quick lunch, such as a sandwich.',
+    'tasks': [
+        "prepare food",
+        "serve the food",
+        "wash the dishes",
+        "prepare the office bag"
+    ],
+}

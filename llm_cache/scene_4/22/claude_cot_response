@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Since the user has done laundry, they likely want to prepare gym clothes. After preparing gym clothes, the user will want to eat before going to the gym. The requirement mentions that the user is hungry and there is rice in the fridge, so they will likely heat up the leftover rice and eat it. Since the living room is dirty, after eating, the user will clean the living room. Finally, the user will prepare gym clothes and go to the gym.",
+    'tasks': ['prepare food', 'serve the food', 'clean the room (livingroom)', 'prepare gym clothes']
+}

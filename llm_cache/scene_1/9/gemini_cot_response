@@ -1,0 +1,12 @@
+```python
+{
+    'chain-of-thought': "The user just came home from the office. We can expect them to change into casual clothes first. Since it is evening, we can expect them to prepare and have their dinner next. Also, after having dinner, they might take any required medication. Finally, since the kitchen is dirty, we can expect them to clean the kitchen.",
+    'tasks': [
+        "prepare casual clothes",
+        "prepare food",
+        "serve the food",
+        "prepare medicines",
+        "clean the room (kitchen)"
+    ]
+}
+```

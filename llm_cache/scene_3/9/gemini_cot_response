@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': 'The user has not eaten lunch yet, so they will first prepare and serve their lunch. We know that all the dishes are very dirty and the soup is not available. Hence, we can anticipate that the user will wash the dishes before preparing lunch. After having lunch, the user will prepare medicines.',
+    'tasks': [
+        'wash the dishes',
+        'prepare food',
+        'serve the food',
+        'prepare medicines',
+    ],
+}
+```

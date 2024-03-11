@@ -1,0 +1,8 @@
+{
+    'tasks': [
+        'charge the electronic devices',
+        'wash the dishes',
+        'prepare food',
+        'serve the food',
+    ]
+}

@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "Let us go through the requirements step by step. We know that all the dishes are very dirty. From previous observations, we know that the user cleans all the dirty dishes before going to sleep. Hence we can anticipate that the user will first finish the requirement by cleaning all the dirty dishes. The user has not eaten lunch yet, so they will prepare and serve their lunch. Since the soup is not available, we can anticipate that the user will prepare something else for lunch.",
+    'tasks': [
+        "wash the dishes",
+        "prepare food",
+        "serve the food",
+        "clean the room (livingroom)",
+    ],
+}
+```

@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Based on the given information and the user's previous observations, we can infer that the user typically cleans the house before going to sleep. Since the user has already cleaned the living room, we can anticipate that they will clean the other dirty areas of the house. The requirement states that the dishes and kitchen are dirty, so the next tasks will likely involve cleaning them. Specifically, the user will likely wash the dishes and clean the kitchen. Additionally, the user usually dusts the electronic devices before going to sleep, so that can be another anticipated task. Since the kitchen is dirty, the user might also need to throw away any leftover food.",
+    'tasks': ["wash the dishes", "clean the room (kitchen)", "dust electronic devices", "throw away leftover food"]
+}

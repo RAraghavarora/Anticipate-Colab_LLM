@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "Let us go through the requirements step by step. We can anticipate that the user will first finish the requirements by cleaning the kitchen and dishes. Since the user is going to sleep, we can expect them to follow their night time routine. The night time routine involves preparing casual clothes, preparing medicines, serving food, and cleaning the room. We can assume that the user will eat a light dinner before sleeping. Since the living room is already cleaned, we can anticipate that the user will clean their bedroom and bathroom. Based on the above reasoning we can anticipate the user to perform the following sequence of tasks.",
+    'tasks': [
+        "clean the room (kitchen)",
+        "wash the dishes",
+        "prepare casual clothes",
+        "prepare medicines",
+    ],
+}
+```

@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': 'Since the dishes and kitchen are dirty, the user will first wash the dishes and clean the kitchen. Before sleeping, the user will likely turn off the lights and set an alarm. The user will also put away any clothes or belongings that are out of place.',
+    'tasks': [
+        "wash the dishes",
+        "clean the room (kitchen)",
+        "set up the office table",
+        "prepare the office bag"
+    ],
+}
+```

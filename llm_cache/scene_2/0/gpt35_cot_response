@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user has already cleaned the living room so we can think after that. We see that the dishes and kitchen are dirty. The user usually washes the dishes and cleans the kitchen when they are dirty. So the next task is 'wash the dishes'. After washing the dishes, the user will clean the kitchen. Since we are at the end of the day, the user will perform the last task for the day. Looking at the sample space, we can anticipate that the user will 'put remaining food in the fridge' before going to sleep. ",
+    'tasks': [
+        'wash the dishes',
+        'clean the room (kitchen)',
+        'put remaining food in the fridge',
+        'prepare casual clothes'
+    ]
+}

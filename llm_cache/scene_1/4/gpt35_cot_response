@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user has just come home from the office and prepared their casual clothes. The kitchen is very dirty, so the user will first clean the kitchen. After that, the user usually prepares and serves dinner. Since the user has just come home, we can anticipate that they will prepare and serve dinner. After dinner, the user takes their medicines. Checking if the user has taken their medicines, we see that they have not. Hence, the next task is to prepare medicines. We don't have any other specific requirements mentioned, so we can anticipate any other task from the sample space.",
+    'tasks': [
+        'clean the room (kitchen)',
+        'prepare food',
+        'serve the food',
+        'prepare medicines'
+    ]
+}

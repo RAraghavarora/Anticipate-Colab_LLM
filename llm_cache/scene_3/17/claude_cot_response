@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Since it is afternoon and the user hasn't eaten lunch yet, the next logical task would be to prepare and serve food. However, the requirement states that all the dishes are very dirty, so the user would first need to wash the dishes before preparing food. After washing the dishes, the user can proceed to prepare and serve food for lunch. Since soup is not available, we can anticipate that the user will prepare a different type of meal. After eating, the user may want to put any remaining food in the fridge.",
+    'tasks': ['wash the dishes', 'prepare food', 'serve the food', 'put remaining food in the fridge']
+}

@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "Let us go through the requirements step by step. We can anticipate that the user will first finish the requirement by cleaning the kitchen. We know that on evenings the user eats dinner and takes medicines. The user has just come back from office, so they will first prepare and serve their dinner. Since the user takes their medicine after food in the evening, we can anticipate that the user will prepare medicines. We also know that the user prepares their casual clothes in the evening, so we can anticipate that the user will wear casual clothes. We can anticipate that they will eat a burger as they are preparing casual clothes and are coming back from office.",
+    'tasks': [
+        "clean the room (kitchen)",
+        "prepare food",
+        "serve the food",
+        "prepare medicines",
+    ],
+}
+```

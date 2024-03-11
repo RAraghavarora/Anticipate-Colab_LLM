@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "The user is back from the office, and changed to casual. It is evening time. The kitchen is dirty. The user usually prepares dinner and eats in the evening. Since the kitchen is dirty, they will first clean the kitchen. We can anticipate the user to prepare food, serve the food and take medicines since this is the sequence in the evening.",
+    'tasks': [
+        "clean the room (kitchen)",
+        "prepare food",
+        "serve the food",
+        "prepare medicines"
+    ]
+}
+```

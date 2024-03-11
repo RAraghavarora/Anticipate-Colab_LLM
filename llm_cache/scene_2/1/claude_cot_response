@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user has already cleaned the living room, so we can think after that. We know that before sleeping, the user cleans the house, washes the dishes and dusts the electronic devices. The requirement states that the dishes and kitchen are dirty. So the user will first clean the kitchen, then wash the dishes. After that, the user will dust the electronic devices as per their usual routine before sleep. We have anticipated 3 tasks so far, for the 4th task, we can check if any other room is dirty and needs cleaning. Since no other room is mentioned as dirty, we can assume all other rooms are clean. However, the bathroom is used frequently, so it would be good to clean it before sleeping to maintain overall cleanliness.",
+    'tasks': [
+        "clean the room (kitchen)", 
+        "wash the dishes",
+        "dust electronic devices",
+        "clean the room (bathroom)"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Based on the observations, in the evening the user typically prepares casual clothes, prepares and serves food, takes medicines, and puts any remaining food in the fridge or throws it away. Since the user has already prepared casual clothes, the next step would likely be to prepare and serve food. However, the requirement states that the kitchen is very dirty, so the user will likely need to clean the kitchen before preparing food. After cleaning the kitchen, the user can then prepare and serve food, followed by taking medicines. Finally, any leftover food can be put in the fridge or thrown away.",
+    'tasks': [
+        'clean the room (kitchen)',
+        'prepare food',
+        'serve the food',
+        'prepare medicines'
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user has already cleaned the living room, so we can think after that. We know that before going to sleep, the user makes sure that the house is clean. Checking if the dishes and kitchen are dirty. Since the dishes and kitchen are dirty, the user will first wash the dishes. The next task is cleaning the kitchen. After that, we can anticipate that the user will dust the electronic devices. Since we have completed the requirements, we can now anticipate any other task that the user usually does before going to sleep. Let's randomly select 'extinguish the fire' as the next task.",
+    'tasks': [
+        'wash the dishes',
+        'clean the room (kitchen)',
+        'dust electronic devices',
+        'extinguish the fire'
+    ]
+}

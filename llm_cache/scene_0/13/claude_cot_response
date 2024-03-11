@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Since the user has prepared the office bag, we can assume that they are getting ready for the office in the morning. The next logical step would be to prepare their office clothes. However, the requirement states that the office clothes are dirty. Therefore, the user will need to do laundry first before preparing their office clothes. After doing the laundry and preparing the office clothes, the user will likely charge their electronic devices and prepare food and serve it before leaving for the office.",
+    'tasks': ['do the laundry', 'prepare office clothes', 'charge the electronic devices', 'prepare food']
+}

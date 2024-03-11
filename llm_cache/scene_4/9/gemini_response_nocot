@@ -1,0 +1,10 @@
+```python
+{
+    'tasks': [
+        "clean the room (livingroom)",
+        "prepare food",
+        "serve the food",
+        "prepare gym clothes"
+    ],
+}
+```

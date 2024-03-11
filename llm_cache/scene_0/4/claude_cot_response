@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let's think through this step-by-step. The user has already prepared the office bag, so we need to consider what comes next based on the morning routine. Typically, the user prepares office clothes, charges electronic devices, prepares food, and serves the food. However, the requirement states that the office clothes are dirty. Therefore, before preparing the office clothes, the user needs to do the laundry. After the laundry, the user can prepare the clean office clothes. Next, the user will charge the electronic devices. Finally, the user will prepare and serve breakfast before leaving for the office.",
+    'tasks': [
+        'do the laundry',
+        'prepare office clothes',
+        'charge the electronic devices',
+        'prepare food'
+    ]
+}

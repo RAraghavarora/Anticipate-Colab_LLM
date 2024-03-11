@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "The user is preparing to sleep, and has just cleaned the living room. We can anticipate that the user will next clean the kitchen and wash the dishes, since they are both dirty. After that, they will likely set up the office table for the next day, and finally charge their electronic devices before going to bed.",
+    'tasks': [
+        "clean the room (kitchen)",
+        "wash the dishes",
+        "set up the office table",
+        "charge the electronic devices"
+    ],
+}
+```

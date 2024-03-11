@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "The user is cleaning the living room, which usually done in the evening. However, since it is afternoon time, we can anticipate that the user is done with their work and is preparing to relax. They will likely first wash the dirty dishes and put them away. Then, they will prepare and serve themselves lunch, since they haven't eaten lunch yet. Since the sample space does not include watching TV, we can anticipate that the user will prepare a cold lunch, or order in lunch.",
+    'tasks': [
+        "wash the dishes",
+        "prepare food",
+        "serve the food",
+        "put remaining food in the fridge",
+    ],
+}
+```

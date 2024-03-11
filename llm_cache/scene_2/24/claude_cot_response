@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Since the user has cleaned the living room, we can anticipate that they will clean the remaining rooms before sleeping. The requirement states that the dishes and kitchen are dirty, so we can expect the user to clean the kitchen and wash the dishes next. After cleaning the house, the user typically dusts the electronic surfaces according to the observations. Once all cleaning tasks are done, the user is likely to prepare for the next day by charging their electronic devices.",
+    'tasks': ['clean the room (kitchen)', 'wash the dishes', 'dust electronic devices', 'charge the electronic devices']
+}

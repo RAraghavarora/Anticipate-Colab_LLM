@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "Let us go through the requirements. Since all the dishes are very dirty, the user will have to wash the dishes first before they can prepare lunch. We know that the time is afternoon and the user has not eaten lunch yet, so they are likely to prepare lunch next. Since we know that the user is preparing lunch, and we know that soup is not available, we can eliminate soup from the list of possible tasks. Now we can look at the user's previous observations. We see that the user cleans the living room before going to sleep. So it is unlikely that the user will clean the living room again. Hence, we can eliminate 'clean the living room' from the list of possible tasks. We anticipate that the user will first wash the dishes, then prepare food, serve the food, and finally put the remaining food in the fridge.",
+    'tasks': [
+        "wash the dishes",
+        "prepare food",
+        "serve the food",
+        "put remaining food in the fridge"
+    ]
+}
+```

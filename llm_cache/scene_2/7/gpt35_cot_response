@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user has already cleaned the living room, so we can think after that. We have the requirement that the dishes and the kitchen are dirty. Checking if the user has cleaned the dishes. The user has not cleaned the dishes, so they will wash the dishes. Checking if the kitchen is dirty. The kitchen is dirty, so the user will clean the kitchen. After that, we can think about the user's previous observations. Checking if the user has prepared office clothes. The user has not prepared office clothes, so they will prepare office clothes. Checking if the user has charged electronic devices. The user has charged electronic devices, so we can eliminate that. Checking if the user has prepared the office bag. The user has prepared the office bag, so we can eliminate that. The next task is to prepare food. Since the user has prepared office clothes, they will now prepare food.",
+    'tasks': [
+        'wash the dishes',
+        'clean the room (kitchen)',
+        'prepare office clothes',
+        'prepare food'
+    ]
+}

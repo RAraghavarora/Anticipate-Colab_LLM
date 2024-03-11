@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Based on the observations, the user usually prepares casual clothes when they return home from the office in the evening. After preparing casual clothes, the typical sequence is to prepare and serve a healthy dinner, take medicines, and either store leftover food in the fridge or throw it away. However, the given requirement states that the kitchen is very dirty. Therefore, before preparing food, the user will likely clean the kitchen first. After cleaning the kitchen, the user can proceed with preparing food, serving the food, and then taking medicines.",
+    'tasks': ['clean the room (kitchen)', 'prepare food', 'serve the food', 'prepare medicines']
+}

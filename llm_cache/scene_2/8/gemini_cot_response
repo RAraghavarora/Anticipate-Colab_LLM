@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': 'The user is preparing to go to sleep. Before going to sleep, the user makes sure that the house is clean. The user has cleaned the living room. Now, the user will clean the other dirty rooms and clean the dirty dishes.',
+    'tasks': [
+        "clean the room (kitchen)",
+        "clean the room (bathroom)",
+        "clean the room (bedroom)",
+        "wash the dishes",
+    ],
+}

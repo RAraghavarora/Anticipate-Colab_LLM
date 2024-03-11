@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Since the user has just come home from the office, they have likely not eaten dinner yet. The user typically prepares casual clothes first when coming home in the evening. After preparing casual clothes, the next tasks for the evening would involve preparing and eating dinner, and taking any necessary medicines. However, the requirement states that the kitchen is very dirty, so cleaning the kitchen would likely be a priority before preparing food. Therefore, the anticipated next tasks are: clean the kitchen, prepare food, serve the food, and prepare medicines.",
+    'tasks': ['clean the room (kitchen)', 'prepare food', 'serve the food', 'prepare medicines']
+}

@@ -1,0 +1,14 @@
+
+# The following tasks are possible in the household
+tasks_sample_space = ['prepare food', 'serve the food', 'serve a drink', 'serve a drink (coke)', 'serve a drink (ice_tea)', 'serve a drink (sugary_fruit_juice)', 'serve a drink (milk)', 'serve a drink (coffee)', 'serve a drink (tea)', 'prepare medicines', 'wash the dishes', 'do the laundry', 'prepare office clothes', 'prepare casual clothes', 'prepare gym clothes', 'charge the electronic devices', 'prepare the office bag', 'clean the room (kitchen)', 'clean the room (bathroom)', 'clean the room (bedroom)', 'clean the room (livingroom)', 'set up the office table', 'throw away leftover food', 'put remaining food in the fridge', 'decorate the place', 'dust electronic devices', 'extinguish the fire']
+
+# The following tasks were done by **User 1** previously:
+user_tasks = {'user 1': {'observation 1': ['prepare office bag', 'prepare office clothes', 'charge electronic devices', 'prepare food', 'serve the food'], 'observation 2': ['prepare casual clothes', 'prepare food', 'serve the food', 'prepare medicines', 'put remaining food in the fridge'], 'observation 3': ['wash the dishes', 'clean the room (kitchen)', 'dust the electronic surfaces', 'clean the room (livingroom)'], 'description': {'observation 1': 'The user is a disciplined employee, who wakes up early morning to prepare for office. They prepare their office bag, office clothes, charge their electronic devices, followed by preparation of a healthy breakfast. Office clothes can only be prepared if they are clean, else the user does laundry before preparation.', 'observation 2': "In the evening, the user prepares their casual clothes (if they're clean). Then they prepare and serve a healthy dinner, and take their medicines. After that, they either store the leftover food back in the fridge, or throw it away.", 'observation 3': 'Before going to sleep, the user makes sure that the house is clean. They clean each room that is dirty, clean the dirty dishes, and dust the electronic devices.'}}}
+
+It is morning time, the user has to go to the office. 
+ You see the user perform the task:  
+ *prepare the office bag* 
+ What do you anticipate to be the next 4 tasks? 
+ Requirement: The office clothes are dirty
+    
+Answer only as a valid python dictionary, with two keys: 'chain-of-thought', and 'tasks'. Number of tasks should be 4! Keep tasks from the sample space.

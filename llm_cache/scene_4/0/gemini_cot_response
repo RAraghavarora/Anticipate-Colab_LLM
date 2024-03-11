@@ -1,0 +1,11 @@
+```
+{
+    'chain-of-thought': "The user has just done the laundry, and it is evening. The user wants to go to the gym, so they will likely change into their gym clothes next. Since the user is hungry, they will likely prepare and eat dinner before going to the gym. The living room is very dirty, so the user will likely clean the living room after they eat dinner. Finally, the user will likely charge their electronic devices before going to bed.",
+    'tasks': [
+        "prepare casual clothes",
+        "prepare food",
+        "serve the food",
+        "clean the room (livingroom)"
+    ],
+}
+```

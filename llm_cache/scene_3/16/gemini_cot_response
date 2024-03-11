@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The first requirement is that the dishes are dirty, so the user will clean them. Secondly, the user has not eaten lunch. So, the user will prepare, and eat their lunch. Since the user generally has a healty lunch with soup, we can deduce that the user will prepare salad instead, since soup is not available. Since the user is particular about their health, they will also include fruits. Hence the next step is to prepare salad and fruits. We know that the living room is already clean, and the use has not prepared for office, so the user will most likely clean one more room next. Since the kitchen has dirty dishes, it is more likely that the user will clean the kitchen.",
+    'tasks': [
+        "wash the dishes",
+        "prepare food",
+        "serve the food",
+        "clean the room (kitchen)",
+    ],
+}
+```

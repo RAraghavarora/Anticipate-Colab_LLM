@@ -1,0 +1,10 @@
+```python
+{
+    'chain-of-thought': "The user has finished cleaning the living room. Since this is the afternoon, it is lunchtime. The user hasn't eaten yet, so they will prepare and eat their lunch. The dishes are all dirty, so the user will wash the dishes. We know that the user prefers soup for lunch, but since it's not available the user will prepare a sandwich.",
+    'tasks': [
+        "prepare food",
+        "serve the food",
+        "wash the dishes",
+    ],
+}
+```

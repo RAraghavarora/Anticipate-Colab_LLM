@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user has just come home from the office and they have prepared their casual clothes. Checking the requirement, we see that the kitchen is very dirty. The user will first clean the kitchen. The requirements for the evening are: prepare food, serve the food, prepare medicines, put remaining food in the fridge. Since the user has just come home and they have not prepared food yet, we can anticipate that the next task will be 'prepare food'. The user will then serve the food. Checking if the user needs to take medicines, we see that it is not mentioned in the observation. So, we can eliminate that. The next task is to put remaining food in the fridge.",
+    'tasks': [
+        'clean the room (kitchen)',
+        'prepare food',
+        'serve the food',
+        'put remaining food in the fridge'
+    ]
+}

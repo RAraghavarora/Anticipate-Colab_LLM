@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "The requirements are: 1. Living Room is very dirty. 2. User wants to go to the gym. 3. User is hungry and there is rice in the fridge. Since the user is hungry, they will first eat. Since there is rice in the fridge, the user will prepare and serve it. Then the user will prepare gym clothes. After that, the user will clean the living room since it is very dirty.",
+    'tasks': [
+        "prepare food",
+        "serve the food",
+        "prepare gym clothes",
+        "clean the room (livingroom)"
+    ]
+}
+```

@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user has already cleaned the living room, so we can think after that. We can anticipate that the user will first check if they have eaten lunch. Since the user has not eaten lunch, they will first prepare and serve their lunch. Checking if the dishes are dirty. Since all the dishes are very dirty, the user will wash the dishes. The requirement is that soup is not available, so the user will not prepare soup. After lunch, the user usually prepares and serves a drink. Since there is no specific drink mentioned, we can assume the user will serve a regular drink. The user can then proceed with the next task.",
+    'tasks': [
+        'prepare food',
+        'wash the dishes',
+        'serve a drink',
+        'serve the food'
+    ]
+}

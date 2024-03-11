@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user just came home from the office and prepared casual clothes, so we can think after that. The kitchen is very dirty, so the user will first clean the kitchen. After that, the user usually prepares and serves dinner. Since the kitchen is dirty, the user will clean the kitchen before preparing food. The requirements in the evening are: prepare casual clothes, prepare food, serve the food, clean the room (kitchen). Since the user has already prepared casual clothes, we can eliminate that. The next task is 'prepare food'. Checking if rice is available. Rice is not available, so the user will prepare a meal without rice. The next task is 'serve the food'. The user will serve the food. The next task is 'clean the room (kitchen)'. The user will clean the kitchen.",
+    'tasks': [
+        'clean the room (kitchen)',
+        'prepare food',
+        'serve the food',
+        'clean the room (kitchen)'
+    ]
+}

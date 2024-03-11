@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Since the user has cleaned the living room, they will likely move on to cleaning other areas of the house before going to sleep, as described in 'observation 3'. The requirements state that the dishes and kitchen are dirty, so the next logical tasks would be to clean those areas. Based on the typical pattern, after cleaning the kitchen and dishes, the user may dust the electronic devices as well.",
+    'tasks': ['wash the dishes', 'clean the room (kitchen)', 'dust electronic devices', 'extinguish the fire']
+}

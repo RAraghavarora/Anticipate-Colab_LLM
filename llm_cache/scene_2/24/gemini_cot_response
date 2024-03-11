@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "The user is preparing to sleep, so they are likely to finish the remaining household tasks before going to bed. The first task is to clean the kitchen, since it is dirty. Next, they should wash the dishes, since they are dirty. After that, they could either clean the bedroom or set up the office table. Since the user is preparing to sleep, it is more likely that they will clean the bedroom before setting up the office table.",
+    'tasks': [
+        "clean the room (kitchen)",
+        "wash the dishes",
+        "clean the room (bedroom)",
+        "set up the office table",
+    ],
+}

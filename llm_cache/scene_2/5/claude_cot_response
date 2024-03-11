@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let's consider the requirements step by step. The user is preparing to sleep, and they have already cleaned the living room. Before sleeping, the user ensures the house is clean. Since the dishes and kitchen are dirty, the user will first clean the kitchen and wash the dishes. After that, the user will dust the electronic devices as per their usual routine before sleeping. Since all the cleaning tasks are done, the user can go to sleep after this. However, the question requires anticipating 4 tasks, so I will add 'prepare the office bag' as the fourth task, assuming the user prepares for the next day before sleeping.",
+    'tasks': [
+        'clean the room (kitchen)',
+        'wash the dishes',
+        'dust electronic devices',
+        'prepare the office bag'
+    ]
+}

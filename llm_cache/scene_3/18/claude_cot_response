@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Given that the user has cleaned the living room and hasn't eaten lunch yet, we can infer that the next task would be to prepare and serve food for lunch. Since all the dishes are dirty, the user will need to wash the dishes before preparing food. Since soup is not available, the user will likely prepare a different dish for lunch. After having lunch, the user may want to take a break and serve a drink. Based on the observations, the user seems to prefer healthy options, so a healthy drink like milk or tea is a reasonable guess.",
+    'tasks': ['wash the dishes', 'prepare food', 'serve the food', 'serve a drink (milk)']
+}

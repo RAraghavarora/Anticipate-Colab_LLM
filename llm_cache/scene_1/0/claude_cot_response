@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let's go through this step-by-step. The user has just come home from office and prepared their casual clothes. From the previous observations, we know that in the evening, the user typically prepares and serves dinner, takes their medicines, and then either stores the leftover food in the fridge or throws it away. However, the kitchen is very dirty, so before preparing dinner, the user will need to clean the kitchen. So the anticipated tasks are: 1) Clean the kitchen, 2) Prepare dinner, 3) Serve the dinner, 4) Take medicines. After dinner, the user will likely either store the leftover food in the fridge or throw it away, but that would be the 5th task, so it's not included in the next 4 tasks.",
+    'tasks': [
+        'clean the room (kitchen)',
+        'prepare food',
+        'serve the food',
+        'prepare medicines'
+    ]
+}

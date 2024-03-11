@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Since the user has cleaned the living room, we can anticipate that they will proceed to clean other rooms or perform tasks related to mealtime. Since the user hasn't eaten lunch, we can anticipate that they will prepare and serve food. Before preparing food, they will need to wash the dirty dishes as all the dishes are dirty. After eating, the user may either throw away leftover food or put remaining food in the fridge. Since soup is not available, we can anticipate that the user will prepare a different meal.",
+    'tasks': ['wash the dishes', 'prepare food', 'serve the food', 'throw away leftover food']
+}

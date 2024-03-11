@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "Since the dishes and kitchen are dirty, it is likely that the user will clean them. It is also likely that the user will then prepare for bed, which may involve taking medicines, brushing teeth, or setting up the bedroom. Based on the user's previous behavior, we can also anticipate that they will likely throw away any leftover food.",
+    'tasks': [
+        "wash the dishes",
+        "clean the room (kitchen)",
+        "prepare medicines",
+        "throw away leftover food",
+    ],
+}
+```

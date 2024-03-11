@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "The user is getting ready for the office. The user has prepared their office bag, which means they will need to prepare for the office. First they will prepare their office clothes. Since the office clothes are dirty, the user will need to prepare laundry. Then they will prepare their breakfast. Finally, they will charge their electronic devices.",
+    'tasks': [
+        "prepare office clothes",
+        "do the laundry",
+        "prepare food",
+        "charge the electronic devices"
+    ]
+}

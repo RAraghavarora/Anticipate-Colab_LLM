@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "The user has just come home from the office and has prepared casual clothes. Based on the observations, we know that in the evening, the user typically prepares and serves a healthy dinner, takes medicines, and either stores leftover food in the fridge or throws it away. Since the kitchen is very dirty, we can anticipate that the user will clean the kitchen before preparing food. After cleaning the kitchen, the user will likely prepare food, serve the food, and then take their medicines.",
+    'tasks': ['clean the room (kitchen)', 'prepare food', 'serve the food', 'prepare medicines']
+}

@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let's analyze the situation step by step. The user has just cleaned the living room, which is typically done before going to sleep according to the previous observations. The kitchen and dishes are dirty, so those tasks need to be done. Referencing the previous observations, we see that before sleeping, the user cleans dirty rooms, washes dishes, and dusts electronic devices. Since the living room is already clean, we can eliminate that task. The kitchen is dirty, so the user will clean the kitchen next. Then, the user will wash the dirty dishes. Finally, the user will dust the electronic devices before going to bed.",
+    'tasks': [
+        'clean the room (kitchen)',
+        'wash the dishes',
+        'dust electronic devices',
+        'prepare casual clothes'
+    ]
+}

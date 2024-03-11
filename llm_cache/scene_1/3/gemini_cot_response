@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': 'The user just came home from office and has prepared casual clothes. The kitchen is dirty, so the user will clean the kitchen. Then, they will prepare dinner. In the evening, they always take medicines after dinner, so they will prepare that too. Since they just came home from office, they might have some leftover food that they want to store. Hence, we can anticipate the following tasks: clean the room (kitchen), prepare food, prepare medicines, put remaining food in the fridge.',
+    'tasks': [
+        'clean the room (kitchen)',
+        'prepare food',
+        'prepare medicines',
+        'put remaining food in the fridge'
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "The user just came home from the office, hence they will change into casual clothes. The user generally cleans the kitchen at night before going to bed, hence they will clean the kitchen now. In the evening, the user prepares a healthy dinner, and takes their medicines after food. We can anticipate that the user will first prepare and serve their dinner. Since the user takes their medicine after food in the evening, we can anticipate that the user will prepare medicines too.",
+    'tasks': [
+        "clean the room (kitchen)",
+        "prepare food",
+        "serve the food",
+        "prepare medicines",
+    ],
+}

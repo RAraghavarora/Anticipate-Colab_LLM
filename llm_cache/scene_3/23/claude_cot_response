@@ -1,0 +1,4 @@
+{
+    'chain-of-thought': "Given that it is the afternoon and the user has not had lunch yet, we can anticipate that they will prepare and serve food for lunch. Since all the dishes are dirty, the logical next step would be to wash the dishes before preparing food. After eating, the user may want to serve a drink as well. Finally, if there are any leftovers from lunch, the user will likely put the remaining food in the fridge.",
+    'tasks': ['wash the dishes', 'prepare food', 'serve the food', 'serve a drink']
+}

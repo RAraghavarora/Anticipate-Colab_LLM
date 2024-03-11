@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The living room is very dirty, so the user will first clean the living room. The user is hungry, and there is rice in the fridge. So, the user will first prepare rice and serve it. Since the user wants to go to the gym, they will prepare gym clothes. Finally, the user will prepare their gym bag.",
+    'tasks': [
+        "clean the room (livingroom)",
+        "prepare food",
+        "serve the food",
+        "prepare gym clothes",
+    ],
+}
+```

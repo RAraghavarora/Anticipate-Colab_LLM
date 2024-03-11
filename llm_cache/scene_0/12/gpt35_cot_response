@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user has already prepared the office bag so we can think after that. We can anticipate that the user will first check if their office clothes are dirty. Checking if the office clothes are dirty. Since the office clothes are dirty, the user will need to do laundry. After doing laundry, the user can prepare clean office clothes. The next task is 'charge the electronic devices'. The user charges electronic devices. The next task is 'prepare food'. The user prepares breakfast before leaving for the office.",
+    'tasks': [
+        'do the laundry',
+        'prepare office clothes',
+        'charge the electronic devices',
+        'prepare food'
+    ]
+}

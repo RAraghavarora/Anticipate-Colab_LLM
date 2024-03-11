@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "The user is preparing to sleep. So the user will wash the dishes and clean the room (kitchen) since both are dirty. The user may also need to clean the bathroom since that is also a general task done before sleep. Finally, since it is night, the user will turn off the lights of the house, which is also a general task done before sleep.",
+    'tasks': [
+        'wash the dishes',
+        'clean the room (kitchen)',
+        'clean the room (bathroom)',
+        'extinguish the fire'
+    ],
+}
+```

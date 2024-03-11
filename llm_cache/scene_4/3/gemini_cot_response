@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': 'First, the user needs to eat since they are hungry. Then the user will prepare their gym clothes and put on their gym clothes since they want to go to the gym. After that, the user will prepare rice, since we know that rice is available in the fridge. Since the living room is very dirty, the user will clean the living room after preparing rice.',
+    'tasks': [
+        "prepare food",
+        "prepare gym clothes",
+        "prepare casual clothes",
+        "clean the room (livingroom)",
+    ],
+}
+```

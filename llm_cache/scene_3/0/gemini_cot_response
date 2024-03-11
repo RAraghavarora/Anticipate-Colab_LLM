@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "Let us go through the requirements step by step. Since all the dishes are dirty, the user will wash the dishes. After washing the dishes, the user should clean the living room. Since it is afternoon, we can anticipate that the user will prepare lunch. The user should prepare the food as per their preference. Also, the user will serve the food after preparation.",
+    'tasks': [
+        'wash the dishes',
+        'prepare food',
+        'serve the food',
+        'clean the room (kitchen)'
+    ],
+}
+```

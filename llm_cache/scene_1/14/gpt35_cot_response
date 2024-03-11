@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user just came home from the office, and they have prepared their casual clothes. So, we can anticipate the next tasks based on the requirements. The kitchen is very dirty, so the user will first clean the kitchen. The requirements in the evening are: prepare food, serve the food, prepare medicines, put remaining food in the fridge, and throw away leftover food. Since the user has just come home, they will first prepare food. After preparing the food, the user will serve the food. Then, they will prepare their medicines. The user has not mentioned anything about remaining food or leftover food, so we cannot anticipate whether they will put the remaining food in the fridge or throw it away. Therefore, we will not include those tasks in the anticipation.",
+    'tasks': [
+        "clean the room (kitchen)",
+        "prepare food",
+        "serve the food",
+        "prepare medicines"
+    ]
+}

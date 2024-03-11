@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Since the user has done laundry, it means they needed clean clothes. Given that they want to go to the gym, we can anticipate they will prepare gym clothes next. After preparing gym clothes, the user will likely prepare a light meal or snack before going to the gym since they are hungry and there is rice in the fridge. We can anticipate that they will prepare and serve food using the rice. Since the living room is dirty, after eating, the user will likely clean the living room before going to the gym.",
+    'tasks': [
+        'prepare gym clothes',
+        'prepare food',
+        'serve the food',
+        'clean the room (livingroom)'
+    ]
+}

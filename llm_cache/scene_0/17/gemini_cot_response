@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "Let's think step-by-step. Since the office clothes are dirty, the user can't prepare them directly. So, they will do their laundry first. After that, they can prepare their office clothes. Now that the office clothes are prepared, they can prepare their office bag, as they need both of them to go to the office. Since the user has to go to the office, they will prepare their breakfast as well. Finally, they will charge their electronic devices.",
+    'tasks': [
+        "do the laundry",
+        "prepare office clothes",
+        "prepare the office bag",
+        "prepare food",
+    ],
+}
+```

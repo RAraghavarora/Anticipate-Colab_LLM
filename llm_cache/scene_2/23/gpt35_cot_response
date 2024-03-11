@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user has already cleaned the living room, so we can think after that. The requirements before going to sleep are cleaning each room that is dirty, cleaning the dirty dishes, and dusting the electronic devices. Checking if any room is dirty. The kitchen is dirty, so the user will first clean the kitchen. After that, the user will clean the dishes. Since the user has already cleaned the living room, we can eliminate that. The next task is dusting the electronic devices. The user will dust the electronic devices. The next task is cleaning the bedroom. The user will clean the bedroom.",
+    'tasks': [
+        'clean the room (kitchen)',
+        'wash the dishes',
+        'dust electronic devices',
+        'clean the room (bedroom)'
+    ]
+}

@@ -1,0 +1,11 @@
+```
+{
+    'chain-of-thought': "The user is going to sleep, so they need to make sure that the house is clean, dishes are taken care of and the kitchen is clean. The user just cleaned the living room, so the valid next tasks are 'wash the dishes', 'clean the room (kitchen)', 'clean the room (bedroom)', and 'clean the room (bathroom)'. We can anticipate that the user will clean the dirtiest room next. Since we know that the kitchen and dishes are dirty, we can assume that they are dirtier than the bedroom and bathroom.",
+    'tasks': [
+        "wash the dishes",
+        "clean the room (kitchen)",
+        "clean the room (bedroom)",
+        "clean the room (bathroom)",
+    ],
+}
+```

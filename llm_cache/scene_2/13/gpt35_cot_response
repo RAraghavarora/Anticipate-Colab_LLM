@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user has already cleaned the living room, so we can think after that. We know that before going to sleep, the user makes sure that the house is clean. Checking the requirements, the dishes and kitchen are dirty. So, the user will first wash the dishes. After that, the user will clean the kitchen. Since we need to anticipate 4 tasks, we can add two more tasks from the sample space that are relevant to the user's habits. Let's add 'put remaining food in the fridge' and 'prepare casual clothes'.",
+    'tasks': [
+        'wash the dishes',
+        'clean the room (kitchen)',
+        'put remaining food in the fridge',
+        'prepare casual clothes'
+    ]
+}

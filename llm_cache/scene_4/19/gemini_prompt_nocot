@@ -1,0 +1,16 @@
+
+# The following tasks are possible in the household
+tasks_sample_space = ['prepare food', 'serve the food', 'serve a drink', 'serve a drink (coke)', 'serve a drink (ice_tea)', 'serve a drink (sugary_fruit_juice)', 'serve a drink (milk)', 'serve a drink (coffee)', 'serve a drink (tea)', 'prepare medicines', 'wash the dishes', 'do the laundry', 'prepare office clothes', 'prepare casual clothes', 'prepare gym clothes', 'charge the electronic devices', 'prepare the office bag', 'clean the room (kitchen)', 'clean the room (bathroom)', 'clean the room (bedroom)', 'clean the room (livingroom)', 'set up the office table', 'throw away leftover food', 'put remaining food in the fridge', 'decorate the place', 'dust electronic devices', 'extinguish the fire']
+
+# The following tasks were done by **User 1** previously:
+user_tasks = {'user 1': {'observation 1': ['prepare office bag', 'prepare office clothes', 'charge electronic devices', 'prepare food', 'serve the food'], 'observation 2': ['prepare casual clothes', 'prepare food', 'serve the food', 'prepare medicines', 'put remaining food in the fridge'], 'observation 3': ['wash the dishes', 'clean the room (kitchen)', 'dust the electronic surfaces', 'clean the room (livingroom)']}}
+
+It is the evening time, and user wants to go to the gym 
+ You see the user perform the task:  
+ *do the laundry* 
+ What do you anticipate to be the next 4 tasks?
+ Requirement: Living Room is very dirty 
+ *User is hungry and there is rice in the fridge* 
+
+    
+Answer only as a valid python dictionary, with a key: 'tasks'. Number of tasks should be 4! Keep tasks from the sample space.

@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "The user just came back from office, they're likely to be hungry and tired. Since the kitchen is dirty, they'll likely start by cleaning the kitchen. Afterwards, since they're tired from work, they'll likely relax by preparing and eating a light dinner, and then take their medicines. Finally, they'll charge their electronic devices before going to bed.",
+    'tasks': [
+        "clean the room (kitchen)",
+        "prepare food",
+        "serve the food",
+        "prepare medicines",
+    ],
+}
+```

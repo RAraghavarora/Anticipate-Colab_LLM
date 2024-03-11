@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': 'The user did laundry. They will need gym clothes to go to the gym. So the next task will be preparing gym clothes. The user is hungry and there\'s rice in the fridge, so the next task will be preparing rice and serving the food. The living room is very dirty, so the next task will be cleaning the living room.',
+    'tasks': [
+        'prepare gym clothes',
+        'prepare food',
+        'serve the food',
+        'clean the room (livingroom)'
+    ]
+}
+```

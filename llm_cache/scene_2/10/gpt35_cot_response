@@ -1,0 +1,9 @@
+{
+    'chain-of-thought': "Let us go through the requirements step by step. The user has already cleaned the living room, so we can think after that. Checking the requirements, we see that the dishes and kitchen are dirty. So the next task would be to wash the dishes. After that, the user will clean the kitchen. Since we are in the evening, we can anticipate that the user will also prepare and serve dinner. Checking if the user has any remaining food in the fridge. Since the user does not have any remaining food, we can anticipate that the user will prepare food for dinner.",
+    "tasks": [
+        "wash the dishes",
+        "clean the room (kitchen)",
+        "prepare food",
+        "serve the food"
+    ]
+}

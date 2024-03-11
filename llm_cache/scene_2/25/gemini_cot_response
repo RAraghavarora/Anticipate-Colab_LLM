@@ -1,0 +1,11 @@
+```python
+{
+    'chain-of-thought': "Let us first think about the requirements. The kitchen and living room are dirty. We can eliminate the tasks related to the bedroom and bathroom, and focus on the kitchen and living room. Since the user is preparing to sleep, we can eliminate the tasks related to preparing and serving food and drinks. The user had already taken medicines, so those are out of the way too. The user had prepared casual clothes earlier in the evening, so those are taken care of as well. That leaves us with cleaning tasks and other household chores.",
+    'tasks': [
+        "wash the dishes",
+        "clean the room (kitchen)",
+        "dust electronic devices",
+        "set up the office table",
+    ],
+}
+```
